@@ -12,6 +12,16 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+# OS
+
+.DS_Store
+Thumbs.db
+
+#blender
+
+*.blend1
+*.blend1.meta
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
