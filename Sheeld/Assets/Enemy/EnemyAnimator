@@ -1,0 +1,36 @@
+using UnityEngine;
+
+// Drives the enemy's Animator based on movement speed and external events (attack, hit).
+// Requires an Animator on the same GameObject and an EnemyMovement component.
+public class EnemyAnimator : MonoBehaviour
+{
+    private Animator animator;
+    private EnemyMovement movement;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        movement = GetComponent<EnemyMovement>();
+    }
+
+    void Update()
+    {
+        // Continuously sync the "Speed" float so the Animator blends idle <-> walk/run
+        if (animator != null && movement != null)
+        {
+            animator.SetFloat("Speed", movement.GetSpeed());
+        }
+    }
+
+    // Called by EnemyCombat when the enemy performs an attack
+    public void Attack()
+    {
+        animator.SetTrigger("Attack");
+    }
+
+    // Called by EnemyCombat when the enemy receives a hit
+    public void TakeDamage()
+    {
+        animator.SetTrigger("Hit");
+    }
+}
