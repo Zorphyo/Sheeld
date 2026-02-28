@@ -455,6 +455,15 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.3.8f1/Editor/Data/Tools/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Assets/Animation/Human Animations/Scripts/SpineProxy.cs"
+"Assets/Scripts/EnemyAnimator.cs"
+"Assets/Scripts/EnemyBrain.cs"
+"Assets/Scripts/EnemyCombat.cs"
+"Assets/Scripts/EnemyHealth.cs"
+"Assets/Scripts/EnemyMovement.cs"
+"Assets/Scripts/Health.cs"
+"Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/WaveManager.cs"
 "Assets/TutorialInfo/Readme.cs"
 -langversion:9.0
 /deterministic
