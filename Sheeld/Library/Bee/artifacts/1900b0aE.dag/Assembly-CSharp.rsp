@@ -462,6 +462,7 @@
 "Assets/Scripts/EnemyHealth.cs"
 "Assets/Scripts/EnemyMovement.cs"
 "Assets/Scripts/Health.cs"
+"Assets/Scripts/PhysicsManager.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/WaveManager.cs"
 "Assets/TutorialInfo/Readme.cs"

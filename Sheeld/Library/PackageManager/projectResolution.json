@@ -1,18 +1,18 @@
 {
   "context": {
-    "projectPath": "C:/Users/Ryan/Desktop/Sheeld/Sheeld/Packages",
+    "projectPath": "C:/Users/reach/OneDrive/Documents/GitHub/Sheeld/Sheeld/Packages",
     "unityVersion": "6000.3.8f1"
   },
   "inputs": [
-    "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Packages\\manifest.json",
-    "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Packages\\packages-lock.json",
+    "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Packages\\manifest.json",
+    "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Packages\\packages-lock.json",
     "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.8f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
     "com.unity.ai.navigation@2.0.10": {
       "name": "com.unity.ai.navigation",
       "displayName": "AI Navigation",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ai.navigation@c33a115e9883",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ai.navigation@c33a115e9883",
       "fingerprint": "c33a115e988396e6eb96aa3a58e9fa0a937d08d5",
       "editorCompatibility": "6000.0.0a1",
       "version": "2.0.10",
@@ -22,7 +22,7 @@
     "com.unity.collab-proxy@2.11.3": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.collab-proxy@e566cd3e7623",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.collab-proxy@e566cd3e7623",
       "fingerprint": "e566cd3e762373591f6828e86f2018eed8021356",
       "editorCompatibility": "2021.3.0f1",
       "version": "2.11.3",
@@ -32,7 +32,7 @@
     "com.unity.ide.rider@3.0.39": {
       "name": "com.unity.ide.rider",
       "displayName": "JetBrains Rider Editor",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ide.rider@4504839d03f7",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ide.rider@4504839d03f7",
       "fingerprint": "4504839d03f7a5a4495357084a0ffd6e439892cf",
       "editorCompatibility": "2021.3.0a1",
       "version": "3.0.39",
@@ -42,7 +42,7 @@
     "com.unity.ide.visualstudio@2.0.26": {
       "name": "com.unity.ide.visualstudio",
       "displayName": "Visual Studio Editor",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ide.visualstudio@a99d56dec63f",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ide.visualstudio@a99d56dec63f",
       "fingerprint": "a99d56dec63ffb3a911a5a9bce9b77ba862a601c",
       "editorCompatibility": "2021.3.0a1",
       "version": "2.0.26",
@@ -52,7 +52,7 @@
     "com.unity.inputsystem@1.18.0": {
       "name": "com.unity.inputsystem",
       "displayName": "Input System",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.inputsystem@57d0e36f6123",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.inputsystem@57d0e36f6123",
       "fingerprint": "57d0e36f61231bc5a2579f37d81bf6fa02f40adc",
       "editorCompatibility": "2022.3.0a1",
       "version": "1.18.0",
@@ -62,7 +62,7 @@
     "com.unity.multiplayer.center@1.0.1": {
       "name": "com.unity.multiplayer.center",
       "displayName": "Multiplayer Center",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.multiplayer.center@f01f4ba8d00a",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.multiplayer.center@f01f4ba8d00a",
       "fingerprint": "f01f4ba8d00afa4e957bddf0fcd1612a564401ff",
       "editorCompatibility": "6000.0.0a1",
       "version": "1.0.1",
@@ -72,7 +72,7 @@
     "com.unity.render-pipelines.universal@17.3.0": {
       "name": "com.unity.render-pipelines.universal",
       "displayName": "Universal Render Pipeline",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.render-pipelines.universal@a6e30d1f59f5",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.render-pipelines.universal@a6e30d1f59f5",
       "fingerprint": "a6e30d1f59f5364f0f32d5b542626a3743ae75b6",
       "editorCompatibility": "6000.3.0a1",
       "version": "17.3.0",
@@ -82,7 +82,7 @@
     "com.unity.test-framework@1.6.0": {
       "name": "com.unity.test-framework",
       "displayName": "Test Framework",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.test-framework@0b7a23ab2e1d",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.test-framework@0b7a23ab2e1d",
       "fingerprint": "0b7a23ab2e1d74441a5afdffa63f417929756957",
       "editorCompatibility": "6000.0.44f1",
       "version": "1.6.0",
@@ -92,7 +92,7 @@
     "com.unity.timeline@1.8.10": {
       "name": "com.unity.timeline",
       "displayName": "Timeline",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.timeline@7f8b2fb101b6",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.timeline@7f8b2fb101b6",
       "fingerprint": "7f8b2fb101b6053cc7472330401e94ff0c17b204",
       "editorCompatibility": "2022.3.0a1",
       "version": "1.8.10",
@@ -102,7 +102,7 @@
     "com.unity.ugui@2.0.0": {
       "name": "com.unity.ugui",
       "displayName": "uGUI",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ugui@bb329a87fcdc",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ugui@bb329a87fcdc",
       "fingerprint": "bb329a87fcdc5d55e815f3d804764d676674047e",
       "editorCompatibility": "2019.2.0a1",
       "version": "2.0.0",
@@ -112,7 +112,7 @@
     "com.unity.visualscripting@1.9.9": {
       "name": "com.unity.visualscripting",
       "displayName": "Visual Scripting",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.visualscripting@191c0d7e3b69",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.visualscripting@191c0d7e3b69",
       "fingerprint": "191c0d7e3b69bc0df1b6fed3a997c4c3a765ef6a",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.9.9",
@@ -122,7 +122,7 @@
     "com.unity.modules.accessibility@1.0.0": {
       "name": "com.unity.modules.accessibility",
       "displayName": "Accessibility",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.accessibility",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.accessibility",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -130,7 +130,7 @@
     "com.unity.modules.adaptiveperformance@1.0.0": {
       "name": "com.unity.modules.adaptiveperformance",
       "displayName": "Adaptive Performance",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.adaptiveperformance",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.adaptiveperformance",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -138,7 +138,7 @@
     "com.unity.modules.ai@1.0.0": {
       "name": "com.unity.modules.ai",
       "displayName": "AI",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.ai",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.ai",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -146,7 +146,7 @@
     "com.unity.modules.androidjni@1.0.0": {
       "name": "com.unity.modules.androidjni",
       "displayName": "Android JNI",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.androidjni",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.androidjni",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -154,7 +154,7 @@
     "com.unity.modules.animation@1.0.0": {
       "name": "com.unity.modules.animation",
       "displayName": "Animation",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.animation",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.animation",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -162,7 +162,7 @@
     "com.unity.modules.assetbundle@1.0.0": {
       "name": "com.unity.modules.assetbundle",
       "displayName": "Asset Bundle",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.assetbundle",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.assetbundle",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -170,7 +170,7 @@
     "com.unity.modules.audio@1.0.0": {
       "name": "com.unity.modules.audio",
       "displayName": "Audio",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.audio",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.audio",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -178,7 +178,7 @@
     "com.unity.modules.cloth@1.0.0": {
       "name": "com.unity.modules.cloth",
       "displayName": "Cloth",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.cloth",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.cloth",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -186,7 +186,7 @@
     "com.unity.modules.director@1.0.0": {
       "name": "com.unity.modules.director",
       "displayName": "Director",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.director",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.director",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -194,7 +194,7 @@
     "com.unity.modules.imageconversion@1.0.0": {
       "name": "com.unity.modules.imageconversion",
       "displayName": "Image Conversion",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.imageconversion",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.imageconversion",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -202,7 +202,7 @@
     "com.unity.modules.imgui@1.0.0": {
       "name": "com.unity.modules.imgui",
       "displayName": "IMGUI",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.imgui",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.imgui",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -210,7 +210,7 @@
     "com.unity.modules.jsonserialize@1.0.0": {
       "name": "com.unity.modules.jsonserialize",
       "displayName": "JSONSerialize",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.jsonserialize",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.jsonserialize",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -218,7 +218,7 @@
     "com.unity.modules.particlesystem@1.0.0": {
       "name": "com.unity.modules.particlesystem",
       "displayName": "Particle System",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.particlesystem",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.particlesystem",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -226,7 +226,7 @@
     "com.unity.modules.physics@1.0.0": {
       "name": "com.unity.modules.physics",
       "displayName": "Physics",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.physics",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.physics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -234,7 +234,7 @@
     "com.unity.modules.physics2d@1.0.0": {
       "name": "com.unity.modules.physics2d",
       "displayName": "Physics 2D",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.physics2d",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.physics2d",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -242,7 +242,7 @@
     "com.unity.modules.screencapture@1.0.0": {
       "name": "com.unity.modules.screencapture",
       "displayName": "Screen Capture",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.screencapture",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.screencapture",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -250,7 +250,7 @@
     "com.unity.modules.terrain@1.0.0": {
       "name": "com.unity.modules.terrain",
       "displayName": "Terrain",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.terrain",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.terrain",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -258,7 +258,7 @@
     "com.unity.modules.terrainphysics@1.0.0": {
       "name": "com.unity.modules.terrainphysics",
       "displayName": "Terrain Physics",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.terrainphysics",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.terrainphysics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -266,7 +266,7 @@
     "com.unity.modules.tilemap@1.0.0": {
       "name": "com.unity.modules.tilemap",
       "displayName": "Tilemap",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.tilemap",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.tilemap",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -274,7 +274,7 @@
     "com.unity.modules.ui@1.0.0": {
       "name": "com.unity.modules.ui",
       "displayName": "UI",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.ui",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.ui",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -282,7 +282,7 @@
     "com.unity.modules.uielements@1.0.0": {
       "name": "com.unity.modules.uielements",
       "displayName": "UIElements",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.uielements",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.uielements",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -290,7 +290,7 @@
     "com.unity.modules.umbra@1.0.0": {
       "name": "com.unity.modules.umbra",
       "displayName": "Umbra",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.umbra",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.umbra",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -298,7 +298,7 @@
     "com.unity.modules.unityanalytics@1.0.0": {
       "name": "com.unity.modules.unityanalytics",
       "displayName": "Unity Analytics",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unityanalytics",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unityanalytics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -306,7 +306,7 @@
     "com.unity.modules.unitywebrequest@1.0.0": {
       "name": "com.unity.modules.unitywebrequest",
       "displayName": "Unity Web Request",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequest",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequest",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -314,7 +314,7 @@
     "com.unity.modules.unitywebrequestassetbundle@1.0.0": {
       "name": "com.unity.modules.unitywebrequestassetbundle",
       "displayName": "Unity Web Request Asset Bundle",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequestassetbundle",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequestassetbundle",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -322,7 +322,7 @@
     "com.unity.modules.unitywebrequestaudio@1.0.0": {
       "name": "com.unity.modules.unitywebrequestaudio",
       "displayName": "Unity Web Request Audio",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequestaudio",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequestaudio",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -330,7 +330,7 @@
     "com.unity.modules.unitywebrequesttexture@1.0.0": {
       "name": "com.unity.modules.unitywebrequesttexture",
       "displayName": "Unity Web Request Texture",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequesttexture",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequesttexture",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -338,7 +338,7 @@
     "com.unity.modules.unitywebrequestwww@1.0.0": {
       "name": "com.unity.modules.unitywebrequestwww",
       "displayName": "Unity Web Request WWW",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequestwww",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.unitywebrequestwww",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -346,7 +346,7 @@
     "com.unity.modules.vectorgraphics@1.0.0": {
       "name": "com.unity.modules.vectorgraphics",
       "displayName": "Vector Graphics",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.vectorgraphics",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.vectorgraphics",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -354,7 +354,7 @@
     "com.unity.modules.vehicles@1.0.0": {
       "name": "com.unity.modules.vehicles",
       "displayName": "Vehicles",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.vehicles",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.vehicles",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -362,7 +362,7 @@
     "com.unity.modules.video@1.0.0": {
       "name": "com.unity.modules.video",
       "displayName": "Video",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.video",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.video",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -370,7 +370,7 @@
     "com.unity.modules.vr@1.0.0": {
       "name": "com.unity.modules.vr",
       "displayName": "VR",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.vr",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.vr",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -378,7 +378,7 @@
     "com.unity.modules.wind@1.0.0": {
       "name": "com.unity.modules.wind",
       "displayName": "Wind",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.wind",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.wind",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -386,7 +386,7 @@
     "com.unity.modules.xr@1.0.0": {
       "name": "com.unity.modules.xr",
       "displayName": "XR",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.xr",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.xr",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -394,7 +394,7 @@
     "com.unity.modules.subsystems@1.0.0": {
       "name": "com.unity.modules.subsystems",
       "displayName": "Subsystems",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.subsystems",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.subsystems",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -402,7 +402,7 @@
     "com.unity.modules.hierarchycore@1.0.0": {
       "name": "com.unity.modules.hierarchycore",
       "displayName": "Hierarchy Core",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.hierarchycore",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.modules.hierarchycore",
       "version": "1.0.0",
       "source": "builtin",
       "testable": false
@@ -410,7 +410,7 @@
     "com.unity.ext.nunit@2.0.5": {
       "name": "com.unity.ext.nunit",
       "displayName": "Custom NUnit",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ext.nunit@d8c07649098d",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.ext.nunit@d8c07649098d",
       "fingerprint": "d8c07649098d3936da4c8ab500960c1776b44592",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.5",
@@ -420,7 +420,7 @@
     "com.unity.render-pipelines.core@17.3.0": {
       "name": "com.unity.render-pipelines.core",
       "displayName": "Scriptable Render Pipeline Core",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.render-pipelines.core@d6dfd1e235d5",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.render-pipelines.core@d6dfd1e235d5",
       "fingerprint": "d6dfd1e235d5156d31265ad0c7f00bd8d46c5154",
       "editorCompatibility": "6000.3.0a1",
       "version": "17.3.0",
@@ -430,7 +430,7 @@
     "com.unity.shadergraph@17.3.0": {
       "name": "com.unity.shadergraph",
       "displayName": "Shader Graph",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.shadergraph@d44b48771ebb",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.shadergraph@d44b48771ebb",
       "fingerprint": "d44b48771ebbf9479f0179b89a001f76788f52dc",
       "editorCompatibility": "6000.3.0a1",
       "version": "17.3.0",
@@ -440,7 +440,7 @@
     "com.unity.render-pipelines.universal-config@17.0.3": {
       "name": "com.unity.render-pipelines.universal-config",
       "displayName": "Universal Render Pipeline Config",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.render-pipelines.universal-config@8dc1aab4af1d",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.render-pipelines.universal-config@8dc1aab4af1d",
       "fingerprint": "8dc1aab4af1d718781689a36ed5231a35ad1a524",
       "editorCompatibility": "6000.0.0a1",
       "version": "17.0.3",
@@ -450,7 +450,7 @@
     "com.unity.searcher@4.9.4": {
       "name": "com.unity.searcher",
       "displayName": "Searcher",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.searcher@d45a78918735",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.searcher@d45a78918735",
       "fingerprint": "d45a78918735dd5b1de2247c6e3567c60aa24115",
       "editorCompatibility": "2019.1.0a1",
       "version": "4.9.4",
@@ -460,7 +460,7 @@
     "com.unity.burst@1.8.27": {
       "name": "com.unity.burst",
       "displayName": "Burst",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.burst@973857688024",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.burst@973857688024",
       "fingerprint": "973857688024e0c6019b60f7a3b403e8e467c4d0",
       "editorCompatibility": "2022.3.0a1",
       "version": "1.8.27",
@@ -470,7 +470,7 @@
     "com.unity.mathematics@1.3.3": {
       "name": "com.unity.mathematics",
       "displayName": "Mathematics",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.mathematics@19a9377c4ffa",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.mathematics@19a9377c4ffa",
       "fingerprint": "19a9377c4ffa59370edad3e6a34e4445529badde",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.3.3",
@@ -480,7 +480,7 @@
     "com.unity.collections@2.6.2": {
       "name": "com.unity.collections",
       "displayName": "Collections",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.collections@aea9d3bd5e19",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.collections@aea9d3bd5e19",
       "fingerprint": "aea9d3bd5e19f2a90fc3a39919974a5f3613a159",
       "editorCompatibility": "2022.3.20f1",
       "version": "2.6.2",
@@ -490,7 +490,7 @@
     "com.unity.nuget.mono-cecil@1.11.6": {
       "name": "com.unity.nuget.mono-cecil",
       "displayName": "Mono Cecil",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.nuget.mono-cecil@ecb9724e46ff",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.nuget.mono-cecil@ecb9724e46ff",
       "fingerprint": "ecb9724e46fff855c46a4f37f0a3377a3cfffc06",
       "editorCompatibility": "2019.4.0a1",
       "version": "1.11.6",
@@ -500,7 +500,7 @@
     "com.unity.test-framework.performance@3.2.0": {
       "name": "com.unity.test-framework.performance",
       "displayName": "Performance testing API",
-      "resolvedPath": "C:\\Users\\Ryan\\Desktop\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.test-framework.performance@0840f58e4562",
+      "resolvedPath": "C:\\Users\\reach\\OneDrive\\Documents\\GitHub\\Sheeld\\Sheeld\\Library\\PackageCache\\com.unity.test-framework.performance@0840f58e4562",
       "fingerprint": "0840f58e45624f7677679a0f8b6a5137689e607f",
       "editorCompatibility": "2020.3.0a1",
       "version": "3.2.0",
