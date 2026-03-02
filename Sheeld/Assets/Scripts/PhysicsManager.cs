@@ -160,6 +160,7 @@ public sealed class PhysicsManager : MonoBehaviour
         impulseQueue.Clear();
     }
 
+    // TODO: Check with Ruba on naming
     private void StepTraps()
     {
         // Remove dead references while iterating (iterate backwards).
