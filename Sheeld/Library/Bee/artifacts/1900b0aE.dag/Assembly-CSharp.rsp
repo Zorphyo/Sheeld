@@ -125,6 +125,7 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -133,6 +134,7 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_INPUT_SYSTEM
+-define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_FONT_ENGINE_1_6_OR_NEWER
@@ -459,11 +461,14 @@
 "Assets/Scripts/EnemyAnimator.cs"
 "Assets/Scripts/EnemyBrain.cs"
 "Assets/Scripts/EnemyCombat.cs"
+"Assets/Scripts/EnemyCounterScript.cs"
 "Assets/Scripts/EnemyHealth.cs"
 "Assets/Scripts/EnemyMovement.cs"
 "Assets/Scripts/Health.cs"
+"Assets/Scripts/HealthBarScript.cs"
 "Assets/Scripts/PhysicsManager.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/StaminaBarScript.cs"
 "Assets/Scripts/WaveManager.cs"
 "Assets/TutorialInfo/Readme.cs"
 -langversion:9.0
