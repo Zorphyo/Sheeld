@@ -5,7 +5,7 @@ public class WaveManager : MonoBehaviour
 {
     [Header("Wave Settings")]
     public Transform player;            // Player Transform
-    public GameObject enemyPrefab = null;      // Enemy prefab with EnemyCombat + EnemyBrain
+    public GameObject[] enemyPrefabs;   // Enemy prefabs with EnemyCombat + EnemyBrain
     public int enemiesPerWave = 5;      // How many enemies per wave
     public float spawnRadius = 10f;     // Radius around player to spawn enemies
     public float timeBetweenWaves = 5f; // Delay before next wave
@@ -24,17 +24,17 @@ public class WaveManager : MonoBehaviour
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Force load the prefab from Resources, ignoring inspector
-        GameObject loadedPrefab = Resources.Load<GameObject>("HumanCharacterDummy_M");
-        if (loadedPrefab != null)
-        {
-            enemyPrefab = loadedPrefab;
-            Debug.Log("Successfully loaded enemy prefab from Resources.");
-        }
-        else
-        {
-            Debug.LogError("Enemy prefab 'HumanCharacterDummy_M' not found in Resources!");
-        }
+        // Load ALL enemy prefabs inside Resources/Enemies
+            enemyPrefabs = Resources.LoadAll<GameObject>("Enemies");
+
+            if (enemyPrefabs.Length > 0)
+            {
+                Debug.Log("Loaded " + enemyPrefabs.Length + " enemy prefabs.");
+            }
+            else
+            {
+                Debug.LogError("No enemy prefabs found in Resources/Enemies!");
+            }
     }
 
     System.Collections.IEnumerator SpawnWaves()
@@ -50,7 +50,8 @@ public class WaveManager : MonoBehaviour
                 Vector3 spawnPos = player.position + Random.insideUnitSphere * spawnRadius;
                 spawnPos.y = player.position.y; // Keep same ground level
 
-                GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+                int randomIndex = Random.Range(0, enemyPrefabs.Length);
+                GameObject enemy = Instantiate(enemyPrefabs[randomIndex], spawnPos, Quaternion.identity);
 
                 // Assign player to enemy scripts
                 EnemyCombat ec = enemy.GetComponent<EnemyCombat>();
