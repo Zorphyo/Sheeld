@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class StaminaBarScript : MonoBehaviour
+public class StaminaBar : MonoBehaviour
 {
     public Slider staminaBarSlider;
     public TextMeshProUGUI staminaBarValueText;

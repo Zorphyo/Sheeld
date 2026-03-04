@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class HealthBarScript : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     public Slider healthBarSlider;
     public TextMeshProUGUI healthBarValueText;

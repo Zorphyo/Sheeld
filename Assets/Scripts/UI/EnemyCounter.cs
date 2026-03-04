@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class EnemyCounterScript : MonoBehaviour
+public class EnemyCounter : MonoBehaviour
 {
     GameObject[] enemies;
     public TextMeshProUGUI enemyCountText;
