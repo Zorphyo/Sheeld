@@ -5,11 +5,10 @@ public class WaveManager : MonoBehaviour
 {
     [Header("Wave Settings")]
     public Transform player;            // Player Transform
-    public GameObject enemyPrefab;      // Enemy prefab with EnemyCombat + EnemyBrain
+    public GameObject enemyPrefab = null;      // Enemy prefab with EnemyCombat + EnemyBrain
     public int enemiesPerWave = 5;      // How many enemies per wave
     public float spawnRadius = 10f;     // Radius around player to spawn enemies
     public float timeBetweenWaves = 5f; // Delay before next wave
-
     private int waveNumber = 0;
     private List<GameObject> aliveEnemies = new List<GameObject>();
 
@@ -21,9 +20,21 @@ public class WaveManager : MonoBehaviour
 
     void Awake()
     {
-        // Automatically finds the player at runtime
+        // Find the player automatically
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        // Force load the prefab from Resources, ignoring inspector
+        GameObject loadedPrefab = Resources.Load<GameObject>("HumanCharacterDummy_M");
+        if (loadedPrefab != null)
+        {
+            enemyPrefab = loadedPrefab;
+            Debug.Log("Successfully loaded enemy prefab from Resources.");
+        }
+        else
+        {
+            Debug.LogError("Enemy prefab 'HumanCharacterDummy_M' not found in Resources!");
+        }
     }
 
     System.Collections.IEnumerator SpawnWaves()
