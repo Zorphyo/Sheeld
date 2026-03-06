@@ -1,0 +1,11 @@
+Model Information:
+* title:	15th - Fall // Banana Peel
+* source:	https://sketchfab.com/3d-models/15th-fall-banana-peel-60a3ba892429433d9b580998b1036c55
+* author:	Ringo Gunther (https://sketchfab.com/ringogunther)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "15th - Fall // Banana Peel" (https://sketchfab.com/3d-models/15th-fall-banana-peel-60a3ba892429433d9b580998b1036c55) by Ringo Gunther (https://sketchfab.com/ringogunther) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
