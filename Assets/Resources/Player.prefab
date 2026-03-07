@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d666a37927626c74cae1be0de003195f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0905b26e6fb4a984e9597fbe55642b18, type: 2}
+    - target: {fileID: 5866666021909216657, guid: d666a37927626c74cae1be0de003195f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -71,6 +79,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7389726156936403852}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8275560175794089077}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4085181678890531512}
@@ -98,6 +109,18 @@ MonoBehaviour:
   MOVEMENT_SPEED: 7
   ROTATION_SPEED: 5.5
   JUMP_FORCE: 4
+--- !u!114 &8275560175794089077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57677947303201897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45300d0c3ad6b464b9385e777a14986c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimations
 --- !u!54 &4085181678890531512
 Rigidbody:
   m_ObjectHideFlags: 0

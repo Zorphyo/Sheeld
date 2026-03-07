@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
-    PlayerInputActions pia;
+    public PlayerInputActions pia;
 
     [SerializeField] float MOVEMENT_SPEED;
     [SerializeField] float ROTATION_SPEED;
