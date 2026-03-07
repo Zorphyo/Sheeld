@@ -5,10 +5,15 @@ public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
     public PlayerInputActions pia;
+    GameObject camera;
 
     [SerializeField] float MOVEMENT_SPEED;
     [SerializeField] float ROTATION_SPEED;
     [SerializeField] float JUMP_FORCE;
+
+    Vector3 moveDirection;
+    Vector3 rotateDirection;
+    Quaternion targetRotation;
 
     private void Awake()
     {
@@ -21,7 +26,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        camera = GameObject.FindWithTag("MainCamera");
     }
 
     // Update is called once per frame
@@ -35,22 +40,29 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement(Vector2 inputVector)
     {
-        rb.MovePosition(rb.position + (new Vector3(inputVector.x, 0, inputVector.y) * MOVEMENT_SPEED * Time.fixedDeltaTime));
+        moveDirection = camera.transform.forward * inputVector.y;
+        moveDirection += camera.transform.right * inputVector.x;
+        moveDirection.Normalize();
+        moveDirection.y = 0;
+
+        rb.MovePosition(rb.position + (moveDirection * MOVEMENT_SPEED * Time.fixedDeltaTime));
     }
 
     void HandleRotation(Vector2 inputVector)
     {
-        Vector3 targetDirection = new Vector3(inputVector.x, 0, inputVector.y);
+        rotateDirection = camera.transform.forward * inputVector.y;
+        rotateDirection += camera.transform.right * inputVector.x;
+        rotateDirection.Normalize();
+        rotateDirection.y = 0;
 
-        if (targetDirection == Vector3.zero)
+        if (inputVector == Vector2.zero)
         {
-            targetDirection = transform.forward;
+            rotateDirection = transform.forward;
         }
 
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, ROTATION_SPEED * Time.fixedDeltaTime);
+        targetRotation = Quaternion.LookRotation(rotateDirection);
 
-        transform.rotation = playerRotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, ROTATION_SPEED * Time.fixedDeltaTime);
     }
 
     public void JumpPerformed(InputAction.CallbackContext context)
