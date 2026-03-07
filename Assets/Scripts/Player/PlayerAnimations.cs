@@ -42,5 +42,15 @@ public class PlayerAnimations : MonoBehaviour
         {
             animator.SetBool("Run", false);
         }
+
+        if (pc.isSprinting)
+        {
+            animator.SetBool("Sprint", true);
+        }
+
+        else
+        {
+            animator.SetBool("Sprint", false);
+        }
     }
 }

@@ -7,13 +7,17 @@ public class PlayerController : MonoBehaviour
     public PlayerInputActions pia;
     GameObject camera;
 
-    [SerializeField] float MOVEMENT_SPEED;
+    [SerializeField] float RUN_SPEED;
+    [SerializeField] float SPRINT_SPEED;
     [SerializeField] float ROTATION_SPEED;
     [SerializeField] float JUMP_FORCE;
 
     Vector3 moveDirection;
     Vector3 rotateDirection;
     Quaternion targetRotation;
+
+    public bool isSprinting = false;
+    float currentSpeed;
 
     private void Awake()
     {
@@ -22,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
         pia.Enable();
         pia.Player.Jump.performed += JumpPerformed;
+        pia.Player.Sprint.performed += SprintPerformed;
+        pia.Player.Sprint.canceled += SprintCanceled;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +51,17 @@ public class PlayerController : MonoBehaviour
         moveDirection.Normalize();
         moveDirection.y = 0;
 
-        rb.MovePosition(rb.position + (moveDirection * MOVEMENT_SPEED * Time.fixedDeltaTime));
+        if (isSprinting)
+        {
+            currentSpeed = SPRINT_SPEED;
+        }
+
+        else
+        {
+            currentSpeed = RUN_SPEED;
+        }
+
+        rb.MovePosition(rb.position + (moveDirection * currentSpeed * Time.fixedDeltaTime));
     }
 
     void HandleRotation(Vector2 inputVector)
@@ -71,5 +87,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * JUMP_FORCE, ForceMode.Impulse);
         }
+    }
+
+    public void SprintPerformed(InputAction.CallbackContext context)
+    {
+        isSprinting = true;
+    }
+
+    public void SprintCanceled(InputAction.CallbackContext context)
+    {
+        isSprinting = false;
     }
 }
