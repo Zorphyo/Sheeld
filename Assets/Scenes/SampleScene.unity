@@ -440,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 117474044}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1366548, y: -2.2975426e-10, z: 3.1694456e-11, w: 0.99061877}
-  m_LocalPosition: {x: -22.47, y: 12.83, z: 35.129597}
+  m_LocalPosition: {x: -22.47, y: 12.98, z: 36.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -914,7 +914,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1366548, y: -2.2975424e-10, z: 3.1694352e-11, w: 0.99061877}
-  m_LocalPosition: {x: -22.47, y: 12.83, z: 35.129597}
+  m_LocalPosition: {x: -22.47, y: 12.98, z: 36.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3943,17 +3943,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 474738754641347079, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: dodgeStaminaCost
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.47
       objectReference: {fileID: 0}
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.58
+      value: 7.73
       objectReference: {fileID: 0}
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.129597
+      value: 44.18
       objectReference: {fileID: 0}
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3982,6 +3986,10 @@ PrefabInstance:
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: DODGE_FORCE
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

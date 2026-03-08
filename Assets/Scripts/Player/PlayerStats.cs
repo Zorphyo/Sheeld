@@ -16,6 +16,8 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector] public bool staminaRegen = true;
     [HideInInspector] public bool staminaLockout = false;
 
+    public int dodgeStaminaCost;
+
     UnityEvent Death;
 
     void Awake()
@@ -116,7 +118,7 @@ public class PlayerStats : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
 
-            if (!staminaRegen && !staminaLockout && !pc.isBlocking && currentStamina > 0)
+            if (!staminaRegen && !staminaLockout && !pc.isBlocking && !pc.isDodging && currentStamina > 0)
             {
                 ChangeStamina(amount);
             }

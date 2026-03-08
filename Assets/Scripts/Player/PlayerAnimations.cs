@@ -69,5 +69,15 @@ public class PlayerAnimations : MonoBehaviour
         {
             animator.SetBool("Falling", true);
         }
+
+        if (pc.isDodging)
+        {
+            animator.SetBool("Dodge", true);
+        }
+
+        else
+        {
+            animator.SetBool("Dodge", false);
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float BLOCKING_SPEED;
     [SerializeField] float ROTATION_SPEED;
     [SerializeField] float JUMP_FORCE;
+    [SerializeField] float DODGE_FORCE;
 
     float currentSpeed;
 
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isSprinting = false;
     [HideInInspector] public bool isBlocking = false;
     [HideInInspector] public bool isGrounded;
+    [HideInInspector] public bool isDodging = false;
 
     public LayerMask groundLayer;
     public float rayCastHeightOffset;
@@ -38,11 +41,14 @@ public class PlayerController : MonoBehaviour
         ps = GetComponent<PlayerStats>();
 
         pia.Enable();
+        pia.Player.Movement.started += SprintOkay;
+        pia.Player.Movement.canceled += SprintNotOkay;
         pia.Player.Jump.performed += JumpPerformed;
         pia.Player.Sprint.performed += SprintPerformed;
         pia.Player.Sprint.canceled += SprintCanceled;
         pia.Player.Block.performed += BlockPerformed;
         pia.Player.Block.canceled += BlockCanceled;
+        pia.Player.Dodge.performed += DodgePerformed;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -155,15 +161,59 @@ public class PlayerController : MonoBehaviour
         isBlocking = false;
     }
 
+    public void DodgePerformed(InputAction.CallbackContext context)
+    {
+        if (isGrounded)
+        {
+            isDodging = true;
+            rb.AddForce(transform.forward * DODGE_FORCE, ForceMode.Impulse);
+            ps.ChangeStamina(-ps.dodgeStaminaCost);
+            ps.staminaRegen = false;
+            pia.Player.Dodge.Disable();
+        }
+
+        StartCoroutine(DodgeTimer());
+    }
+
+    IEnumerator DodgeTimer()
+    {           
+        yield return new WaitForSeconds((1.433f - 0.35825f) + 0.1f);
+
+        isDodging = false;
+
+        if (!ps.staminaLockout)
+        {
+            pia.Player.Dodge.Enable();
+
+            if (!isSprinting)
+            {
+                ps.staminaRegen = true;
+            }
+        }
+    }
+
+    public void SprintOkay(InputAction.CallbackContext context)
+    {
+        pia.Player.Sprint.Enable();
+    }
+
+    public void SprintNotOkay(InputAction.CallbackContext context)
+    {
+        pia.Player.Sprint.Disable();
+        isSprinting = false;
+    }
+
     public void NoMoreStamina()
     {
         pia.Player.Sprint.Disable();
         pia.Player.Block.Disable();
+        pia.Player.Dodge.Disable();
     }
 
     public void RegainedStamina()
     {
         pia.Player.Sprint.Enable();
         pia.Player.Block.Enable();
+        pia.Player.Dodge.Enable();
     }
 }
