@@ -79,5 +79,15 @@ public class PlayerAnimations : MonoBehaviour
         {
             animator.SetBool("Dodge", false);
         }
+
+        if (pc.isShieldBashing)
+        {
+            animator.SetBool("ShieldBash", true);
+        }
+
+        else
+        {
+            animator.SetBool("ShieldBash", false);
+        }
     }
 }

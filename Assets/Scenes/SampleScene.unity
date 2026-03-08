@@ -3947,6 +3947,14 @@ PrefabInstance:
       propertyPath: dodgeStaminaCost
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 474738754641347079, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: DODGE_STAMINA_COST
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 474738754641347079, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: SHIELD_BASH_STAMINA_COST
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.47
@@ -3989,6 +3997,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: DODGE_FORCE
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: SHIELD_BASH_FORCE
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []

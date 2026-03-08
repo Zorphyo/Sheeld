@@ -11,12 +11,13 @@ public class PlayerStats : MonoBehaviour
     public int MAX_HEALTH;
     public int MAX_STAMINA;
 
+    public int DODGE_STAMINA_COST;
+    public int SHIELD_BASH_STAMINA_COST;
+
     [HideInInspector] public int currentHealth;
     [HideInInspector] public int currentStamina;
     [HideInInspector] public bool staminaRegen = true;
     [HideInInspector] public bool staminaLockout = false;
-
-    public int dodgeStaminaCost;
 
     UnityEvent Death;
 
