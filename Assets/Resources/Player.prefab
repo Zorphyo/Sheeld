@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &433836079247834350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2348432944266781502}
+  m_Layer: 0
+  m_Name: LookTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2348432944266781502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433836079247834350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 830695762274932435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &868491145807442232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.237036
+      value: -22.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.552
+      value: 7.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -64,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d666a37927626c74cae1be0de003195f, type: 3}
       propertyPath: m_Controller
       value: 
@@ -74,7 +109,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2348432944266781502}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
       insertIndex: -1
@@ -82,6 +120,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8275560175794089077}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 474738754641347079}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d666a37927626c74cae1be0de003195f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4085181678890531512}
@@ -106,9 +147,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5c2535e0eb11443a2ad5f8f26f4390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  MOVEMENT_SPEED: 7
-  ROTATION_SPEED: 5.5
-  JUMP_FORCE: 4
+  RUN_SPEED: 6
+  SPRINT_SPEED: 10
+  BLOCKING_SPEED: 2.5
+  ROTATION_SPEED: 7
+  JUMP_FORCE: 5
+  isSprinting: 0
+  isBlocking: 0
+  isGrounded: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  rayCastHeightOffset: 0.5
 --- !u!114 &8275560175794089077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +171,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45300d0c3ad6b464b9385e777a14986c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimations
+--- !u!114 &474738754641347079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57677947303201897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4091f84dfde244a4bb3dfbea363ba684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  MAX_HEALTH: 100
+  MAX_STAMINA: 100
+  currentHealth: 0
+  currentStamina: 0
+  staminaRegen: 1
+  staminaLockout: 0
 --- !u!54 &4085181678890531512
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,3 +239,8 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!4 &830695762274932435 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
+  m_PrefabInstance: {fileID: 868491145807442232}
+  m_PrefabAsset: {fileID: 0}

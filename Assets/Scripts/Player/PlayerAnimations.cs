@@ -14,9 +14,6 @@ public class PlayerAnimations : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         pc = GetComponent<PlayerController>();
-
-        //runOkay = Animator.StringToHash("Run");
-        //sprintOkay = Animator.StringToHash("Sprint");
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,6 +48,26 @@ public class PlayerAnimations : MonoBehaviour
         else
         {
             animator.SetBool("Sprint", false);
+        }
+
+        if (pc.isBlocking)
+        {
+            animator.SetBool("Block", true);
+        }
+
+        else
+        {
+            animator.SetBool("Block", false);
+        }
+
+        if (pc.isGrounded)
+        {
+            animator.SetBool("Falling", false);
+        }
+
+        else
+        {
+            animator.SetBool("Falling", true);
         }
     }
 }

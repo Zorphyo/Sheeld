@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBrain : MonoBehaviour
 {
     [Header("Detection")]
-    public Transform player;
+    [HideInInspector] public Transform player;
     public float detectionRange = 10f; // Outer range at which the enemy begins chasing
     public float attackRange = 1.5f;   // Inner range at which the enemy stops and attacks
 
@@ -16,6 +16,11 @@ public class EnemyBrain : MonoBehaviour
     {
         movement = GetComponent<EnemyMovement>();
         combat = GetComponent<EnemyCombat>();
+    }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()

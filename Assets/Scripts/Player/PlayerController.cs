@@ -6,29 +6,45 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public PlayerInputActions pia;
     GameObject camera;
+    Animator animator;
+    PlayerAnimations pa;
+    PlayerStats ps;
 
     [SerializeField] float RUN_SPEED;
     [SerializeField] float SPRINT_SPEED;
+    [SerializeField] float BLOCKING_SPEED;
     [SerializeField] float ROTATION_SPEED;
     [SerializeField] float JUMP_FORCE;
+
+    float currentSpeed;
 
     Vector3 moveDirection;
     Vector3 rotateDirection;
     Quaternion targetRotation;
 
-    public bool isSprinting = false;
-    float currentSpeed;
+    [HideInInspector] public bool isSprinting = false;
+    [HideInInspector] public bool isBlocking = false;
+    [HideInInspector] public bool isGrounded;
+
+    public LayerMask groundLayer;
+    public float rayCastHeightOffset;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         pia = new PlayerInputActions();
+        animator = GetComponent<Animator>();
+        pa = GetComponent<PlayerAnimations>();
+        ps = GetComponent<PlayerStats>();
 
         pia.Enable();
         pia.Player.Jump.performed += JumpPerformed;
         pia.Player.Sprint.performed += SprintPerformed;
         pia.Player.Sprint.canceled += SprintCanceled;
+        pia.Player.Block.performed += BlockPerformed;
+        pia.Player.Block.canceled += BlockCanceled;
     }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -38,6 +54,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        HandleFalling();
+
         Vector2 inputVector = pia.Player.Movement.ReadValue<Vector2>();
 
         HandleMovement(inputVector);
@@ -51,7 +69,12 @@ public class PlayerController : MonoBehaviour
         moveDirection.Normalize();
         moveDirection.y = 0;
 
-        if (isSprinting)
+        if (isBlocking)
+        {
+            currentSpeed = BLOCKING_SPEED;
+        }
+
+        else if (isSprinting)
         {
             currentSpeed = SPRINT_SPEED;
         }
@@ -81,9 +104,27 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, ROTATION_SPEED * Time.fixedDeltaTime);
     }
 
+    void HandleFalling()
+    {
+        RaycastHit hit;
+        Vector3 rayCastOrigin;
+        rayCastOrigin = transform.position;
+        rayCastOrigin.y += rayCastHeightOffset;
+
+        if (Physics.SphereCast(rayCastOrigin, 0.2f, -Vector3.up, out hit, 0.4f, groundLayer))
+        {
+            isGrounded = true;
+        }
+
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
     public void JumpPerformed(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (isGrounded)
         {
             rb.AddForce(Vector3.up * JUMP_FORCE, ForceMode.Impulse);
         }
@@ -91,11 +132,38 @@ public class PlayerController : MonoBehaviour
 
     public void SprintPerformed(InputAction.CallbackContext context)
     {
-        isSprinting = true;
+        if (!ps.staminaLockout)
+        {
+            isSprinting = true;
+            ps.staminaRegen = false;   
+        }
     }
 
     public void SprintCanceled(InputAction.CallbackContext context)
     {
         isSprinting = false;
+        ps.staminaRegen = true;
+    }
+
+    public void BlockPerformed(InputAction.CallbackContext context)
+    {
+        isBlocking = true;
+    }
+
+    public void BlockCanceled (InputAction.CallbackContext context)
+    {
+        isBlocking = false;
+    }
+
+    public void NoMoreStamina()
+    {
+        pia.Player.Sprint.Disable();
+        pia.Player.Block.Disable();
+    }
+
+    public void RegainedStamina()
+    {
+        pia.Player.Sprint.Enable();
+        pia.Player.Block.Enable();
     }
 }

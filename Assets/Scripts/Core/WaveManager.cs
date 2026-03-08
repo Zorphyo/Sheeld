@@ -12,18 +12,8 @@ public class WaveManager : MonoBehaviour
     private int waveNumber = 0;
     private List<GameObject> aliveEnemies = new List<GameObject>();
 
-    void Start()
-    {
-        // Start spawning waves
-        StartCoroutine(SpawnWaves());
-    }
-
     void Awake()
     {
-        // Find the player automatically
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-
         // Load ALL enemy prefabs inside Resources/Enemies
             enemyPrefabs = Resources.LoadAll<GameObject>("Enemies");
 
@@ -35,6 +25,16 @@ public class WaveManager : MonoBehaviour
             {
                 Debug.LogError("No enemy prefabs found in Resources/Enemies!");
             }
+    }
+
+    void Start()
+    {
+        // Find the player automatically
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            
+        // Start spawning waves
+        StartCoroutine(SpawnWaves());
     }
 
     System.Collections.IEnumerator SpawnWaves()

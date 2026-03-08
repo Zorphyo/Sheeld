@@ -10,7 +10,7 @@ public class EnemyCombat : MonoBehaviour
     public float attackCooldown = 1.5f;
     public float attackRange = 2f;         // How close the enemy must be to attack
     public float damageDelay = 0.5f;       // Time in animation when hit should land
-    public Transform player;               // Assign Player Transform in Inspector
+    [HideInInspector] public Transform player;               
 
     private float lastAttackTime;
     private Animator animator;
@@ -20,6 +20,11 @@ public class EnemyCombat : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()

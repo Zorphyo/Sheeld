@@ -11,17 +11,21 @@ public class StaminaBar : MonoBehaviour
     public int maxStamina;
     public int currStamina;
 
+    PlayerStats playerStats;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currStamina = maxStamina;
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        maxStamina = playerStats.MAX_STAMINA;
+
+        staminaBarSlider.maxValue = maxStamina;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.DownArrow))
-            currStamina--;
+        currStamina = playerStats.currentStamina;
 
         if(currStamina <= 0)
         {
@@ -38,7 +42,5 @@ public class StaminaBar : MonoBehaviour
             staminaBarSlider.value = currStamina;
             staminaBarValueText.text = currStamina.ToString() + "/" + maxStamina.ToString();
         }
-
-        staminaBarSlider.maxValue = maxStamina;
     }
 }

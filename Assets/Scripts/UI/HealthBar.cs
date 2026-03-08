@@ -10,18 +10,22 @@ public class HealthBar : MonoBehaviour
 
     public int maxHealth;
     public int currHealth;
+
+    PlayerStats playerStats;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currHealth = maxHealth;
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        maxHealth = playerStats.MAX_HEALTH;
+
+        healthBarSlider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-            currHealth--;
+        currHealth = playerStats.currentHealth;
 
         if(currHealth <= 0)
         {
@@ -38,7 +42,5 @@ public class HealthBar : MonoBehaviour
             healthBarSlider.value = currHealth;
             healthBarValueText.text = currHealth.ToString() + "/" + maxHealth.ToString();
         }
-
-        healthBarSlider.maxValue = maxHealth;
     }
 }
