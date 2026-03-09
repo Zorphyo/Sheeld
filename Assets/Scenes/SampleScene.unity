@@ -440,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 117474044}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1366548, y: -2.2975426e-10, z: 3.1694456e-11, w: 0.99061877}
-  m_LocalPosition: {x: -22.47, y: 12.98, z: 36.18}
+  m_LocalPosition: {x: -22.47, y: 15.98, z: 36.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -599,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7572985362092555852, guid: d9ecf92f0ef5d4b11ab842aeab51f3f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6354399
+      value: 0.143
       objectReference: {fileID: 0}
     - target: {fileID: 7572985362092555852, guid: d9ecf92f0ef5d4b11ab842aeab51f3f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -697,7 +697,7 @@ Transform:
   m_GameObject: {fileID: 262007780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.45, y: -0.91, z: 11.63}
+  m_LocalPosition: {x: -35.45, y: -1.37, z: 11.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -721,8 +721,8 @@ MonoBehaviour:
   spikesVisual: {fileID: 304937082}
   damageZone: {fileID: 398288157}
   triggerZone: {fileID: 1127281462}
-  riseDistance: 1.5
-  riseSpeed: 12
+  riseDistance: 7
+  riseSpeed: 40
   stayUpTime: 2
   cooldownTime: 1
   canRetrigger: 1
@@ -832,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7572985362092555852, guid: d9ecf92f0ef5d4b11ab842aeab51f3f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.64
+      value: 0.151
       objectReference: {fileID: 0}
     - target: {fileID: 7572985362092555852, guid: d9ecf92f0ef5d4b11ab842aeab51f3f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -997,7 +997,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1366548, y: -2.2975424e-10, z: 3.1694352e-11, w: 0.99061877}
-  m_LocalPosition: {x: -22.47, y: 12.98, z: 36.18}
+  m_LocalPosition: {x: -22.47, y: 15.98, z: 36.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1345,6 +1345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 398288156}
   - component: {fileID: 398288157}
+  - component: {fileID: 398288158}
   m_Layer: 0
   m_Name: DamageZone
   m_TagString: Untagged
@@ -1388,6 +1389,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.375992, y: 9.525221, z: 18.798504}
   m_Center: {x: 0.060455322, y: 4.9774313, z: 0.75095177}
+--- !u!114 &398288158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398288155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30820ea15900f4e61aebbc8aaf747289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.MovingSpikeTrap.SpikeDamageZone
+  damageAmount: 5
+  damageInterval: 1
 --- !u!1001 &402090804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4259,6 +4274,18 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.47
       objectReference: {fileID: 0}
@@ -4321,7 +4348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4080889341055696580, guid: 73b6c638c28e74bb6a2627b41e57a0c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -79.81
+      value: -48.26
       objectReference: {fileID: 0}
     - target: {fileID: 4080889341055696580, guid: 73b6c638c28e74bb6a2627b41e57a0c2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4329,7 +4356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4080889341055696580, guid: 73b6c638c28e74bb6a2627b41e57a0c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -80.91
+      value: -167.8
       objectReference: {fileID: 0}
     - target: {fileID: 4080889341055696580, guid: 73b6c638c28e74bb6a2627b41e57a0c2, type: 3}
       propertyPath: m_LocalRotation.w
