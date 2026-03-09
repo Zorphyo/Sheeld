@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
+using Core.Interfaces;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamageable
 {
     PlayerController pc;
     SceneManagerScript sceneManager;
@@ -138,5 +139,10 @@ public class PlayerStats : MonoBehaviour
         }
 
         Destroy(this);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        ChangeHealth(-amount);
     }
 }
