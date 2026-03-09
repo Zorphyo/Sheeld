@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class PlayerStats : MonoBehaviour
 {
     PlayerController pc;
+    SceneManagerScript sceneManager;
 
     public int MAX_HEALTH;
     public int MAX_STAMINA;
@@ -24,6 +25,7 @@ public class PlayerStats : MonoBehaviour
     void Awake()
     {
         pc = GetComponent<PlayerController>();
+        sceneManager = FindFirstObjectByType<SceneManagerScript>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,7 +48,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ChangeHealth(int amount)
@@ -129,6 +131,12 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         staminaRegen = false;
+
+        if(sceneManager != null)
+        {
+            sceneManager.OnPlayerDeath();
+        }
+
         Destroy(this);
     }
 }
