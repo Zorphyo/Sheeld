@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spike Trap
+* source:	https://sketchfab.com/3d-models/spike-trap-26602c98bc424d079af7793edc4c0418
+* author:	Helyx Silveira (https://sketchfab.com/helyxsilveira)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spike Trap" (https://sketchfab.com/3d-models/spike-trap-26602c98bc424d079af7793edc4c0418) by Helyx Silveira (https://sketchfab.com/helyxsilveira) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
