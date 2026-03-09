@@ -46,7 +46,7 @@ namespace Traps.MovingSpikeTrap
             downPosition = spikesVisual.localPosition;
             
             // Calculate where the spikes should move to when raised
-            upPosition = downPosition + Vector3.up * riseDistance;
+            upPosition = downPosition + Vector3.forward * riseDistance;
             
             // Make sure damage is disabled at start
             if (damageZone != null)
