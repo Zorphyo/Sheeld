@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
+    void Start()
+    {
+        SceneManager.LoadScene("PhotoScene", LoadSceneMode.Additive);
+    }
+    
     public void Play()
     {
         SceneManager.LoadScene("SampleScene");
