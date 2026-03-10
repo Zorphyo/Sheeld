@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     IEnumerator ShieldBashTimer()
     {           
-        yield return new WaitForSeconds((1.433f - 0.35825f) + 0.1f);
+        yield return new WaitForSeconds(1.5f);
 
         isShieldBashing = false;
 
@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         pia.Player.Block.Enable();
         pia.Player.Dodge.Enable();
     }
-
+    
     public void ApplyKnockback(Vector3 direction, float force)
     {
         direction.y = 0f;
