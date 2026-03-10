@@ -1,8 +1,9 @@
 using System.Collections;
+using Core.Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IKnockbackable
 {
     Rigidbody rb;
     public PlayerInputActions pia;
@@ -252,5 +253,12 @@ public class PlayerController : MonoBehaviour
         pia.Player.Sprint.Enable();
         pia.Player.Block.Enable();
         pia.Player.Dodge.Enable();
+    }
+
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        direction.y = 0f;
+        direction.Normalize();
+        rb.AddForce(direction * force, ForceMode.Impulse);
     }
 }

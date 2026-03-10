@@ -2070,6 +2070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754574894}
   - component: {fileID: 754574895}
+  - component: {fileID: 754574896}
   m_Layer: 0
   m_Name: DamageZone
   m_TagString: Untagged
@@ -2115,6 +2116,22 @@ CapsuleCollider:
   m_Height: 2.197077
   m_Direction: 2
   m_Center: {x: 0.03722596, y: -0.0003464222, z: -0.0029791833}
+--- !u!114 &754574896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754574893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74873ffedd4347fdbc1b54804be63046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.RotatingTrapHitZone
+  damageAmount: 10
+  damageInterval: 0.5
+  knockbackForce: 8
+  trapRoot: {fileID: 1342458309}
 --- !u!1001 &766315881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4629,7 +4646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1976858542}
   m_Layer: 0
-  m_Name: LogTraps
+  m_Name: SpinLogTraps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
