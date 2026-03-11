@@ -3937,7 +3937,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyPrefabs: []
   enemiesPerWave: 5
-  spawnRadius: 10
+  spawnRadius: 100
   timeBetweenWaves: 5
 --- !u!4 &1594839082 stripped
 Transform:
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a2c5b51fbb1bf40b6710c866a851ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
-  _timeToWaitBeforeExit: 3
+  _timeToWaitBeforeExit: 0.5
 --- !u!1 &1970255504
 GameObject:
   m_ObjectHideFlags: 0
