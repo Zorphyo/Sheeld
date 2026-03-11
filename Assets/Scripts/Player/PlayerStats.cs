@@ -143,6 +143,13 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
+    if (pc.isBlocking)
+    {
+        ChangeStamina(-amount);
+    }
+    else
+    {
         ChangeHealth(-amount);
+    }
     }
 }
