@@ -1,8 +1,9 @@
+using Core.Interfaces;
 using UnityEngine;
 
 // Tracks the enemy's health, handles incoming damage, and destroys the GameObject on death.
 // Call TakeDamage() from any external source (e.g. player weapon, projectile, AoE).
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public int maxHealth = 100;
     private int currentHealth; // Decremented by TakeDamage(); never restored unless a heal system is added

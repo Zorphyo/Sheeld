@@ -313,56 +313,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73370154}
   m_CullTransparentMesh: 1
---- !u!1 &153051161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 153051162}
-  - component: {fileID: 153051163}
-  m_Layer: 0
-  m_Name: WaveManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &153051162
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153051161}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -24.48899, y: 7.51842, z: 38.07533}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1586802436}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &153051163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153051161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4faa0d1d695ef234293b3c4ba17196c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  player: {fileID: 0}
-  enemyPrefabs:
-  - {fileID: 0}
-  enemiesPerWave: 5
-  spawnRadius: 10
-  timeBetweenWaves: 5
 --- !u!1 &154234433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,7 +3662,7 @@ MonoBehaviour:
   maximumDeltaTime: 0.05
   solverIterations: 10
   solverVelocityIterations: 2
-  showMetrics: 0
+  showMetrics: 1
 --- !u!4 &1376413699
 Transform:
   m_ObjectHideFlags: 0
@@ -3965,7 +3915,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 153051162}
   - {fileID: 1376413699}
   - {fileID: 1464209564}
   - {fileID: 1248720638}
@@ -4413,7 +4362,8 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -1131378341993520872, guid: d018caa5444cd449990ae3e6ce8ae053, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4880099508911529307, guid: d018caa5444cd449990ae3e6ce8ae053, type: 3}

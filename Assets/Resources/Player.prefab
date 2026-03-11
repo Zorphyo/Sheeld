@@ -152,9 +152,13 @@ MonoBehaviour:
   BLOCKING_SPEED: 2.5
   ROTATION_SPEED: 7
   JUMP_FORCE: 5
+  DODGE_FORCE: 0
+  SHIELD_BASH_FORCE: 0
   isSprinting: 0
   isBlocking: 0
   isGrounded: 0
+  isDodging: 0
+  isShieldBashing: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -185,6 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   MAX_HEALTH: 100
   MAX_STAMINA: 100
+  DODGE_STAMINA_COST: 0
+  SHIELD_BASH_STAMINA_COST: 0
   currentHealth: 0
   currentStamina: 0
   staminaRegen: 1
@@ -235,7 +241,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.12
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}

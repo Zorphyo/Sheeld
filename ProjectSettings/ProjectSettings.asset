@@ -524,7 +524,10 @@ PlayerSettings:
       m_Height: 720
       m_Kind: 1
       m_SubKind: 
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: Standalone
+    m_StaticBatching: 1
+    m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
@@ -859,12 +862,12 @@ PlayerSettings:
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
-  metroWideTileShowName: 0
+  metroWideTileShowName: 1
   metroSupportStreamingInstall: 0
   metroLastRequiredScene: 0
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
-  metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
+  metroTileBackgroundColor: {r: 0.43529412, g: 0, b: 0, a: 0}
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
   metroSplashScreenUseBackgroundColor: 0
   syncCapabilities: 0
