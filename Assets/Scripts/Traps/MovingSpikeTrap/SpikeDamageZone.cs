@@ -21,7 +21,8 @@ namespace Traps.MovingSpikeTrap
     public class SpikeDamageZone : MonoBehaviour
     {
         [Header("Damage Settings")]
-        [SerializeField] private int damageAmount = 10;
+        [SerializeField] private int playerDamage = 20;
+        [SerializeField] private int enemyDamage = 50;
         [SerializeField] private float damageInterval = 0.5f;
 
         private Dictionary<IDamageable, float> nextDamageTime = new Dictionary<IDamageable, float>();
@@ -29,22 +30,18 @@ namespace Traps.MovingSpikeTrap
         private void OnTriggerStay(Collider other)
         {
             IDamageable damageable = other.GetComponentInParent<IDamageable>();
-
-            if (damageable == null)
-                return;
+            if (damageable == null) return;
 
             if (!nextDamageTime.ContainsKey(damageable))
-            {
                 nextDamageTime[damageable] = 0f;
-            }
 
             if (Time.time >= nextDamageTime[damageable])
             {
-                damageable.TakeDamage(damageAmount);
+                int damage = other.CompareTag("Enemy") ? enemyDamage : playerDamage;
+                damageable.TakeDamage(damage);
                 nextDamageTime[damageable] = Time.time + damageInterval;
             }
         }
-
         private void OnTriggerExit(Collider other)
         {
             IDamageable damageable = other.GetComponentInParent<IDamageable>();

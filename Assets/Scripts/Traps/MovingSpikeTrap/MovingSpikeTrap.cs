@@ -77,7 +77,7 @@ namespace Traps.MovingSpikeTrap
             if (isActive || isOnCooldown)
                 return;
 
-            if (!other.CompareTag("Player"))
+            if (!other.CompareTag("Player") && !other.CompareTag("Enemy"))
                 return;
 
             StartCoroutine(ActivateTrap());

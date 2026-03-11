@@ -3687,8 +3687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBrain
   player: {fileID: 0}
-  detectionRange: 100
-  attackRange: 10
+  detectionRange: 1000
+  attackRange: 5
 --- !u!195 &5446093981303419793
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3699,8 +3699,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 7
-  m_Acceleration: 8
+  m_Speed: 20
+  m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0.5
@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
   damage: 10
-  attackCooldown: 1.5
+  attackCooldown: 2
   damageDelay: 0.5
   player: {fileID: 0}
 --- !u!114 &7832261608743868755

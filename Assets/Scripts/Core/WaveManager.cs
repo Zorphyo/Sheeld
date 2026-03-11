@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     public Transform player;            // Player Transform
     public GameObject[] enemyPrefabs;   // Enemy prefabs with EnemyCombat + EnemyBrain
     public int enemiesPerWave = 5;      // How many enemies per wave
-    public float spawnRadius = 10f;     // Radius around player to spawn enemies
+    public float spawnRadius = 100f;     // Radius around player to spawn enemies
     public float timeBetweenWaves = 5f; // Delay before next wave
     private int waveNumber = 0;
     private List<GameObject> aliveEnemies = new List<GameObject>();
