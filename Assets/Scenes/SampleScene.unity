@@ -1760,6 +1760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StaminaBarScript
   staminaBarSlider: {fileID: 981592519}
   staminaBarValueText: {fileID: 2028516187}
+  staminaBarFill: {fileID: 1525950123}
   maxStamina: 100
   currStamina: 100
 --- !u!1 &588516199

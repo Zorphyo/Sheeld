@@ -7,6 +7,7 @@ public class StaminaBar : MonoBehaviour
 {
     public Slider staminaBarSlider;
     public TextMeshProUGUI staminaBarValueText;
+    public Image staminaBarFill;
 
     public int maxStamina;
     public int currStamina;
@@ -41,6 +42,16 @@ public class StaminaBar : MonoBehaviour
         {
             staminaBarSlider.value = currStamina;
             staminaBarValueText.text = currStamina.ToString() + "/" + maxStamina.ToString();
+        }
+
+        if (playerStats.staminaLockout)
+        {
+            staminaBarFill.color = Color.gray;
+        }
+
+        else
+        {
+            staminaBarFill.color = Color.green;
         }
     }
 }
