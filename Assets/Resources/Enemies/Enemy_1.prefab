@@ -980,8 +980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBrain
   player: {fileID: 0}
-  detectionRange: 10
-  attackRange: 2.5
+  detectionRange: 100
+  attackRange: 10
 --- !u!114 &3553237389942143002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,7 +996,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
   damage: 10
   attackCooldown: 1.5
-  attackRange: 2
   damageDelay: 0.5
   player: {fileID: 0}
 --- !u!114 &6348436869146633224
