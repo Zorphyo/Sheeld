@@ -1,7 +1,6 @@
 using UnityEngine;
 
-// Drives the enemy's Animator based on movement speed and external events (attack, hit).
-// Requires an Animator on the same GameObject and an EnemyMovement component.
+// Drives the enemy's Animator based on movement speed and external events.
 public class EnemyAnimator : MonoBehaviour
 {
     private Animator animator;
@@ -15,22 +14,40 @@ public class EnemyAnimator : MonoBehaviour
 
     void Update()
     {
-        // Continuously sync the "Speed" float so the Animator blends idle <-> walk/run
+        // Sync movement speed with blend tree
         if (animator != null && movement != null)
         {
             animator.SetFloat("Speed", movement.GetSpeed());
         }
     }
 
-    // Called by EnemyCombat when the enemy performs an attack
+    // Attack trigger
     public void Attack()
     {
         animator.SetTrigger("Attack");
     }
 
-    // Called by EnemyCombat when the enemy receives a hit
+    // Hit reaction
     public void TakeDamage()
     {
         animator.SetTrigger("Hit");
+    }
+
+    // Enter DBNO state
+    public void EnterDBNO()
+    {
+        animator.SetBool("isDBNO", true);
+    }
+
+    // Revive from DBNO
+    public void Revive()
+    {
+        animator.SetBool("isDBNO", false);
+    }
+
+    // Instant death (no medic present)
+    public void Die()
+    {
+        animator.SetBool("isDead", true);
     }
 }
