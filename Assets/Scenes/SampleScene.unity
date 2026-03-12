@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (3)
@@ -174,7 +178,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 806702336}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!4 &26999697 stripped
 Transform:
@@ -229,6 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (4)
@@ -236,7 +247,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348100489}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!1 &73370154
 GameObject:
@@ -472,6 +486,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7572985362092555852, guid: d9ecf92f0ef5d4b11ab842aeab51f3f0, type: 3}
   m_PrefabInstance: {fileID: 166450592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &197913698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 215193803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &197913701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197913698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1 &207932435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7933996725840985336, guid: d018caa5444cd449990ae3e6ce8ae053, type: 3}
@@ -547,6 +581,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (7)
@@ -554,7 +592,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 197913701}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!4 &220632845 stripped
 Transform:
@@ -762,6 +803,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7572985362092555852, guid: d9ecf92f0ef5d4b11ab842aeab51f3f0, type: 3}
   m_PrefabInstance: {fileID: 311371449}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &311498387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 1154129672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &311498390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311498387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1 &319810559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,6 +1194,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (1)
@@ -1140,7 +1205,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 933806115}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!1 &380705794
 GameObject:
@@ -1900,6 +1968,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588516199}
   m_CullTransparentMesh: 1
+--- !u!1 &666152906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 1182948539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &666152909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666152906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1001 &766315881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1962,6 +2050,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 92909957394765440, guid: d0ea1d7c21d4047cf9b3454469c6bb4f, type: 3}
   m_PrefabInstance: {fileID: 766315881}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &806702333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 10323915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &806702336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806702333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2297,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906829245}
   m_CullTransparentMesh: 1
+--- !u!1 &933806112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 358236822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &933806115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933806112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1 &944828286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (9)
@@ -2476,7 +2608,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1500260058}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!1001 &1082171769
 PrefabInstance:
@@ -2588,6 +2723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (2)
@@ -2595,8 +2734,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2128406447}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+--- !u!1 &1102748741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 2091992862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1102748744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102748741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1 &1102795090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,6 +3075,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (6)
@@ -2920,7 +3086,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 311498390}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!1001 &1156988505
 PrefabInstance:
@@ -3032,6 +3201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (8)
@@ -3039,7 +3212,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 666152909}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!4 &1202391589 stripped
 Transform:
@@ -3493,6 +3669,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8756909522991120686, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
   m_PrefabInstance: {fileID: 6878280359947076560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1348100486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 63124244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348100489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348100486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1001 &1367231412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3811,6 +4007,26 @@ Transform:
   - {fileID: 2063348297}
   m_Father: {fileID: 154234434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1500260055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 1018147671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1500260058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500260055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1 &1525950121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,6 +4222,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8756909522991120686, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
   m_PrefabInstance: {fileID: 1607876879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1620146434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 5582562008462087023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1620146437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620146434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1001 &1671786132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5252,6 +5488,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (5)
@@ -5259,8 +5499,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1102748744}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+--- !u!1 &2128406444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  m_PrefabInstance: {fileID: 1097447812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2128406447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128406444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  playerDamage: 10
+  enemyDamage: 25
+  damageInterval: 0.5
 --- !u!1001 &588254063954430670
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5527,7 +5790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7580481732533878822, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_UseGravity
@@ -5549,6 +5812,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7580953881168795362}
+    - targetCorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1620146437}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
 --- !u!1001 &6200449562794947109
 PrefabInstance:
@@ -5681,7 +5947,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
-  damageAmount: 10
+  playerDamage: 10
+  enemyDamage: 50
   damageInterval: 0.5
 --- !u!4 &8188630626081688271 stripped
 Transform:
