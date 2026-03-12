@@ -30,7 +30,7 @@ public class EnemyAnimator : MonoBehaviour
     // Hit reaction
     public void TakeDamage()
     {
-        animator.SetTrigger("Hit");
+       // animator.SetTrigger("Hit");
     }
 
     // Enter DBNO state

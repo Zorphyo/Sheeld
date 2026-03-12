@@ -15,8 +15,9 @@ public class EnemyMovement : MonoBehaviour
     // Resumes the agent and plots a path to the target (called every frame by EnemyBrain while chasing)
     public void MoveTo(Vector3 targetPosition)
     {
-        if (agent == null || agent.isStopped) return;
-
+        if (!agent.isOnNavMesh) return;
+        if (!agent.enabled) return; // Guard against disabled agent
+        agent.isStopped = false;
         agent.SetDestination(targetPosition);
     }
     // Halts the agent in place; does not clear the existing path
