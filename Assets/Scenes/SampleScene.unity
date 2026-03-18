@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationarySpike (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -243,6 +247,10 @@ PrefabInstance:
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -589,6 +597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationarySpike (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -663,6 +675,10 @@ PrefabInstance:
     - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
       propertyPath: m_Name
       value: MovingSpike (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1202,6 +1218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationarySpike (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1398,6 +1418,10 @@ PrefabInstance:
     - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
       propertyPath: m_Name
       value: LogTrap (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1681,6 +1705,10 @@ PrefabInstance:
     - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
       propertyPath: m_Name
       value: LogTrap (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2605,6 +2633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationarySpike (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2730,6 +2762,10 @@ PrefabInstance:
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3083,6 +3119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationarySpike (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3142,6 +3182,10 @@ PrefabInstance:
     - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
       propertyPath: m_Name
       value: LogTrap (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3208,6 +3252,10 @@ PrefabInstance:
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3669,6 +3717,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8756909522991120686, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
   m_PrefabInstance: {fileID: 6878280359947076560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342611241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342611242}
+  - component: {fileID: 1342611243}
+  m_Layer: 0
+  m_Name: Director
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1342611242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342611241}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1586802436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342611243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342611241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c4b6f2ec9b8504f8bd87a92af08856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DirectorAI
+  totalRounds: 5
+  chaosSpikesRequiredBase: 3
+  chaosSpikesScaling: 1
+  timeRequiredBase: 60
+  timeRequiredScaling: 15
+  mainMenuScene: MainMenu
+  overwhelmThreshold: 40
+  chaosSpikThreshold: 65
+  microBreathThreshold: 85
+  maxAliveEnemies: 25
+  pressureSpawnInterval: 4
+  overwhelmSpawnInterval: 2.5
+  chaosSpikeSpawnInterval: 1.5
+  microBreathSpawnInterval: 8
+  microBreathDuration: 6
+  betweenRoundBreathDuration: 10
+  killStreakThreshold: 5
+  noDamageTimeThreshold: 20
+  noAttackTimeThreshold: 10
+  lowChaosTimeThreshold: 15
+  spawnMinDistanceFromPlayer: 15
+  spawnMaxDistanceFromPlayer: 40
+  chaosLevel: 0
 --- !u!1 &1348100486 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2772138608122847633, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
@@ -4111,7 +4226,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586802436}
-  - component: {fileID: 1586802437}
   m_Layer: 0
   m_Name: __Managers
   m_TagString: Untagged
@@ -4136,25 +4250,10 @@ Transform:
   - {fileID: 1464209564}
   - {fileID: 1248720638}
   - {fileID: 1953588419}
+  - {fileID: 1342611242}
+  - {fileID: 1672421792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1586802437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586802435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4faa0d1d695ef234293b3c4ba17196c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  player: {fileID: 0}
-  enemyPrefabs: []
-  enemiesPerWave: 5
-  spawnRadius: 100
-  timeBetweenWaves: 5
 --- !u!4 &1594839082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1825976490044776863, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
@@ -4211,6 +4310,10 @@ PrefabInstance:
     - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
       propertyPath: m_Name
       value: LogTrap (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4294,11 +4397,59 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingSpike (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+--- !u!1 &1672421791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672421792}
+  - component: {fileID: 1672421793}
+  m_Layer: 0
+  m_Name: MedicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672421792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672421791}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1586802436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1672421793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672421791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42deac73ffc70d347b8b8c928932e813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MedicManager
 --- !u!1001 &1705073044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4350,6 +4501,10 @@ PrefabInstance:
     - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
       propertyPath: m_Name
       value: MovingSpike (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4523,6 +4678,10 @@ PrefabInstance:
     - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
       propertyPath: m_Name
       value: MovingSpike (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4831,6 +4990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogTrap (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4975,6 +5138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogTrap (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5036,6 +5203,10 @@ PrefabInstance:
     - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
       propertyPath: m_Name
       value: LogTrap (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5496,6 +5667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StationarySpike (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5730,6 +5905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovingSpike
       objectReference: {fileID: 0}
+    - target: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+      propertyPath: m_TagString
+      value: Trap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5799,6 +5978,10 @@ PrefabInstance:
     - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_Name
       value: StationarySpike
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 8600802612057739413, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
       propertyPath: m_IsTrigger
@@ -5924,6 +6107,10 @@ PrefabInstance:
     - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
       propertyPath: m_Name
       value: LogTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
