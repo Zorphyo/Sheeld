@@ -1,31 +1,29 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-// Thin wrapper around NavMeshAgent that exposes simple movement commands to EnemyBrain
-// and a speed value to EnemyAnimator. Requires a NavMeshAgent component and a baked NavMesh.
 public class EnemyMovement : MonoBehaviour
 {
+    // Agent rotation is disabled — EnemyLocomotion handles all turning
     private NavMeshAgent agent;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false; // hand rotation to EnemyLocomotion
     }
 
-    // Resumes the agent and plots a path to the target (called every frame by EnemyBrain while chasing)
     public void MoveTo(Vector3 targetPosition)
     {
-        if (!agent.isOnNavMesh) return;
-        if (!agent.enabled) return; // Guard against disabled agent
+        if (!agent.isOnNavMesh || !agent.enabled) return;
         agent.isStopped = false;
         agent.SetDestination(targetPosition);
     }
-    // Halts the agent in place; does not clear the existing path
+
     public void StopMoving()
     {
+        if (!agent.isOnNavMesh || !agent.enabled) return;
         agent.isStopped = true;
     }
 
-    // Returns world-space speed; used by EnemyAnimator to drive the "Speed" blend parameter
     public float GetSpeed() => agent.velocity.magnitude;
 }

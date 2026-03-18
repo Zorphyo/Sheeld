@@ -7878,6 +7878,7 @@ GameObject:
   - component: {fileID: 1920330642829009242}
   - component: {fileID: 3643774525315170310}
   - component: {fileID: -4962963433394055793}
+  - component: {fileID: 7605529647928712402}
   m_Layer: 0
   m_Name: Enemy_2
   m_TagString: Enemy
@@ -7914,7 +7915,7 @@ Animator:
   m_GameObject: {fileID: 1965107420363712}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7bad186bcc74edf4098b7e6ec65688e3, type: 3}
-  m_Controller: {fileID: 9100000, guid: 69279553ca89c0a46b15aacf9f2ce7f3, type: 2}
+  m_Controller: {fileID: 9100000, guid: bcd2df1b586ff904e959cf4916ae4e6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -7953,6 +7954,8 @@ MonoBehaviour:
   player: {fileID: 0}
   detectionRange: 1000
   attackRange: 5
+  moveSpeed: 15
+  navMeshSampleRadius: 5
 --- !u!195 &3598043568419762503
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8004,6 +8007,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 100
+  bleedoutTime: 10
+  reviveHealthPct: 0.5
+  medicPresent: 0
+  isDead: 0
+  isDBNO: 0
 --- !u!114 &1920330642829009242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8066,6 +8074,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7605529647928712402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965107420363712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff19a80dbd3e57e45a973b5956cfb1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLocomotion
+  farRange: 35
+  closeRange: 10
+  sprintTurnSpeed: 180
+  midTurnSpeed: 270
+  closeTurnSpeed: 360
+  strafeIntervalMin: 2
+  strafeIntervalMax: 5
+  strafeDuration: 1.2
+  strafeStrength: 1
+  velocitySmoothing: 0.12
 --- !u!1 &1968470488432234
 GameObject:
   m_ObjectHideFlags: 0

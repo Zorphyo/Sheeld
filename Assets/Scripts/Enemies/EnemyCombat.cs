@@ -12,13 +12,13 @@ public class EnemyCombat : MonoBehaviour
     [HideInInspector] public Transform player;
 
     private float lastAttackTime;
-    private Animator animator;
+    private EnemyAnimator enemyAnimator;
     private NavMeshAgent agent;
     private EnemyBrain brain;
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        enemyAnimator = GetComponent<EnemyAnimator>();
         agent = GetComponent<NavMeshAgent>();
         brain = GetComponent<EnemyBrain>();
     }
@@ -33,7 +33,7 @@ public class EnemyCombat : MonoBehaviour
         if (player == null) return;
         if (Time.time < lastAttackTime + attackCooldown) return;
 
-        animator.SetTrigger("Attack");
+        enemyAnimator.Attack();
         lastAttackTime = Time.time;
         Invoke(nameof(DealDamage), damageDelay);
     }

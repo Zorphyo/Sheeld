@@ -15,16 +15,16 @@ public class WaveManager : MonoBehaviour
     void Awake()
     {
         // Load ALL enemy prefabs inside Resources/Enemies
-            enemyPrefabs = Resources.LoadAll<GameObject>("Enemies");
+        enemyPrefabs = Resources.LoadAll<GameObject>("Enemies");
 
-            if (enemyPrefabs.Length > 0)
-            {
-                Debug.Log("Loaded " + enemyPrefabs.Length + " enemy prefabs.");
-            }
-            else
-            {
-                Debug.LogError("No enemy prefabs found in Resources/Enemies!");
-            }
+        if (enemyPrefabs.Length > 0)
+        {
+            Debug.Log("Loaded " + enemyPrefabs.Length + " enemy prefabs.");
+        }
+        else
+        {
+            Debug.LogError("No enemy prefabs found in Resources/Enemies!");
+        }
     }
 
     void Start()
@@ -32,7 +32,7 @@ public class WaveManager : MonoBehaviour
         // Find the player automatically
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").transform;
-            
+
         // Start spawning waves
         StartCoroutine(SpawnWaves());
     }
@@ -59,6 +59,10 @@ public class WaveManager : MonoBehaviour
 
                 EnemyBrain eb = enemy.GetComponent<EnemyBrain>();
                 if (eb != null) eb.player = player;
+
+                EnemyHealth eh = enemy.GetComponent<EnemyHealth>();
+                if (eh != null && MedicManager.Instance != null)
+                    MedicManager.Instance.RegisterEnemy(eh);
 
                 aliveEnemies.Add(enemy);
 

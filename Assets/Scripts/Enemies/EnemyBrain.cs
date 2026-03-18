@@ -9,7 +9,7 @@ public class EnemyBrain : MonoBehaviour
     public float attackRange = 10f;
 
     [Header("Movement")]
-    public float moveSpeed = 5f;
+    public float moveSpeed = 20f;
 
     [Header("NavMesh Spawn")]
     public float navMeshSampleRadius = 5f;
