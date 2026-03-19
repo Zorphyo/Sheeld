@@ -7,8 +7,8 @@ public class MedicManager : MonoBehaviour
 {
     public static MedicManager Instance { get; private set; }
 
-    private readonly List<MedicAI>      liveMedics   = new();
-    private readonly List<EnemyHealth>  enemies      = new();
+    private readonly List<MedicAI> liveMedics = new();
+    private readonly List<EnemyHealth> enemies = new();
 
     void Awake()
     {
@@ -22,7 +22,37 @@ public class MedicManager : MonoBehaviour
         if (!liveMedics.Contains(medic))
             liveMedics.Add(medic);
 
+        Debug.Log($"[MedicManager] Medic registered. Total medics: {liveMedics.Count}, Total enemies: {enemies.Count}");
         BroadcastMedicPresence(true);
+        StartCoroutine(BroadcastNextFrame());
+    }
+
+    System.Collections.IEnumerator BroadcastNextFrame()
+    {
+        yield return null;
+        BroadcastMedicPresence(true);
+        Debug.Log($"[MedicManager] Next frame broadcast — enemies updated: {enemies.Count}");
+    }
+
+    public void RegisterEnemy(EnemyHealth enemy)
+    {
+        if (!enemies.Contains(enemy))
+            enemies.Add(enemy);
+
+        enemy.medicPresent = liveMedics.Count > 0;
+        Debug.Log($"[MedicManager] Enemy registered: {enemy.gameObject.name}, medicPresent: {enemy.medicPresent}");
+    }
+
+    void BroadcastMedicPresence(bool present)
+    {
+        foreach (EnemyHealth enemy in enemies)
+        {
+            if (enemy != null)
+            {
+                enemy.medicPresent = present;
+                Debug.Log($"[MedicManager] Broadcast to {enemy.gameObject.name}: medicPresent = {present}");
+            }
+        }
     }
 
     public void UnregisterMedic(MedicAI medic)
@@ -34,14 +64,7 @@ public class MedicManager : MonoBehaviour
     }
 
     // ── Enemy registration (called by WaveManager) ────────────────────────────
-    public void RegisterEnemy(EnemyHealth enemy)
-    {
-        if (!enemies.Contains(enemy))
-            enemies.Add(enemy);
 
-        // Tell this enemy immediately whether a medic is already alive
-        enemy.medicPresent = liveMedics.Count > 0;
-    }
 
     public void UnregisterEnemy(EnemyHealth enemy)
     {
@@ -49,13 +72,20 @@ public class MedicManager : MonoBehaviour
     }
 
     // ── Queries used by MedicAI and EnemyHealth ───────────────────────────────
-    public bool IsMedicAlive => liveMedics.Count > 0;
+    public bool IsMedicAlive
+    {
+        get
+        {
+            Debug.Log($"[MedicManager] IsMedicAlive check — liveMedics.Count: {liveMedics.Count}");
+            return liveMedics.Count > 0;
+        }
+    }
 
     // Returns the closest medic to a world position, null if none alive
     public MedicAI GetClosestMedic(Vector3 position)
     {
-        MedicAI closest  = null;
-        float   bestDist = float.MaxValue;
+        MedicAI closest = null;
+        float bestDist = float.MaxValue;
 
         foreach (MedicAI medic in liveMedics)
         {
@@ -77,8 +107,8 @@ public class MedicManager : MonoBehaviour
     // Returns all DBNO enemies — MedicAI uses this to find its target
     public EnemyHealth GetClosestDBNOEnemy(Vector3 fromPosition)
     {
-        EnemyHealth closest  = null;
-        float       bestDist = float.MaxValue;
+        EnemyHealth closest = null;
+        float bestDist = float.MaxValue;
 
         foreach (EnemyHealth enemy in enemies)
         {
@@ -91,12 +121,5 @@ public class MedicManager : MonoBehaviour
     }
 
     // ── Internal ──────────────────────────────────────────────────────────────
-    void BroadcastMedicPresence(bool present)
-    {
-        foreach (EnemyHealth enemy in enemies)
-        {
-            if (enemy != null)
-                enemy.medicPresent = present;
-        }
-    }
+
 }

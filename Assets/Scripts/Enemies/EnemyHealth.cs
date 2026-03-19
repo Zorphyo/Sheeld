@@ -7,8 +7,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public int maxHealth = 100;
 
     [Header("DBNO")]
-    public float bleedoutTime = 10f;   // seconds before dying in DBNO
-    public float reviveHealthPct = 0.5f; // 50% health on revive
+    public float bleedoutTime = 10f;
+    public float reviveHealthPct = 0.5f;
+    public bool canEnterDBNO = true;   // uncheck this on the medic prefab
 
     private float hitCooldown = 0.2f;
     private float lastHitTime = -1f;
@@ -25,7 +26,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private float bleedoutTimer;
     private bool bleedoutActive;
 
-    void Start()
+    void OnEnable()
     {
         currentHealth = maxHealth;
         enemyAnimator = GetComponent<EnemyAnimator>();
@@ -68,9 +69,14 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
     }
 
+    // In EnemyHealth — replace HandleZeroHealth
     void HandleZeroHealth()
     {
-        if (medicPresent)
+        bool medicAlive = MedicManager.Instance != null && MedicManager.Instance.IsMedicAlive;
+
+        Debug.Log($"[EnemyHealth] {gameObject.name} hit zero. medicAlive: {medicAlive}, canEnterDBNO: {canEnterDBNO}");
+
+        if (medicAlive && canEnterDBNO)
             EnterDBNO();
         else
             Die();

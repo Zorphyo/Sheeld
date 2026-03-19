@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Trap
+  - Enemy
+  - Speedster
+  - Tank
+  - Medic
+  - Archer
   layers:
   - Default
   - TransparentFX
