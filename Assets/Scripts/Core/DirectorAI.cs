@@ -303,6 +303,11 @@ public class DirectorAI : MonoBehaviour
                 Spawn(RandomFrom(basicPrefabs));
                 if (Random.value < 0.4f) Spawn(RandomFrom(speedsterPrefabs));
                 if (Random.value < 0.3f) Spawn(RandomFrom(archerPrefabs));
+                if (!medicSpawned && ShouldSpawnMedic())
+                {
+                    Spawn(RandomFrom(medicPrefabs));
+                    medicSpawned = true;
+                }
                 break;
 
             case DirectorState.ChaosSpike:

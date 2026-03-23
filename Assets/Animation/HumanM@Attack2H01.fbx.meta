@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f28925e980a3b1499ad08da1b4ef221
+guid: a3b2bd75dc433e742844e9c7e0ecb01e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -15,7 +15,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
-    motionNodeName: Rig/B-root
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -33,22 +33,22 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: HumanM@StrafeRun01_BackwardLeft [RM]
-      takeName: HumanM@StrafeRun01_BackwardLeft [RM]
-      internalID: -6313650752802900462
+      name: HumanM@Attack2H01
+      takeName: Untitled
+      internalID: 3094330708855449807
       firstFrame: 0
-      lastFrame: 18
+      lastFrame: 48
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
@@ -949,7 +949,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Rig/B-root
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -971,6 +971,5 @@ AssetOrigin:
   productId: 165785
   packageName: Human Melee Animations FREE
   packageVersion: 2.0.2
-  assetPath: Assets/Animation/Player/StrafeRun/RootMotion/HumanM@StrafeRun01_BackwardLeft
-    [RM].fbx
+  assetPath: Assets/Kevin Iglesias/Human Animations/Animations/Male/Combat/2H/HumanM@Attack2H01.fbx
   uploadId: 825254
