@@ -1860,6 +1860,8 @@ MonoBehaviour:
   staminaBarFill: {fileID: 1525950123}
   maxStamina: 100
   currStamina: 100
+  pulseSpeed: 10
+  shakeAmount: 2
 --- !u!1 &588516199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,63 +3806,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1586802436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1303291274
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.2140145
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.518423
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 51.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444048464664359147, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2252251446214142545, guid: 06334953e6201014bbefa01a9656b930, type: 3}
-      propertyPath: m_Name
-      value: Enemy_Heavy_01
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 06334953e6201014bbefa01a9656b930, type: 3}
 --- !u!4 &1342458309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8756909522991120686, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
@@ -6369,4 +6314,3 @@ SceneRoots:
   - {fileID: 319810560}
   - {fileID: 1213229312}
   - {fileID: 1246889556}
-  - {fileID: 1303291274}
