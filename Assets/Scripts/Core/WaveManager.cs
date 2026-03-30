@@ -19,8 +19,6 @@ public class WaveManager : MonoBehaviour
 
     public int AliveEnemyCount => aliveEnemies.Count(e => e != null);
 
-    public event System.Action<int> OnWaveStarted;
-
     // ── Unity lifecycle ───────────────────────────────────────────────────────
     void Awake()
     {
@@ -50,7 +48,6 @@ public class WaveManager : MonoBehaviour
         {
             waveNumber++;
             Debug.Log($"Starting wave {waveNumber}");
-            OnWaveStarted?.Invoke(waveNumber);
 
             for (int i = 0; i < enemiesPerWave; i++)
             {

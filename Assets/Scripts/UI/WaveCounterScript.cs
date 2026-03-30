@@ -8,21 +8,17 @@ public class WaveCounterScript : MonoBehaviour
 {
     public TextMeshProUGUI waveCountText;
     
-    void OnEnable()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        if (WaveManager.Instance != null)
-            WaveManager.Instance.OnWaveStarted += UpdateWaveText;
+        
     }
 
-    void OnDisable()
+    // Update is called once per frame
+    void Update()
     {
-        if (WaveManager.Instance != null)
-            WaveManager.Instance.OnWaveStarted -= UpdateWaveText;
-    }
-
-    void UpdateWaveText(int waveNumber)
-    {
-        waveCountText.text = waveNumber.ToString();
+        int wave = DirectorAI.Instance.CurrentRound;
+        waveCountText.text = wave.ToString();
     }
 
 }
