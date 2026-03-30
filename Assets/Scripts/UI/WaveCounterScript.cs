@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class EnemyCounter : MonoBehaviour
+public class WaveCounterScript : MonoBehaviour
 {
-    GameObject[] enemies;
-    public TextMeshProUGUI enemyCountText;
+    public TextMeshProUGUI waveCountText;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,7 +17,8 @@ public class EnemyCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyCountText.text = enemies.Length.ToString();
+        int wave = DirectorAI.Instance.CurrentRound;
+        waveCountText.text = wave.ToString();
     }
+
 }

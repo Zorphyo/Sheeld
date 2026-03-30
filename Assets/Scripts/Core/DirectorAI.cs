@@ -92,6 +92,8 @@ public class DirectorAI : MonoBehaviour
     int RequiredSpikes => chaosSpikesRequiredBase + (currentRound - 1) * chaosSpikesScaling;
     float RequiredTime => timeRequiredBase + (currentRound - 1) * timeRequiredScaling;
 
+    public int CurrentRound => currentRound;
+
     // ── Unity lifecycle ───────────────────────────────────────────────────────
     void Awake()
     {
