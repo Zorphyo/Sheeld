@@ -19,6 +19,6 @@ public class EnemyCounter : MonoBehaviour
     void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemyCountText.text = "Enemies : " + enemies.Length.ToString();
+        enemyCountText.text = enemies.Length.ToString();
     }
 }
