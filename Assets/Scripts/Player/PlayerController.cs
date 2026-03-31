@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     Rigidbody rb;
     public PlayerInputActions pia;
     GameObject camera;
-    Animator animator;
-    PlayerAnimations pa;
     PlayerStats ps;
 
     [SerializeField] float RUN_SPEED;
@@ -31,6 +29,11 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     [HideInInspector] public bool isGrounded;
     [HideInInspector] public bool isDodging = false;
     [HideInInspector] public bool isShieldBashing = false;
+    [HideInInspector] public bool isHolding = false;
+
+    public bool interactOkay = false;
+    IInteractable currentInteractable;
+    InteractPopup text;
 
     public LayerMask groundLayer;
     public float rayCastHeightOffset;
@@ -39,8 +42,6 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     {
         rb = GetComponent<Rigidbody>();
         pia = new PlayerInputActions();
-        animator = GetComponent<Animator>();
-        pa = GetComponent<PlayerAnimations>();
         ps = GetComponent<PlayerStats>();
 
         pia.Enable();
@@ -54,12 +55,15 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         pia.Player.Dodge.performed += DodgePerformed;
         pia.Player.ShieldBash.performed += ShieldBashPerformed;
         pia.Player.ShieldBash.Disable();
+        pia.Player.Interact.started += InteractStarted;
+        pia.Player.Throw.started += ThrowStarted;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         camera = GameObject.FindWithTag("MainCamera");
+        text = FindFirstObjectByType<InteractPopup>();
     }
 
     // Update is called once per frame
@@ -71,6 +75,30 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
         HandleMovement(inputVector);
         HandleRotation(inputVector);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        GameObject otherGameObject = other.gameObject;
+
+        if (otherGameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
+        {
+            text.EnablePopUp();
+            interactOkay = true;
+            currentInteractable = interactable;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        GameObject otherGameObject = other.gameObject;
+
+        if (otherGameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
+        {
+            text.DisablePopUp();
+            interactOkay = false;
+            currentInteractable = null;
+        }
     }
 
     void HandleMovement(Vector2 inputVector)
@@ -228,6 +256,19 @@ public class PlayerController : MonoBehaviour, IKnockbackable
                 ps.staminaRegen = true;
             }
         }
+    }
+
+    public void InteractStarted(InputAction.CallbackContext context)
+    {
+        if (interactOkay)
+        {
+            currentInteractable.Interact();
+        }
+    }
+
+    public void ThrowStarted(InputAction.CallbackContext context)
+    {
+        
     }
 
     public void SprintOkay(InputAction.CallbackContext context)

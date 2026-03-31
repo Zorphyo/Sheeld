@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 92909957394765440}
   - component: {fileID: 4280336490560653035}
   - component: {fileID: 8552790803155725611}
+  - component: {fileID: 2653962331466688249}
+  - component: {fileID: 5509599158263660452}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -82,6 +84,39 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.475231, y: 1.504817, z: 7.1560855}
   m_Center: {x: 1.0509474, y: 1.2768769, z: -1.6138401}
+--- !u!135 &2653962331466688249
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591490893580815997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 20
+  m_Center: {x: 1, y: 0, z: -2}
+--- !u!114 &5509599158263660452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591490893580815997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Throwable
 --- !u!1001 &3269811694185109012
 PrefabInstance:
   m_ObjectHideFlags: 0
