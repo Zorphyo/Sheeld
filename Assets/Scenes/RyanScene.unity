@@ -2667,7 +2667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13.715942, y: 8.221008}
+  m_AnchoredPosition: {x: 13.715942, y: 8.220947}
   m_SizeDelta: {x: 115.60803, y: 114.80798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913399209
@@ -2973,6 +2973,11 @@ MonoBehaviour:
 --- !u!4 &984548709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 830695762274932435, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+  m_PrefabInstance: {fileID: 2345996403998869893}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1009516347 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4033897570548534381, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
   m_PrefabInstance: {fileID: 2345996403998869893}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1018147671
@@ -4812,6 +4817,37 @@ MonoBehaviour:
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
+--- !u!1 &1620337111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620337112}
+  m_Layer: 0
+  m_Name: HoldPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1620337112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620337111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.116, y: -0.064, z: 0.009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1009516347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1671786132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6606,6 +6642,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1093502116374519296, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197655755519458834, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197655755519458834, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722114097172829650, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: RUN_SPEED
       value: 10
@@ -6615,16 +6667,28 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: THROW_FORCE
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: SPRINT_SPEED
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      propertyPath: holdPosition
+      value: 
+      objectReference: {fileID: 1620337112}
     - target: {fileID: 7389726156936403852, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
       propertyPath: SHIELD_BASH_FORCE
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 580667417478936196, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4033897570548534381, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1620337112}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8fdfd84118bf744d952a28181c2f4f4, type: 3}
 --- !u!1001 &2814740261067924731

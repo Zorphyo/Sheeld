@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Throwable
+  THROW_FORCE: 25
 --- !u!1001 &3269811694185109012
 PrefabInstance:
   m_ObjectHideFlags: 0

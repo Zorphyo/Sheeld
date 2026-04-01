@@ -33,7 +33,9 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public bool interactOkay = false;
     IInteractable currentInteractable;
+    IThrowable currentThrowable;
     InteractPopup text;
+    public Transform holdPosition;
 
     public LayerMask groundLayer;
     public float rayCastHeightOffset;
@@ -86,6 +88,14 @@ public class PlayerController : MonoBehaviour, IKnockbackable
             text.EnablePopUp();
             interactOkay = true;
             currentInteractable = interactable;
+        }
+
+        if (otherGameObject.TryGetComponent<IThrowable>(out IThrowable throwable))
+        {
+            if (!isHolding)
+            {
+                currentThrowable = throwable;
+            }
         }
     }
 
@@ -268,7 +278,11 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public void ThrowStarted(InputAction.CallbackContext context)
     {
-        
+        if (isHolding)
+        {
+            currentThrowable.Throw();
+            currentThrowable = null;
+        }
     }
 
     public void SprintOkay(InputAction.CallbackContext context)
