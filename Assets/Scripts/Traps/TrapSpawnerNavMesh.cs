@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -115,4 +115,4 @@ public class TrapSpawnerNavMesh : MonoBehaviour
         Gizmos.DrawWireSphere(arenaCenter.position, arenaRadius);
     }
 #endif
-}
+}*/

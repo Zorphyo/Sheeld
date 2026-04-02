@@ -368,6 +368,8 @@ Transform:
   - {fileID: 1495228500}
   - {fileID: 1853537453}
   - {fileID: 1976858542}
+  - {fileID: 682604395}
+  - {fileID: 1623031373}
   m_Father: {fileID: 1213229312}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &162828590
@@ -959,7 +961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043619376, y: 0.000000029773966, z: -0.000000001299959, w: 0.99904823}
+  m_LocalRotation: {x: 0.043619387, y: 2.955828e-11, z: -1.2905423e-12, w: 0.99904823}
   m_LocalPosition: {x: -22.47, y: 14.775868, z: 32.225662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2157,6 +2159,120 @@ MonoBehaviour:
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
+--- !u!1 &682604394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682604395}
+  - component: {fileID: 682604396}
+  m_Layer: 0
+  m_Name: TrapSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682604395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682604394}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 154234434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682604396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682604394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5cc099c64794d178419ded0ed58f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.Logic.ArenaTrapSpawner
+  currentArena: 0
+  arenaFloorCollider: {fileID: 1788688434}
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  trapDefinitions:
+  - trapName: Moving Spike Pit
+    prefab: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 5
+    maxSpawnCount: 10
+    placementMode: 1
+    bottomOffset: 0
+    minEmbedDepth: 0.5
+    maxEmbedDepth: 0.5
+    yOffset: 0
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 5
+    allowedOverlapGroups: 040000000300000003000000
+    overlapCheckRadius: 3
+  - trapName: Moving Log
+    prefab: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 6
+    maxSpawnCount: 15
+    placementMode: 0
+    bottomOffset: 0
+    minEmbedDepth: 0.2
+    maxEmbedDepth: 0.2
+    yOffset: 5.1
+    randomYaw: 0
+    baseRotationEuler: {x: -90, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 3
+    allowedOverlapGroups: 0200000001000000
+    overlapCheckRadius: 3
+  - trapName: Stationary Spike Pit
+    prefab: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 7
+    maxSpawnCount: 20
+    placementMode: 1
+    bottomOffset: 0
+    minEmbedDepth: 0.02
+    maxEmbedDepth: 1
+    yOffset: 0
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 5
+    allowedOverlapGroups: 0300000001000000
+    overlapCheckRadius: 3
+  playerSpawnPoint: {fileID: 0}
+  enemySpawnPoints: []
+  trapParent: {fileID: 1623031373}
+  raycastStartHeightAboveFloor: 50
+  raycastDistance: 200
+  generateOnStart: 1
+  clearOldTrapsBeforeGenerating: 1
+  useRandomSeed: 1
+  fixedSeed: 12345
+  maxPlacementAttemptsPerTrap: 50
 --- !u!1001 &766315881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4004,7 +4120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246889550}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043619372, y: 0.000000029773963, z: -0.0000000012999588, w: 0.9990483}
+  m_LocalRotation: {x: 0.043619383, y: 2.9088724e-11, z: 9.46405e-12, w: 0.99904823}
   m_LocalPosition: {x: -22.47, y: 14.775868, z: 32.225662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4482,7 +4598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1495228500
 Transform:
   m_ObjectHideFlags: 0
@@ -4761,6 +4877,37 @@ MonoBehaviour:
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
+--- !u!1 &1623031372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623031373}
+  m_Layer: 0
+  m_Name: SpawnedTraps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1623031373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623031372}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 154234434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1671786132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5435,7 +5582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1853537453
 Transform:
   m_ObjectHideFlags: 0
@@ -5864,7 +6011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1970255505
 Transform:
   m_ObjectHideFlags: 0
@@ -5902,7 +6049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1976858542
 Transform:
   m_ObjectHideFlags: 0
