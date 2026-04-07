@@ -2225,7 +2225,7 @@ MonoBehaviour:
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 1
-    allowedOverlapGroups: 030000000100000005000000
+    allowedOverlapGroups: 03000000010000000500000004000000
     overlapCheckRadius: 3
   - trapName: Moving Spike Pit
     prefab: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
@@ -2243,7 +2243,7 @@ MonoBehaviour:
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 2
-    allowedOverlapGroups: 040000000300000005000000
+    allowedOverlapGroups: 04000000030000000500000004000000
     overlapCheckRadius: 3
   - trapName: Moving Log
     prefab: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
@@ -2272,13 +2272,31 @@ MonoBehaviour:
     bottomOffset: 0
     minEmbedDepth: 0
     maxEmbedDepth: 0
-    yOffset: -0.69
+    yOffset: -0.665
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
     minDistanceFromPlayerSpawn: 0
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 5
+    allowedOverlapGroups: 0100000002000000
+    overlapCheckRadius: 3
+  - trapName: Book
+    prefab: {fileID: 4082966800244279014, guid: 83512811ce41a4703a766730f7ba2a62, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 10
+    maxSpawnCount: 20
+    placementMode: 0
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0.08
+    randomYaw: 0
+    baseRotationEuler: {x: -90, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 4
     allowedOverlapGroups: 0100000002000000
     overlapCheckRadius: 3
   playerSpawnPoint: {fileID: 0}
