@@ -25,6 +25,7 @@ namespace Traps.Logic
             HiddenMovingSpikePit,
             LogTrap,
             Throwable,
+            Banana,
             Other
         }
 

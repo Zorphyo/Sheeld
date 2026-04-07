@@ -2209,6 +2209,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   trapDefinitions:
+  - trapName: Stationary Spike Pit
+    prefab: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 7
+    maxSpawnCount: 20
+    placementMode: 1
+    bottomOffset: 0
+    minEmbedDepth: 0.02
+    maxEmbedDepth: 1
+    yOffset: 0
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 1
+    allowedOverlapGroups: 030000000100000005000000
+    overlapCheckRadius: 3
   - trapName: Moving Spike Pit
     prefab: {fileID: 5716162322998998028, guid: 830c30a40ff824216a644d443ab33549, type: 3}
     allowedArenas: 00000000
@@ -2224,8 +2242,8 @@ MonoBehaviour:
     minDistanceFromPlayerSpawn: 0
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
-    overlapGroup: 5
-    allowedOverlapGroups: 040000000300000003000000
+    overlapGroup: 2
+    allowedOverlapGroups: 040000000300000005000000
     overlapCheckRadius: 3
   - trapName: Moving Log
     prefab: {fileID: 8947822662646008677, guid: 9eded462b88d34924b5fffafe708a42e, type: 3}
@@ -2245,23 +2263,23 @@ MonoBehaviour:
     overlapGroup: 3
     allowedOverlapGroups: 0200000001000000
     overlapCheckRadius: 3
-  - trapName: Stationary Spike Pit
-    prefab: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+  - trapName: Banana Peel
+    prefab: {fileID: 4643225173817904502, guid: c9fae08af77a64631bb55096d7e0d6ef, type: 3}
     allowedArenas: 00000000
-    minSpawnCount: 7
+    minSpawnCount: 10
     maxSpawnCount: 20
-    placementMode: 1
+    placementMode: 0
     bottomOffset: 0
-    minEmbedDepth: 0.02
-    maxEmbedDepth: 1
-    yOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: -0.69
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
     minDistanceFromPlayerSpawn: 0
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 5
-    allowedOverlapGroups: 0300000001000000
+    allowedOverlapGroups: 0100000002000000
     overlapCheckRadius: 3
   playerSpawnPoint: {fileID: 0}
   enemySpawnPoints: []
