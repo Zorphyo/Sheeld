@@ -24,6 +24,14 @@ public class ArcherBrain : MonoBehaviour
     private float moveDelayTimer = 0f;
     private bool isFiring = false;
 
+
+    void Start()
+    {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+    }
     void Update()
     {
         if (player == null) return;
