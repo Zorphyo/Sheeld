@@ -2264,7 +2264,7 @@ MonoBehaviour:
     allowedOverlapGroups: 0200000001000000
     overlapCheckRadius: 3
   - trapName: Banana Peel
-    prefab: {fileID: 4643225173817904502, guid: c9fae08af77a64631bb55096d7e0d6ef, type: 3}
+    prefab: {fileID: 8284843170063756669, guid: c9fae08af77a64631bb55096d7e0d6ef, type: 3}
     allowedArenas: 00000000
     minSpawnCount: 10
     maxSpawnCount: 20
@@ -2272,9 +2272,9 @@ MonoBehaviour:
     bottomOffset: 0
     minEmbedDepth: 0
     maxEmbedDepth: 0
-    yOffset: -0.665
+    yOffset: 1.25
     randomYaw: 0
-    baseRotationEuler: {x: 0, y: 0, z: 0}
+    baseRotationEuler: {x: -90, y: 0, z: 0}
     minDistanceFromPlayerSpawn: 0
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
@@ -2804,7 +2804,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13.715942, y: 8.221008}
+  m_AnchoredPosition: {x: 13.716064, y: 8.220947}
   m_SizeDelta: {x: 115.60803, y: 114.80798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913399209
