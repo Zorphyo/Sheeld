@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: -5221200786807613066}
   - component: {fileID: -8691948485890250390}
   m_Layer: 0
-  m_Name: Speedster
+  m_Name: Enemy_Speedster_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
