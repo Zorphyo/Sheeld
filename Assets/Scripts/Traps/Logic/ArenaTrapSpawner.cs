@@ -26,6 +26,7 @@ namespace Traps.Logic
             LogTrap,
             Throwable,
             Banana,
+            Rolling,
             Other
         }
 
@@ -45,6 +46,12 @@ namespace Traps.Logic
 
             [Header("Placement")]
             public PlacementMode placementMode = PlacementMode.FlatOnFloor;
+            
+            [Header("Runtime Respawn")]
+            public bool respawnAtRuntime = false;
+
+            [Tooltip("Delay before this trap is respawned after being destroyed.")]
+            public float respawnDelay = 8f;
 
             [Tooltip("Raise the trap after raycast hit. Use this if the pivot is in the middle instead of the bottom.")]
             public float bottomOffset = 0f;
@@ -177,11 +184,13 @@ namespace Traps.Logic
         
         private class SpawnedTrapInfo
         {
+            public GameObject instance;
             public Vector3 position;
             public TrapDefinition trapDefinition;
 
-            public SpawnedTrapInfo(Vector3 position, TrapDefinition trapDefinition)
+            public SpawnedTrapInfo(GameObject instance, Vector3 position, TrapDefinition trapDefinition)
             {
+                this.instance = instance;
                 this.position = position;
                 this.trapDefinition = trapDefinition;
             }
@@ -255,7 +264,13 @@ namespace Traps.Logic
                     spawnedTrap.transform.SetParent(trapParent);
                 }
 
-                placedTraps.Add(new SpawnedTrapInfo(spawnPosition, trap));
+                TrapRespawnNotifier notifier = spawnedTrap.GetComponent<TrapRespawnNotifier>();
+                if (notifier != null)
+                {
+                    notifier.Initialize(this, trap, spawnedTrap);
+                }
+
+                placedTraps.Add(new SpawnedTrapInfo(spawnedTrap, spawnPosition, trap));
                 return true;
             }
 
@@ -320,6 +335,46 @@ namespace Traps.Logic
             }
 
             return valid;
+        }
+        
+        public void NotifyTrapDestroyed(TrapDefinition trapDefinition, GameObject destroyedTrap)
+        {
+            RemovePlacedTrap(destroyedTrap);
+
+            if (trapDefinition == null)
+                return;
+
+            if (!trapDefinition.respawnAtRuntime)
+                return;
+
+            StartCoroutine(RespawnTrapAfterDelay(trapDefinition));
+        }
+
+        private System.Collections.IEnumerator RespawnTrapAfterDelay(TrapDefinition trapDefinition)
+        {
+            yield return new WaitForSeconds(trapDefinition.respawnDelay);
+
+            bool spawned = TrySpawnTrap(trapDefinition);
+
+            if (!spawned)
+            {
+                Debug.LogWarning("ArenaTrapSpawner: Failed to respawn trap " + trapDefinition.trapName);
+            }
+        }
+
+        private void RemovePlacedTrap(GameObject destroyedTrap)
+        {
+            if (destroyedTrap == null)
+                return;
+
+            for (int i = placedTraps.Count - 1; i >= 0; i--)
+            {
+                if (placedTraps[i].instance == destroyedTrap)
+                {
+                    placedTraps.RemoveAt(i);
+                    return;
+                }
+            }
         }
 
         [ContextMenu("Clear Spawned Traps")]
