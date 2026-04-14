@@ -29,6 +29,7 @@ namespace Traps.MovingSpikeTrap
         [SerializeField] private float riseSpeed = 12f;       // how fast they go up/down
         [SerializeField] private float stayUpTime = 2f;       // how long spikes stay up
         [SerializeField] private float cooldownTime = 1f;     // time before trap can trigger again
+        [SerializeField] private Vector3 riseDirection = Vector3.forward;
 
         [Header("Behavior")]
         [SerializeField] private bool canRetrigger = true;
@@ -46,7 +47,7 @@ namespace Traps.MovingSpikeTrap
             downPosition = spikesVisual.localPosition;
             
             // Calculate where the spikes should move to when raised
-            upPosition = downPosition + Vector3.forward * riseDistance;
+            upPosition = downPosition + riseDirection.normalized * riseDistance;
             
             // Make sure damage is disabled at start
             if (damageZone != null)
