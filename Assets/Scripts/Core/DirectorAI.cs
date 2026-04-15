@@ -18,6 +18,10 @@ public class DirectorAI : MonoBehaviour
     public float timeRequiredScaling = 15f;
     public string mainMenuScene = "MainMenu";
 
+    [Header("Arena Scenes")]
+    public string[] arenaScenes;   // assign 3 scenes in the inspector
+    public int roundsPerArena = 2; // e.g. rounds 1-2 = arena 1, 3-4 = arena 2, 5 = arena 3
+
     // ── Chaos thresholds ──────────────────────────────────────────────────────
     [Header("Chaos Thresholds")]
     public float overwhelmThreshold = 40f;
@@ -99,7 +103,7 @@ public class DirectorAI : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-
+        DontDestroyOnLoad(gameObject); // add this
         evaluator = new ChaosEvaluator();
         Roster = new EnemyRoster();
         Traps = new TrapRegistry();
@@ -166,6 +170,13 @@ public class DirectorAI : MonoBehaviour
     {
         for (int round = 1; round <= totalRounds; round++)
         {
+            int arenaIndex = (round - 1) / roundsPerArena;
+            arenaIndex = Mathf.Clamp(arenaIndex, 0, arenaScenes.Length - 1);
+
+            // Load a new arena at the start of round 1, and whenever the index changes
+            if (round == 1 || (round - 1) % roundsPerArena == 0)
+                yield return StartCoroutine(LoadArena(arenaIndex));
+
             yield return StartCoroutine(RunRound(round));
 
             if (round < totalRounds)
@@ -173,8 +184,25 @@ public class DirectorAI : MonoBehaviour
         }
 
         yield return StartCoroutine(RunBetweenRound());
-        Debug.Log("[Director] All rounds complete. Returning to main menu.");
         SceneManager.LoadScene(mainMenuScene);
+    }
+
+    IEnumerator LoadArena(int index)
+    {
+        yield return SceneManager.LoadSceneAsync(arenaScenes[index]);
+
+        MedicManager.Instance?.ClearForNewArena(); // add this
+
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+        {
+            player = p.transform;
+            playerStats = p.GetComponent<PlayerStats>();
+        }
+
+        Roster.Clear();
+        Traps.Clear();
+        medicSpawned = false;
     }
 
     IEnumerator RunRound(int round)
