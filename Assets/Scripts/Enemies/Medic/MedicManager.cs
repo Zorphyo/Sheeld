@@ -14,6 +14,7 @@ public class MedicManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        DontDestroyOnLoad(gameObject); // add this
     }
 
     // ── Medic registration (called by MedicAI) ────────────────────────────────
@@ -118,6 +119,13 @@ public class MedicManager : MonoBehaviour
         }
 
         return closest;
+    }
+
+    public void ClearForNewArena()
+    {
+        liveMedics.Clear();
+        enemies.Clear();
+        BroadcastMedicPresence(false);
     }
 
     // ── Internal ──────────────────────────────────────────────────────────────

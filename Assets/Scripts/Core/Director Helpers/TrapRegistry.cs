@@ -9,4 +9,5 @@ public class TrapRegistry
 
     public void Register  (TrapBase t) { if (!traps.Contains(t)) traps.Add(t); }
     public void Unregister(TrapBase t) => traps.Remove(t);
+    public void Clear() => traps.Clear();
 }

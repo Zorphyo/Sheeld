@@ -15,5 +15,6 @@ public class EnemyRoster
 
     public void Register  (GameObject e) { if (!live.Contains(e)) live.Add(e); }
     public void Unregister(GameObject e) => live.Remove(e);
+    public void Clear() => live.Clear();
     public void Purge     ()             => live.RemoveAll(e => e == null);
 }
