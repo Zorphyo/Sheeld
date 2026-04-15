@@ -2499,6 +2499,8 @@ MonoBehaviour:
     minSpawnCount: 7
     maxSpawnCount: 20
     placementMode: 1
+    respawnAtRuntime: 0
+    respawnDelay: 8
     bottomOffset: 0
     minEmbedDepth: 0.02
     maxEmbedDepth: 1
@@ -2517,6 +2519,8 @@ MonoBehaviour:
     minSpawnCount: 5
     maxSpawnCount: 10
     placementMode: 1
+    respawnAtRuntime: 0
+    respawnDelay: 8
     bottomOffset: 0
     minEmbedDepth: 0.5
     maxEmbedDepth: 0.5
@@ -2535,6 +2539,8 @@ MonoBehaviour:
     minSpawnCount: 6
     maxSpawnCount: 15
     placementMode: 0
+    respawnAtRuntime: 0
+    respawnDelay: 8
     bottomOffset: 0
     minEmbedDepth: 0.2
     maxEmbedDepth: 0.2
@@ -2553,6 +2559,8 @@ MonoBehaviour:
     minSpawnCount: 10
     maxSpawnCount: 20
     placementMode: 0
+    respawnAtRuntime: 0
+    respawnDelay: 8
     bottomOffset: 0
     minEmbedDepth: 0
     maxEmbedDepth: 0
@@ -2571,6 +2579,8 @@ MonoBehaviour:
     minSpawnCount: 10
     maxSpawnCount: 20
     placementMode: 0
+    respawnAtRuntime: 0
+    respawnDelay: 8
     bottomOffset: 0
     minEmbedDepth: 0
     maxEmbedDepth: 0
@@ -2581,6 +2591,26 @@ MonoBehaviour:
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 4
+    allowedOverlapGroups: 0100000002000000
+    overlapCheckRadius: 3
+  - trapName: Rolling Boulder
+    prefab: {fileID: 2353211200803620035, guid: 2dcb797de07cb4fbeaa12912ca8845a2, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 4
+    maxSpawnCount: 7
+    placementMode: 0
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 1.5
+    randomYaw: 0
+    baseRotationEuler: {x: -90, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 0
     allowedOverlapGroups: 0100000002000000
     overlapCheckRadius: 3
   playerSpawnPoint: {fileID: 0}
