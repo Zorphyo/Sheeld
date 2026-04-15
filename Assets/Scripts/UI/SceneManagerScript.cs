@@ -7,13 +7,20 @@ public class SceneManagerScript : MonoBehaviour
 {
     [SerializeField]
     private float _timeToWaitBeforeExit;
+    public GameObject deathPopup;
     public void OnPlayerDeath()
     {
-        Invoke(nameof(EndGame), _timeToWaitBeforeExit);
+        deathPopup.SetActive(true);
+        Time.timeScale = 0f;
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
