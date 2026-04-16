@@ -908,6 +908,7 @@ GameObject:
   - component: {fileID: -4323773436770145855}
   - component: {fileID: 2761910423349825575}
   - component: {fileID: -7279270112110618455}
+  - component: {fileID: -1783057289418300982}
   m_Layer: 0
   m_Name: Enemy_Basic_01
   m_TagString: Enemy
@@ -1135,6 +1136,20 @@ MonoBehaviour:
   strafeDuration: 1.2
   strafeStrength: 1
   velocitySmoothing: 0.12
+--- !u!114 &-1783057289418300982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082034268796750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1862335a11374fae05a2e3251f5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySoundHandler
+  voice: 1
+  mixerGroup: {fileID: 2027888447949932597, guid: 708e68d943c7a764d835467d997fac49, type: 2}
 --- !u!1 &1084822215124904
 GameObject:
   m_ObjectHideFlags: 0

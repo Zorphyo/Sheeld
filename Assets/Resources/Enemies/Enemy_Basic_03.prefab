@@ -5091,6 +5091,7 @@ GameObject:
   - component: {fileID: 5821080941592061906}
   - component: {fileID: 7943714142554115497}
   - component: {fileID: 1785633867796659815}
+  - component: {fileID: 7548452725928450266}
   m_Layer: 0
   m_Name: Enemy_Basic_03
   m_TagString: Enemy
@@ -5318,6 +5319,22 @@ MonoBehaviour:
   strafeDuration: 1.2
   strafeStrength: 1
   velocitySmoothing: 0.12
+--- !u!114 &7548452725928450266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622378232313904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1862335a11374fae05a2e3251f5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySoundHandler
+  attackSound: {fileID: 8300000, guid: 4f38cfc057803284a8ce039fd8f26215, type: 3}
+  hitSound: {fileID: 8300000, guid: 6c9966e82133dbf478cb0d6d4f04f674, type: 3}
+  deathSound: {fileID: 8300000, guid: 9ac9e455e130968459fc7ff35a33428c, type: 3}
+  mixerGroup: {fileID: 2027888447949932597, guid: 708e68d943c7a764d835467d997fac49, type: 2}
 --- !u!1 &1627595664153426
 GameObject:
   m_ObjectHideFlags: 0
