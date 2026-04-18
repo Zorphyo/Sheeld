@@ -3078,7 +3078,7 @@ MonoBehaviour:
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 4
-    allowedOverlapGroups: 0100000002000000
+    allowedOverlapGroups: 010000000200000006000000
     overlapCheckRadius: 3
   - trapName: Rolling Boulder
     prefab: {fileID: 2353211200803620035, guid: 2dcb797de07cb4fbeaa12912ca8845a2, type: 3}
@@ -3098,7 +3098,47 @@ MonoBehaviour:
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 0
-    allowedOverlapGroups: 0100000002000000
+    allowedOverlapGroups: 010000000200000004000000
+    overlapCheckRadius: 3
+  - trapName: Icicle Pit
+    prefab: {fileID: 4366283405686675091, guid: daae568b82187482ba67d65a4bcca3e5, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 7
+    maxSpawnCount: 15
+    placementMode: 1
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 3.3
+    maxEmbedDepth: 3.3
+    yOffset: 1.5
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 0
+    allowedOverlapGroups: 0400000006000000
+    overlapCheckRadius: 3
+  - trapName: Rolling Snow Ball
+    prefab: {fileID: 8030296799390961215, guid: a311cdd30236f4130b80001b2e1c30f3, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 3
+    maxSpawnCount: 6
+    placementMode: 0
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 3.3
+    maxEmbedDepth: 3.3
+    yOffset: 1.5
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 6
+    allowedOverlapGroups: 0400000002000000
     overlapCheckRadius: 3
   playerSpawnPoint: {fileID: 0}
   enemySpawnPoints: []
@@ -5453,6 +5493,8 @@ MonoBehaviour:
   timeRequiredBase: 60
   timeRequiredScaling: 15
   mainMenuScene: MainMenu
+  arenaScenes: []
+  roundsPerArena: 2
   overwhelmThreshold: 40
   chaosSpikThreshold: 65
   microBreathThreshold: 85
