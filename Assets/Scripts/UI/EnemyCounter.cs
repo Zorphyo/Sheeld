@@ -8,6 +8,7 @@ public class EnemyCounter : MonoBehaviour
 {
     GameObject[] enemies;
     public TextMeshProUGUI enemyCountText;
+    SceneManagerScript sceneManager;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,5 +21,13 @@ public class EnemyCounter : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemyCountText.text = enemies.Length.ToString();
+
+        if(enemies.Length == 0)
+        {
+            if(sceneManager != null)
+            {
+                sceneManager.OnPlayerWin();
+            }
+        }
     }
 }

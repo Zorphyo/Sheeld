@@ -8,9 +8,16 @@ public class SceneManagerScript : MonoBehaviour
     [SerializeField]
     private float _timeToWaitBeforeExit;
     public GameObject deathPopup;
+    public GameObject winPopup;
     public void OnPlayerDeath()
     {
         deathPopup.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void OnPlayerWin()
+    {
+        winPopup.SetActive(true);
         Time.timeScale = 0f;
     }
 
