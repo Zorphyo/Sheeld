@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     [SerializeField] float JUMP_FORCE;
     [SerializeField] float DODGE_FORCE;
     [SerializeField] float SHIELD_BASH_FORCE;
+    [SerializeField] float KNOCKBACK_FORCE;
 
     float currentSpeed;
 
@@ -96,6 +97,13 @@ public class PlayerController : MonoBehaviour, IKnockbackable
             {
                 currentThrowable = throwable;
             }
+        }
+
+        if (otherGameObject.TryGetComponent<EnemyLocomotion>(out EnemyLocomotion enemy) && isShieldBashing)
+        {
+            Debug.Log("Success");
+            Vector3 launchDirection = enemy.transform.position - transform.position;
+            enemy.ApplyKnockback(launchDirection, KNOCKBACK_FORCE);
         }
     }
 
@@ -198,12 +206,14 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     {
         isBlocking = true;
         pia.Player.ShieldBash.Enable();
+        pia.Player.Throw.Disable();
     }
 
     public void BlockCanceled(InputAction.CallbackContext context)
     {
         isBlocking = false;
         pia.Player.ShieldBash.Disable();
+        pia.Player.Throw.Enable();
     }
 
     public void DodgePerformed(InputAction.CallbackContext context)

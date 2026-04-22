@@ -1,11 +1,15 @@
+using Core.Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(EnemyMovement))]
-public class EnemyLocomotion : MonoBehaviour
+[RequireComponent(typeof(SphereCollider))]
+public class EnemyLocomotion : MonoBehaviour, IKnockbackable
 {
+    bool knockbackable = true;
+
     [Header("Range Thresholds")]
     public float farRange   = 35f;
     public float closeRange = 10f;
@@ -28,6 +32,7 @@ public class EnemyLocomotion : MonoBehaviour
     private NavMeshAgent agent;
     private Animator     animator;
     private Transform    player;
+    private Rigidbody    rb;
 
     private Vector2 smoothVelocity;
     private Vector2 velocityRef;        // SmoothDamp ref
@@ -49,6 +54,7 @@ public class EnemyLocomotion : MonoBehaviour
     {
         agent    = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        rb       = GetComponent<Rigidbody>();
     }
 
     void Start()
@@ -175,5 +181,27 @@ public class EnemyLocomotion : MonoBehaviour
         animator.SetFloat(VelX,    smoothVelocity.x);
         animator.SetFloat(VelZ,    smoothVelocity.y);
         animator.SetFloat(SpeedID, smoothVelocity.magnitude);
+    }
+
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        agent.enabled = false;
+        direction.Normalize();
+        if (knockbackable)
+        {
+            rb.AddForce(direction + new Vector3(0, 0.3f, 10) * force, ForceMode.Impulse);
+            knockbackable = false;
+        }
+
+        Debug.Log("Enemy");
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("WalkableFloor"))
+        {
+            agent.enabled = true;
+            knockbackable = true;
+        }
     }
 }
