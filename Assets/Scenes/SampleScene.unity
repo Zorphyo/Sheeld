@@ -3352,7 +3352,7 @@ MonoBehaviour:
     allowedOverlapGroups: 010000000200000006000000
     overlapCheckRadius: 3
   - trapName: Rolling Boulder
-    prefab: {fileID: 8589894147195926275, guid: 292e08bdaa4a64517a0d98f14bd58f03, type: 3}
+    prefab: {fileID: 5867308206479245, guid: 6f71a73e017914935917be28fb7113d2, type: 3}
     allowedArenas: 00000000
     minSpawnCount: 7
     maxSpawnCount: 10
@@ -3392,7 +3392,7 @@ MonoBehaviour:
     allowedOverlapGroups: 0400000006000000
     overlapCheckRadius: 3
   - trapName: Rolling Snow Ball
-    prefab: {fileID: 1443657902885328149, guid: f6fad73ff7c774dc392a365abe0638e3, type: 3}
+    prefab: {fileID: 2485728305134913985, guid: 4c55674fd9e8b47e6a0354aaf00ccbad, type: 3}
     allowedArenas: 00000000
     minSpawnCount: 7
     maxSpawnCount: 10
