@@ -1,3 +1,4 @@
+using System.Collections;
 using Core.Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,8 +9,6 @@ using UnityEngine.AI;
 [RequireComponent(typeof(SphereCollider))]
 public class EnemyLocomotion : MonoBehaviour, IKnockbackable
 {
-    bool knockbackable = true;
-
     [Header("Range Thresholds")]
     public float farRange   = 35f;
     public float closeRange = 10f;
@@ -183,25 +182,44 @@ public class EnemyLocomotion : MonoBehaviour, IKnockbackable
         animator.SetFloat(SpeedID, smoothVelocity.magnitude);
     }
 
-    public void ApplyKnockback(Vector3 direction, float force)
-    {
-        agent.enabled = false;
-        direction.Normalize();
-        if (knockbackable)
-        {
-            rb.AddForce(direction + new Vector3(0, 0.3f, 10) * force, ForceMode.Impulse);
-            knockbackable = false;
-        }
-
-        Debug.Log("Enemy");
-    }
-
-    public void OnCollisionEnter(Collision collision)
+    /*public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("WalkableFloor"))
         {
             agent.enabled = true;
             knockbackable = true;
         }
+    }*/
+
+    public void Knockback(Vector3 direction, float force)
+    {
+        StartCoroutine(ApplyShieldBashKnockback(direction, force));
+    }
+
+    public IEnumerator ApplyShieldBashKnockback(Vector3 direction, float force)
+    {
+        yield return null;
+
+        animator.applyRootMotion = false;
+        agent.enabled = false;
+        rb.useGravity = true;
+        rb.isKinematic = false;
+
+        rb.AddForce(direction + new Vector3(0, 0.2f, 2) * force, ForceMode.Impulse);
+
+        yield return new WaitForFixedUpdate();
+        yield return new WaitUntil(() => rb.linearVelocity.magnitude < 0.1f);
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        rb.useGravity = false;
+        rb.isKinematic = true;
+
+        agent.Warp(transform.position);
+        agent.enabled = true;
+        animator.applyRootMotion = true;
+
+        yield return null;
     }
 }
