@@ -5,6 +5,13 @@ namespace Traps
 {
     public class LeverBallSpawner : MonoBehaviour
     {
+        public enum SpawnRotationMode
+        {
+            UseSpawnPointFullRotation,
+            UseSpawnPointYawOnly,
+            UsePrefabRotationOnly
+        }
+
         [Header("References")]
         [SerializeField] private Transform leverHandle;
         [SerializeField] private Transform spawnPoint;
@@ -19,10 +26,12 @@ namespace Traps
         [Header("Lever Animation")]
         [Tooltip("How much the handle rotates locally when pulled.")]
         [SerializeField] private Vector3 pulledLocalEulerOffset = new Vector3(-35f, 0f, 0f);
-
         [SerializeField] private float pullSpeed = 240f;
         [SerializeField] private float returnSpeed = 180f;
         [SerializeField] private float pulledHoldTime = 0.08f;
+
+        [Header("Spawn Rotation")]
+        [SerializeField] private SpawnRotationMode spawnRotationMode = SpawnRotationMode.UseSpawnPointYawOnly;
 
         [Header("Behavior")]
         [SerializeField] private bool requirePlayerTrigger = true;
@@ -45,11 +54,8 @@ namespace Traps
 
         private void Update()
         {
-            if (requirePlayerTrigger)
-            {
-                if (!playerInRange)
-                    return;
-            }
+            if (requirePlayerTrigger && !playerInRange)
+                return;
 
             if (isBusy || isOnCooldown)
                 return;
@@ -98,7 +104,6 @@ namespace Traps
 
             isBusy = true;
 
-            // Pull lever down
             while (Quaternion.Angle(leverHandle.localRotation, Quaternion.Euler(pulledLocalEuler)) > 0.5f)
             {
                 leverHandle.localRotation = Quaternion.RotateTowards(
@@ -112,11 +117,12 @@ namespace Traps
 
             leverHandle.localRotation = Quaternion.Euler(pulledLocalEuler);
 
-            // Spawn the rolling trap
+            Quaternion spawnRotation = GetSpawnRotation();
+
             GameObject spawnedTrap = Instantiate(
                 spawnedTrapPrefab,
                 spawnPoint.position,
-                spawnPoint.rotation
+                spawnRotation
             );
 
             if (spawnedTrapParent != null)
@@ -129,7 +135,6 @@ namespace Traps
                 yield return new WaitForSeconds(pulledHoldTime);
             }
 
-            // Return lever back up
             while (Quaternion.Angle(leverHandle.localRotation, Quaternion.Euler(restLocalEuler)) > 0.5f)
             {
                 leverHandle.localRotation = Quaternion.RotateTowards(
@@ -149,6 +154,24 @@ namespace Traps
             yield return new WaitForSeconds(reuseCooldown);
 
             isOnCooldown = false;
+        }
+
+        private Quaternion GetSpawnRotation()
+        {
+            switch (spawnRotationMode)
+            {
+                case SpawnRotationMode.UseSpawnPointFullRotation:
+                    return spawnPoint.rotation;
+
+                case SpawnRotationMode.UseSpawnPointYawOnly:
+                    return Quaternion.Euler(0f, spawnPoint.eulerAngles.y, 0f);
+
+                case SpawnRotationMode.UsePrefabRotationOnly:
+                    return spawnedTrapPrefab.transform.rotation;
+
+                default:
+                    return spawnPoint.rotation;
+            }
         }
     }
 }

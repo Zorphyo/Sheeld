@@ -3411,6 +3411,26 @@ MonoBehaviour:
     overlapGroup: 6
     allowedOverlapGroups: 
     overlapCheckRadius: 10
+  - trapName: Rolling Log
+    prefab: {fileID: 8756624941542966808, guid: 9bc851a064fd441e88fac16914c41af4, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 7
+    maxSpawnCount: 10
+    placementMode: 0
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 6
+    allowedOverlapGroups: 
+    overlapCheckRadius: 10
   playerSpawnPoint: {fileID: 0}
   enemySpawnPoints: []
   trapParent: {fileID: 1623031373}

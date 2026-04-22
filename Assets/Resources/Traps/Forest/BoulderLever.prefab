@@ -59,6 +59,7 @@ MonoBehaviour:
   pullSpeed: 240
   returnSpeed: 180
   pulledHoldTime: 0.08
+  spawnRotationMode: 0
   requirePlayerTrigger: 1
 --- !u!54 &4518570914459900608
 Rigidbody:
