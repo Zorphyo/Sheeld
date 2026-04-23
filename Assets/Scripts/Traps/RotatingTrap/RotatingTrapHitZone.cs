@@ -80,7 +80,7 @@ namespace Traps
                     direction.y = 0f;
                     direction.Normalize();
 
-                    knockbackable.ApplyKnockback(direction, knockbackForce);
+                    knockbackable.Knockback(direction, knockbackForce);
                 }
 
                 nextHitTime[key] = Time.time + damageInterval;

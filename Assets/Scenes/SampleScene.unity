@@ -3214,25 +3214,25 @@ MonoBehaviour:
     allowedOverlapGroups: 010000000200000006000000
     overlapCheckRadius: 3
   - trapName: Rolling Boulder
-    prefab: {fileID: 2353211200803620035, guid: 2dcb797de07cb4fbeaa12912ca8845a2, type: 3}
+    prefab: {fileID: 5867308206479245, guid: 6f71a73e017914935917be28fb7113d2, type: 3}
     allowedArenas: 00000000
-    minSpawnCount: 4
-    maxSpawnCount: 7
+    minSpawnCount: 7
+    maxSpawnCount: 10
     placementMode: 0
     respawnAtRuntime: 1
     respawnDelay: 8
     bottomOffset: 0
     minEmbedDepth: 0
     maxEmbedDepth: 0
-    yOffset: 1.5
+    yOffset: 0
     randomYaw: 0
-    baseRotationEuler: {x: -90, y: 0, z: 0}
+    baseRotationEuler: {x: 0, y: 0, z: 0}
     minDistanceFromPlayerSpawn: 0
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 0
-    allowedOverlapGroups: 010000000200000004000000
-    overlapCheckRadius: 3
+    allowedOverlapGroups: 
+    overlapCheckRadius: 10
   - trapName: Icicle Pit
     prefab: {fileID: 4366283405686675091, guid: daae568b82187482ba67d65a4bcca3e5, type: 3}
     allowedArenas: 00000000
@@ -3254,25 +3254,45 @@ MonoBehaviour:
     allowedOverlapGroups: 0400000006000000
     overlapCheckRadius: 3
   - trapName: Rolling Snow Ball
-    prefab: {fileID: 8030296799390961215, guid: a311cdd30236f4130b80001b2e1c30f3, type: 3}
+    prefab: {fileID: 2485728305134913985, guid: 4c55674fd9e8b47e6a0354aaf00ccbad, type: 3}
     allowedArenas: 00000000
-    minSpawnCount: 3
-    maxSpawnCount: 6
+    minSpawnCount: 7
+    maxSpawnCount: 10
     placementMode: 0
     respawnAtRuntime: 1
     respawnDelay: 8
     bottomOffset: 0
-    minEmbedDepth: 3.3
-    maxEmbedDepth: 3.3
-    yOffset: 1.5
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
     minDistanceFromPlayerSpawn: 0
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 6
-    allowedOverlapGroups: 0400000002000000
-    overlapCheckRadius: 3
+    allowedOverlapGroups: 
+    overlapCheckRadius: 10
+  - trapName: Rolling Log
+    prefab: {fileID: 8756624941542966808, guid: 9bc851a064fd441e88fac16914c41af4, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 7
+    maxSpawnCount: 10
+    placementMode: 0
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 6
+    allowedOverlapGroups: 
+    overlapCheckRadius: 10
   playerSpawnPoint: {fileID: 0}
   enemySpawnPoints: []
   trapParent: {fileID: 1623031373}

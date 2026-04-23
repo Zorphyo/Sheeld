@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Core.Interfaces
@@ -13,6 +14,6 @@ namespace Core.Interfaces
     */
     public interface IKnockbackable
     {
-        void ApplyKnockback(Vector3 direction, float force);
+        void Knockback(Vector3 direction, float force);
     }
 }

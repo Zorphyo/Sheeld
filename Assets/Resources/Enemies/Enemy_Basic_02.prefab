@@ -7878,6 +7878,7 @@ GameObject:
   - component: {fileID: 6253127363822211682}
   - component: {fileID: 1920330642829009242}
   - component: {fileID: 3643774525315170310}
+  - component: {fileID: 1035445271093752454}
   - component: {fileID: -4962963433394055793}
   - component: {fileID: 7605529647928712402}
   - component: {fileID: -1070382984932391469}
@@ -8059,6 +8060,27 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!135 &1035445271093752454
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965107420363712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &-4962963433394055793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8081,7 +8103,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -8121,6 +8143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySoundHandler
   voice: 1
+  type: 0
   mixerGroup: {fileID: 2027888447949932597, guid: 708e68d943c7a764d835467d997fac49, type: 2}
 --- !u!1 &1968470488432234
 GameObject:
