@@ -1,32 +1,56 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Audio;
-using UnityEngine.UI; // Added for Sliders
+using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using TigerForge;
 
 public class SettingsManagerScript : MonoBehaviour
 {
+    EasyFileSave myFile;
+
+    // Graphics
     public RenderPipelineAsset lowQualityAsset;
     public RenderPipelineAsset mediumQualityAsset;
     public RenderPipelineAsset highQualityAsset;
 
     public AudioMixer mainAudioMixer;
 
-    // References to UI elements so we can sync them on Load
+    // UI
     public TMP_Dropdown ResDropDown;
     public TMP_Dropdown QualityDropDown; 
     public Slider MusicSlider;
     public Slider SFXSlider;
     public Toggle FullScreenToggle;
 
+    public GameObject settingsMenuUI;
+
     bool isFullScreen;
+    bool isInitialized = false;
+
     Resolution[] AllResolutions;
     List<Resolution> SelectedResolutionList = new List<Resolution>();
 
-    public GameObject settingsMenuUI;
+    void Awake()
+    {
+        myFile = new EasyFileSave("SettingsFile");
+    }
 
     void Start()
+    {
+        Debug.Log("=== SETTINGS MANAGER START ===");
+
+        Debug.Log("ResDropDown: " + (ResDropDown == null ? "NULL ❌" : "OK ✅"));
+        Debug.Log("QualityDropDown: " + (QualityDropDown == null ? "NULL ❌" : "OK ✅"));
+        Debug.Log("MusicSlider: " + (MusicSlider == null ? "NULL ❌" : "OK ✅"));
+        Debug.Log("SFXSlider: " + (SFXSlider == null ? "NULL ❌" : "OK ✅"));
+        Debug.Log("FullScreenToggle: " + (FullScreenToggle == null ? "NULL ❌" : "OK ✅"));
+
+        InitializeUI();
+    }
+
+    void InitializeUI()
     {
         SetupResolutionDropdown();
         LoadSettings();
@@ -34,26 +58,33 @@ public class SettingsManagerScript : MonoBehaviour
 
     void SetupResolutionDropdown()
     {
+        if (ResDropDown == null) return;
+
         ResDropDown.ClearOptions();
+        SelectedResolutionList.Clear();
+
         AllResolutions = Screen.resolutions;
         List<string> options = new List<string>();
 
-        for (int i = 0; i < AllResolutions.Length; i++)
+        foreach (var res in AllResolutions)
         {
-            string option = AllResolutions[i].width + " x " + AllResolutions[i].height;
+            string option = res.width + " x " + res.height;
+
             if (!options.Contains(option))
             {
                 options.Add(option);
-                SelectedResolutionList.Add(AllResolutions[i]);
+                SelectedResolutionList.Add(res);
             }
         }
+
         ResDropDown.AddOptions(options);
     }
+
+    // ===== SETTINGS =====
 
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        PlayerPrefs.SetInt("QualityLevel", qualityIndex); // SAVE
 
         switch (qualityIndex)
         {
@@ -61,78 +92,118 @@ public class SettingsManagerScript : MonoBehaviour
             case 1: GraphicsSettings.defaultRenderPipeline = mediumQualityAsset; break;
             case 2: GraphicsSettings.defaultRenderPipeline = highQualityAsset; break;
         }
+
+        myFile.Add("QualityLevel", qualityIndex);
+        myFile.Save();
     }
 
     public void ChangeMusicVolume(float musicVol)
     {
         mainAudioMixer.SetFloat("MusicVolume", musicVol);
-        PlayerPrefs.SetFloat("MusicVolume", musicVol); // SAVE
+        myFile.Add("MusicVolume", musicVol);
+        myFile.Save();
     }
 
     public void ChangeSFXVolume(float sfxVol)
     {
         mainAudioMixer.SetFloat("SFXVolume", sfxVol);
-        PlayerPrefs.SetFloat("SFXVolume", sfxVol); // SAVE
+        myFile.Add("SFXVolume", sfxVol);
+        myFile.Save();
     }
 
-    public void SetFullScreen(bool IsFullScreen)
+    public void SetFullScreen(bool value)
     {
-        Screen.fullScreen = IsFullScreen;
-        isFullScreen = IsFullScreen;
-        PlayerPrefs.SetInt("FullScreen", IsFullScreen ? 1 : 0); // SAVE
+        Screen.fullScreen = value;
+        isFullScreen = value;
+
+        myFile.Add("FullScreen", value);
+        myFile.Save();
     }
 
     public void ChangeResolution(int index)
     {
+        if (index < 0 || index >= SelectedResolutionList.Count) return;
+
         Resolution res = SelectedResolutionList[index];
         Screen.SetResolution(res.width, res.height, isFullScreen);
-        PlayerPrefs.SetInt("ResIndex", index); // SAVE
+
+        myFile.Add("ResIndex", index);
+        myFile.Save();
     }
 
     void LoadSettings()
     {
-        if (SelectedResolutionList.Count == 0) return;
-        
-        // Load Quality
-        int savedQuality = PlayerPrefs.GetInt("QualityLevel", 2); // Default to High (2)
-        SetQuality(savedQuality);
-        if(QualityDropDown != null) QualityDropDown.value = savedQuality;
-
-        // Load Volume
-        float savedMusic = PlayerPrefs.GetFloat("MusicVolume", 0f);
-        mainAudioMixer.SetFloat("MusicVolume", savedMusic);
-        if(MusicSlider != null) MusicSlider.value = savedMusic;
-
-        float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 0f);
-        mainAudioMixer.SetFloat("SFXVolume", savedSFX);
-        if(SFXSlider != null) SFXSlider.value = savedSFX;
-
-        // Load Fullscreen
-        isFullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
-        Screen.fullScreen = isFullScreen;
-        if(FullScreenToggle != null) FullScreenToggle.isOn = isFullScreen;
-
-        // Load Resolution
-        int savedRes = PlayerPrefs.GetInt("ResIndex", SelectedResolutionList.Count - 1);
-        if (savedRes < SelectedResolutionList.Count)
+        if (!myFile.Load())
         {
-            ChangeResolution(savedRes);
-            ResDropDown.value = savedRes;
-            ResDropDown.RefreshShownValue();
+            Debug.Log("No save file found, using defaults.");
+            return;
+        }
+    
+        // Quality
+        int quality = myFile.GetInt("QualityLevel", 2);
+        QualitySettings.SetQualityLevel(quality);
+    
+        if (QualityDropDown != null)
+            QualityDropDown.SetValueWithoutNotify(quality);
+    
+        // Music
+        float music = myFile.GetFloat("MusicVolume", 0f);
+        mainAudioMixer.SetFloat("MusicVolume", music);
+        if (MusicSlider != null)
+            MusicSlider.SetValueWithoutNotify(music);
+    
+        // SFX
+        float sfx = myFile.GetFloat("SFXVolume", 0f);
+        mainAudioMixer.SetFloat("SFXVolume", sfx);
+        if (SFXSlider != null)
+            SFXSlider.SetValueWithoutNotify(sfx);
+    
+        // Fullscreen
+        isFullScreen = myFile.GetBool("FullScreen", true);
+        Screen.fullScreen = isFullScreen;
+        if (FullScreenToggle != null)
+            FullScreenToggle.SetIsOnWithoutNotify(isFullScreen);
+    
+        // Resolution
+        int resIndex = myFile.GetInt("ResIndex", SelectedResolutionList.Count - 1);
+    
+        if (resIndex >= 0 && resIndex < SelectedResolutionList.Count)
+        {
+            Resolution res = SelectedResolutionList[resIndex];
+            Screen.SetResolution(res.width, res.height, isFullScreen);
+    
+            if (ResDropDown != null)
+                ResDropDown.SetValueWithoutNotify(resIndex);
         }
     }
 
-    public void PauseGame() 
-    { 
+    // ===== PAUSE SYSTEM =====
+
+    public void PauseGame()
+    {
         settingsMenuUI.SetActive(true);
-        if(ResDropDown != null) SetupResolutionDropdown();
-        LoadSettings();
-        Invoke("StopWorld", 0.01f); 
+       InitializeUI();
+        Time.timeScale = 0f;
     }
 
-    void StopWorld()
+    public void ResumeGame()
     {
-        Time.timeScale = 0f; 
+        settingsMenuUI.SetActive(false);
+        Time.timeScale = 1f;
     }
-    public void ResumeGame() { Time.timeScale = 1f; }
+
+    void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        InitializeUI();
+    }
 }

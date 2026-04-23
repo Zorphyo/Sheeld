@@ -10,6 +10,11 @@ TagManager:
   - Tank
   - Medic
   - Archer
+  - ResolutionDropdown
+  - QualityDropdown
+  - MusicSlider
+  - SFXSlider
+  - FullscreenToggle
   layers:
   - Default
   - TransparentFX

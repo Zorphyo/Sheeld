@@ -727,8 +727,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 407280025}
-        m_TargetAssemblyTypeName: SettingsManagerScript, Assembly-CSharp
+      - m_Target: {fileID: 1665332429}
+        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
         m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
@@ -2189,143 +2189,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 92909957394765440, guid: d0ea1d7c21d4047cf9b3454469c6bb4f, type: 3}
   m_PrefabInstance: {fileID: 402090804}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &407280024
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 545485079}
-    m_Modifications:
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1652.8644
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -101.60275
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -539.801
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: SFXSlider
-      value: 
-      objectReference: {fileID: 1665332419}
-    - target: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: MusicSlider
-      value: 
-      objectReference: {fileID: 1665332420}
-    - target: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: ResDropDown
-      value: 
-      objectReference: {fileID: 1665332416}
-    - target: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: settingsMenuUI
-      value: 
-      objectReference: {fileID: 1665332417}
-    - target: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: QualityDropDown
-      value: 
-      objectReference: {fileID: 1665332421}
-    - target: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: FullScreenToggle
-      value: 
-      objectReference: {fileID: 1665332418}
-    - target: {fileID: 6847109529245229216, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-      propertyPath: m_Name
-      value: SettingsMenu
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
---- !u!114 &407280025 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2876324023208028808, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-  m_PrefabInstance: {fileID: 407280024}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db62770686e756c44838fe5044c0b5b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SettingsManagerScript
---- !u!224 &407280026 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 967687121430126864, guid: d46ff6ce001fdc143aab9033bcb056ef, type: 3}
-  m_PrefabInstance: {fileID: 407280024}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &407661568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,7 +2786,6 @@ RectTransform:
   - {fileID: 1914778283}
   - {fileID: 913399208}
   - {fileID: 174108282}
-  - {fileID: 407280026}
   - {fileID: 1665332415}
   - {fileID: 755519957}
   - {fileID: 1125516417}
@@ -7046,10 +6908,14 @@ PrefabInstance:
     - target: {fileID: 14746308028562579, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 407280025}
+      objectReference: {fileID: 0}
     - target: {fileID: 14746308028562579, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetFullScreen
+      value: SetFullscreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 14746308028562579, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 14746308028562579, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -7058,10 +6924,14 @@ PrefabInstance:
     - target: {fileID: 144997992138266836, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 407280025}
+      objectReference: {fileID: 0}
     - target: {fileID: 144997992138266836, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeMusicVolume
+      value: SetMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 144997992138266836, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1734286758142158199, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7075,13 +6945,25 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2453415532953746791, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_TagString
+      value: ResolutionDropdown
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554582104695385196, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_TagString
+      value: SFXSlider
+      objectReference: {fileID: 0}
     - target: {fileID: 2683985564966196631, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 407280025}
+      objectReference: {fileID: 0}
     - target: {fileID: 2683985564966196631, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetQuality
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683985564966196631, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2748480100290754378, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7103,6 +6985,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4342861741291252279, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_TagString
+      value: FullscreenToggle
+      objectReference: {fileID: 0}
     - target: {fileID: 4554625647921833088, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7110,6 +6996,10 @@ PrefabInstance:
     - target: {fileID: 4554625647921833088, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4711138093451761574, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_TagString
+      value: QualityDropdown
       objectReference: {fileID: 0}
     - target: {fileID: 5337258491271430190, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7138,10 +7028,14 @@ PrefabInstance:
     - target: {fileID: 6707670912331131813, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 407280025}
+      objectReference: {fileID: 0}
     - target: {fileID: 6707670912331131813, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeSFXVolume
+      value: SetSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 6707670912331131813, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7290278588010313856, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_Pivot.x
@@ -7246,7 +7140,7 @@ PrefabInstance:
     - target: {fileID: 7441127718316115156, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 407280025}
+      objectReference: {fileID: 1665332429}
     - target: {fileID: 7441127718316115156, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -7257,7 +7151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7441127718316115156, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SettingsManagerScript, Assembly-CSharp
+      value: SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7441127718316115156, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7271,18 +7165,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7794955483670515413, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_TagString
+      value: MusicSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 407280025}
+      objectReference: {fileID: 0}
     - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeResolution
+      value: SetResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7655760748053604083, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1665332429}
   m_SourcePrefab: {fileID: 100100000, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
 --- !u!224 &1665332415 stripped
 RectTransform:
@@ -7349,6 +7258,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
+--- !u!114 &1665332429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665332417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb63eb688a644f4698f7c40b8aff249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsUI
+  ResDropDown: {fileID: 1665332416}
+  QualityDropDown: {fileID: 1665332421}
+  MusicSlider: {fileID: 1665332420}
+  SFXSlider: {fileID: 1665332419}
+  FullscreenToggle: {fileID: 1665332418}
+  settingsMenuUI: {fileID: 1665332417}
+  mixer: {fileID: 24100000, guid: 708e68d943c7a764d835467d997fac49, type: 2}
 --- !u!1001 &1671786132
 PrefabInstance:
   m_ObjectHideFlags: 0
