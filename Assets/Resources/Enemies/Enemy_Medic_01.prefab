@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2785349526946024345}
   - component: {fileID: 974319665383693257}
   - component: {fileID: 2536132301941031884}
+  - component: {fileID: 2242132049410592760}
   m_Layer: 0
   m_Name: Enemy_Medic_01
   m_TagString: Enemy
@@ -244,6 +245,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2242132049410592760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940719953895527930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1862335a11374fae05a2e3251f5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySoundHandler
+  voice: 0
+  type: 3
+  mixerGroup: {fileID: 2027888447949932597, guid: 708e68d943c7a764d835467d997fac49, type: 2}
 --- !u!1001 &8488196711846185449
 PrefabInstance:
   m_ObjectHideFlags: 0

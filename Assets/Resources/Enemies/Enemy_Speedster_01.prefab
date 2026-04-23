@@ -2015,7 +2015,7 @@ MonoBehaviour:
   maxHealth: 100
   bleedoutTime: 10
   reviveHealthPct: 0.5
-  canEnterDBNO: 1
+  canEnterDBNO: 0
   medicPresent: 0
   isDead: 0
   isDBNO: 0
