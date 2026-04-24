@@ -4,11 +4,11 @@ using UnityEngine.Audio;
 public class EnemySoundHandler : MonoBehaviour
 {
     public enum EnemyVoice { Male, Female }
-    public enum EnemyType  { Basic, Heavy, Archer, Medic }
+    public enum EnemyType { Basic, Heavy, Archer, Medic }
 
     [Header("Identity")]
     public EnemyVoice voice;
-    public EnemyType  type;
+    public EnemyType type;
 
     [Header("Mixer")]
     public AudioMixerGroup mixerGroup;
@@ -30,7 +30,7 @@ public class EnemySoundHandler : MonoBehaviour
         string gender = voice == EnemyVoice.Male ? "male" : "female";
 
         // Every enemy type gets hit and death
-        hit   = Resources.Load<AudioClip>($"Sounds/{gender}/Hit");
+        hit = Resources.Load<AudioClip>($"Sounds/{gender}/Hit");
         death = Resources.Load<AudioClip>($"Sounds/{gender}/Death");
 
         // Type-specific sounds
@@ -41,7 +41,10 @@ public class EnemySoundHandler : MonoBehaviour
                 break;
 
             case EnemyType.Heavy:
-                attack      = Resources.Load<AudioClip>($"Sounds/{gender}/Attack");
+                attack = Resources.Load<AudioClip>($"Sounds/heavy/Attack");
+                hit = Resources.Load<AudioClip>($"Sounds/heavy/Hit");
+                death = Resources.Load<AudioClip>($"Sounds/heavy/Death");
+
                 stomp = Resources.Load<AudioClip>("Sounds/heavy/Stomp");
                 break;
 
@@ -56,16 +59,16 @@ public class EnemySoundHandler : MonoBehaviour
     }
 
     // Shared
-    public void PlayAttackSound()    => audioSource.PlayOneShot(attack);
-    public void PlayHitSound()       => audioSource.PlayOneShot(hit);
-    public void PlayDeathSound()     => audioSource.PlayOneShot(death);
+    public void PlayAttackSound() => audioSource.PlayOneShot(attack);
+    public void PlayHitSound() => audioSource.PlayOneShot(hit);
+    public void PlayDeathSound() => audioSource.PlayOneShot(death);
 
     // Heavy
     public void PlayStompSound() => audioSource.PlayOneShot(stomp);
 
     // Archer
-    public void PlayArrowLoadSound()  => audioSource.PlayOneShot(arrowLoad);
+    public void PlayArrowLoadSound() => audioSource.PlayOneShot(arrowLoad);
 
     // Medic
-    public void PlayHealSound()        => audioSource.PlayOneShot(medicHeal);
+    public void PlayHealSound() => audioSource.PlayOneShot(medicHeal);
 }
