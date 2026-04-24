@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cc19787204cbc5499384b07f4d9ba4d
+guid: a715ddf00ff7f24469c72404e8df85e9
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -22,8 +22,8 @@ AudioImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 262072
-  packageName: Footsteps Small Sound Pack
+  productId: 228835
+  packageName: Free Deadly Kombat
   packageVersion: 1.0
-  assetPath: Assets/Footsteps Small Sound Pack/Dirt/S_Dirt_Mono_Without_Hitting_Boot_7.wav
-  uploadId: 604354
+  assetPath: Assets/Deadly Kombat Free version/face_hit_small_23.wav
+  uploadId: 516598

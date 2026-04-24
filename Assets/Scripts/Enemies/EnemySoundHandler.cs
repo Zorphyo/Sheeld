@@ -25,6 +25,9 @@ public class EnemySoundHandler : MonoBehaviour
     private AudioClip arrowShoot;
     private AudioClip medicHeal;
     private AudioClip footstep;
+    private AudioClip swing;
+    private AudioClip damage;
+
     private float footstepTimer;
     private float footstepInterval;
     private UnityEngine.AI.NavMeshAgent agent;
@@ -41,12 +44,15 @@ public class EnemySoundHandler : MonoBehaviour
 
         hit   = Resources.Load<AudioClip>($"Sounds/{gender}/Hit");
         death = Resources.Load<AudioClip>($"Sounds/{gender}/Death");
-
+        //swing = Resources.Load<AudioClip>("Sounds/basicSwing");
+        damage = Resources.Load<AudioClip>("Sounds/basicDamage");
+        footstep = Resources.Load<AudioClip>($"Sounds/basicFootstep");
+        
         switch (type)
         {
             case EnemyType.Basic:
                 attack   = Resources.Load<AudioClip>($"Sounds/{gender}/Attack");
-                footstep = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
+                swing    = Resources.Load<AudioClip>("Sounds/basicSwing");
                 footstepInterval = basicFootstepInterval;
                 break;
 
@@ -55,6 +61,7 @@ public class EnemySoundHandler : MonoBehaviour
                 hit      = Resources.Load<AudioClip>("Sounds/heavy/Hit");
                 death    = Resources.Load<AudioClip>("Sounds/heavy/Death");
                 stomp    = Resources.Load<AudioClip>("Sounds/heavy/Stomp");
+                swing = Resources.Load<AudioClip>("Sounds/heavy/swing");
                 footstep = Resources.Load<AudioClip>("Sounds/heavy/Footstep");
                 footstepInterval = heavyFootstepInterval;
                 break;
@@ -62,18 +69,15 @@ public class EnemySoundHandler : MonoBehaviour
             case EnemyType.Archer:
                 arrowLoad = Resources.Load<AudioClip>("Sounds/archer/arrowLoad");
                 arrowShoot= Resources.Load<AudioClip>("Sounds/archer/arrowShoot");
-                footstepInterval = basicFootstepInterval;
-                footstep  = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
                 break;
 
             case EnemyType.Medic:
                 medicHeal = Resources.Load<AudioClip>("Sounds/medic/Heal");
-                footstepInterval = basicFootstepInterval;
-                footstep  = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
                 break;
 
             case EnemyType.Speedster:
                 attack   = Resources.Load<AudioClip>($"Sounds/{gender}/Attack");
+                swing    = Resources.Load<AudioClip>("Sounds/basicSwing");
                 footstep = Resources.Load<AudioClip>("Sounds/speedster/Footstep");
                 footstepInterval = speedsterFootstepInterval;
                 break;
@@ -105,10 +109,16 @@ public class EnemySoundHandler : MonoBehaviour
     }
 
     // Shared
-    public void PlayAttackSound()    => audioSource.PlayOneShot(attack);
-    public void PlayHitSound()       => audioSource.PlayOneShot(hit);
+    public void PlayAttackSound() {
+        audioSource.PlayOneShot(attack);
+        audioSource.PlayOneShot(swing);
+    }
+    public void PlayHitSound() {
+        audioSource.PlayOneShot(hit);
+        audioSource.PlayOneShot(damage);
+    } 
     public void PlayDeathSound()     => audioSource.PlayOneShot(death);
-
+  
     // Heavy
     public void PlayStompSound()     => audioSource.PlayOneShot(stomp);
 
