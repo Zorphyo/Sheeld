@@ -22,6 +22,7 @@ public class EnemySoundHandler : MonoBehaviour
     private AudioClip attack, hit, death;
     private AudioClip stomp;
     private AudioClip arrowLoad;
+    private AudioClip arrowShoot;
     private AudioClip medicHeal;
     private AudioClip footstep;
     private float footstepTimer;
@@ -59,12 +60,15 @@ public class EnemySoundHandler : MonoBehaviour
                 break;
 
             case EnemyType.Archer:
-                arrowLoad = Resources.Load<AudioClip>("Sounds/archer/ArrowLoad");
+                arrowLoad = Resources.Load<AudioClip>("Sounds/archer/arrowLoad");
+                arrowShoot= Resources.Load<AudioClip>("Sounds/archer/arrowShoot");
+                footstepInterval = basicFootstepInterval;
                 footstep  = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
                 break;
 
             case EnemyType.Medic:
                 medicHeal = Resources.Load<AudioClip>("Sounds/medic/Heal");
+                footstepInterval = basicFootstepInterval;
                 footstep  = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
                 break;
 
@@ -110,6 +114,7 @@ public class EnemySoundHandler : MonoBehaviour
 
     // Archer
     public void PlayArrowLoadSound() => audioSource.PlayOneShot(arrowLoad);
+    public void PlayArrowShootSound() => audioSource.PlayOneShot(arrowShoot);
 
     // Medic
     public void PlayHealSound()      => audioSource.PlayOneShot(medicHeal);
