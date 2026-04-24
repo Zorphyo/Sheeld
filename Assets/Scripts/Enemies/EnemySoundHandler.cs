@@ -19,6 +19,41 @@ public class EnemySoundHandler : MonoBehaviour
     private AudioClip arrowLoad;
     private AudioClip medicHeal;
 
+    [Header("Footsteps")]
+public float footstepInterval = 0.4f; // time between steps, decrease for faster enemies
+
+private float footstepTimer;
+private AudioClip footstep;
+private UnityEngine.AI.NavMeshAgent agent;
+
+void Start()
+{
+    agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+    string gender = voice == EnemyVoice.Male ? "male" : "female";
+    footstep = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
+    Debug.Log($"[SoundHandler] Footstep loaded: {footstep != null}");
+}
+
+void Update()
+{
+    if (agent == null || footstep == null) return;
+
+    // Only tick when actually moving
+    if (agent.velocity.magnitude > 0.5f)
+    {
+        footstepTimer -= Time.deltaTime;
+        if (footstepTimer <= 0f)
+        {
+            audioSource.PlayOneShot(footstep);
+            footstepTimer = footstepInterval;
+        }
+    }
+    else
+    {
+        footstepTimer = 0f; // reset so first step plays immediately on move
+    }
+}
+
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
