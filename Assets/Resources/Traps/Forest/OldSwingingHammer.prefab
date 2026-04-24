@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 7614681177919706020}
   - component: {fileID: 8714200094477691539}
   m_Layer: 0
-  m_Name: SwingingHammer
+  m_Name: OldSwingingHammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
