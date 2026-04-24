@@ -1791,6 +1791,7 @@ GameObject:
   - component: {fileID: -2749485506657551877}
   - component: {fileID: -5221200786807613066}
   - component: {fileID: -8691948485890250390}
+  - component: {fileID: 6929615564219998111}
   m_Layer: 0
   m_Name: Enemy_Speedster_01
   m_TagString: Enemy
@@ -2046,6 +2047,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353a0a88af9614549b607ab18a1b9bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimationEventReceiver
+--- !u!114 &6929615564219998111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4403654181150536991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa1862335a11374fae05a2e3251f5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySoundHandler
+  voice: 0
+  type: 4
+  mixerGroup: {fileID: 2027888447949932597, guid: 708e68d943c7a764d835467d997fac49, type: 2}
+  footstepInterval: 0.4
 --- !u!1 &4411677762338043546
 GameObject:
   m_ObjectHideFlags: 0
