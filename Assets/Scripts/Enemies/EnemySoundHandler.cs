@@ -12,9 +12,11 @@ public class EnemySoundHandler : MonoBehaviour
 
     [Header("Mixer")]
     public AudioMixerGroup mixerGroup;
-
+    
     [Header("Footsteps")]
-    public float footstepInterval = 0.4f;
+    public float basicFootstepInterval    = 0.4f;
+    public float heavyFootstepInterval    = 0.7f;
+    public float speedsterFootstepInterval = 0.25f;
 
     private AudioSource audioSource;
     private AudioClip attack, hit, death;
@@ -23,6 +25,7 @@ public class EnemySoundHandler : MonoBehaviour
     private AudioClip medicHeal;
     private AudioClip footstep;
     private float footstepTimer;
+    private float footstepInterval;
     private UnityEngine.AI.NavMeshAgent agent;
 
     void Awake()
@@ -43,6 +46,7 @@ public class EnemySoundHandler : MonoBehaviour
             case EnemyType.Basic:
                 attack   = Resources.Load<AudioClip>($"Sounds/{gender}/Attack");
                 footstep = Resources.Load<AudioClip>($"Sounds/{gender}/Footstep");
+                footstepInterval = basicFootstepInterval;
                 break;
 
             case EnemyType.Heavy:
@@ -51,6 +55,7 @@ public class EnemySoundHandler : MonoBehaviour
                 death    = Resources.Load<AudioClip>("Sounds/heavy/Death");
                 stomp    = Resources.Load<AudioClip>("Sounds/heavy/Stomp");
                 footstep = Resources.Load<AudioClip>("Sounds/heavy/Footstep");
+                footstepInterval = heavyFootstepInterval;
                 break;
 
             case EnemyType.Archer:
@@ -66,6 +71,7 @@ public class EnemySoundHandler : MonoBehaviour
             case EnemyType.Speedster:
                 attack   = Resources.Load<AudioClip>($"Sounds/{gender}/Attack");
                 footstep = Resources.Load<AudioClip>("Sounds/speedster/Footstep");
+                footstepInterval = speedsterFootstepInterval;
                 break;
         }
     }
