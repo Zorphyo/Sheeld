@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class SnowballThrowable : Throwable
 {
+    public float SLOW_TIMER;
     public override void EnemyHit(EnemyLocomotion enemy)
     {
         base.EnemyHit(enemy);
@@ -17,7 +18,7 @@ public class SnowballThrowable : Throwable
 
         agent.speed = agent.speed * 0.5f;
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(SLOW_TIMER);
 
         agent.speed = agent.speed * 2;
     }
