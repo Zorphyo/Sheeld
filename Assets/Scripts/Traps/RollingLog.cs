@@ -15,22 +15,32 @@ namespace Traps
             NegativeZ
         }
 
+        public enum LocalLongAxis
+        {
+            LocalX,
+            LocalY,
+            LocalZ
+        }
+
         [Header("Movement")]
-        public float startSpeed = 22f;
-        public float minimumSpeed = 18f;
-        public float speedRecoveryAcceleration = 30f;
+        public float startSpeed = 18f;
+        public float minimumSpeed = 14f;
+        public float speedRecoveryAcceleration = 20f;
+        public float rollTorque = 8f;
 
-        [Tooltip("How strongly the log spins visually while moving.")]
-        public float rollTorque = 20f;
+        [Header("Direction")]
+        public WorldRollDirection rollDirection = WorldRollDirection.NegativeX;
 
-        [Header("Fixed Rolling Direction")]
-        [Tooltip("All logs will roll in this same world direction, no matter how they spawned.")]
-        public WorldRollDirection rollDirection = WorldRollDirection.PositiveZ;
+        [Tooltip("Which LOCAL axis points along the length of the log/capsule.")]
+        public LocalLongAxis logLongAxis = LocalLongAxis.LocalY;
+
+        [Header("Orientation Fix")]
+        public bool forceCorrectLogOrientationOnSpawn = true;
 
         [Header("Grounding")]
-        public float groundStickForce = 35f;
-        public float centerOfMassYOffset = -0.75f;
-        public float maxUpwardVelocity = 1.5f;
+        public float groundStickForce = 45f;
+        public float centerOfMassYOffset = -0.5f;
+        public float maxUpwardVelocity = 1f;
 
         [Header("Damage")]
         public int damageAmount = 10;
@@ -43,6 +53,7 @@ namespace Traps
 
         private Rigidbody rb;
         private Vector3 travelDirection;
+        private Vector3 rollAxis;
         private float lastDamageTime = -999f;
         private float stuckTimer = 0f;
 
@@ -60,6 +71,16 @@ namespace Traps
         private void Start()
         {
             SetTravelDirection();
+
+            // A real log rolls around its long axis.
+            // The long axis must be sideways/perpendicular to the movement direction.
+            rollAxis = Vector3.Cross(Vector3.up, travelDirection).normalized;
+
+            if (forceCorrectLogOrientationOnSpawn)
+            {
+                ForceLogLongAxisToMatchRollAxis();
+            }
+
             Launch();
 
             if (fallbackLifeTime > 0f)
@@ -90,12 +111,42 @@ namespace Traps
             }
         }
 
+        private void ForceLogLongAxisToMatchRollAxis()
+        {
+            Vector3 currentLongAxis = GetCurrentWorldLongAxis();
+
+            if (currentLongAxis == Vector3.zero)
+                return;
+
+            Quaternion correction = Quaternion.FromToRotation(currentLongAxis, rollAxis);
+            transform.rotation = correction * transform.rotation;
+        }
+
+        private Vector3 GetCurrentWorldLongAxis()
+        {
+            switch (logLongAxis)
+            {
+                case LocalLongAxis.LocalX:
+                    return transform.right;
+
+                case LocalLongAxis.LocalY:
+                    return transform.up;
+
+                case LocalLongAxis.LocalZ:
+                    return transform.forward;
+
+                default:
+                    return transform.up;
+            }
+        }
+
         private void Launch()
         {
-            Vector3 velocity = rb.linearVelocity;
-            velocity.x = travelDirection.x * startSpeed;
-            velocity.z = travelDirection.z * startSpeed;
-            rb.linearVelocity = velocity;
+            rb.linearVelocity = new Vector3(
+                travelDirection.x * startSpeed,
+                rb.linearVelocity.y,
+                travelDirection.z * startSpeed
+            );
 
             ApplyRollingTorque();
         }
@@ -134,13 +185,17 @@ namespace Traps
             }
 
             Vector3 desiredFlatVelocity = travelDirection * Mathf.Max(forwardSpeed, minimumSpeed);
-            rb.linearVelocity = new Vector3(desiredFlatVelocity.x, velocity.y, desiredFlatVelocity.z);
+
+            rb.linearVelocity = new Vector3(
+                desiredFlatVelocity.x,
+                velocity.y,
+                desiredFlatVelocity.z
+            );
         }
 
         private void ApplyRollingTorque()
         {
-            Vector3 torqueAxis = Vector3.Cross(Vector3.up, travelDirection).normalized;
-            rb.AddTorque(torqueAxis * rollTorque, ForceMode.Acceleration);
+            rb.AddTorque(rollAxis * rollTorque, ForceMode.Acceleration);
         }
 
         private void HandleStuckCheck()
@@ -179,6 +234,7 @@ namespace Traps
                 return;
 
             IDamageable damageable = other.GetComponent<IDamageable>();
+
             if (damageable == null)
                 return;
 
