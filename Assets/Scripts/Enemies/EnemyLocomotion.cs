@@ -199,7 +199,7 @@ public class EnemyLocomotion : MonoBehaviour, IKnockbackable
         rb.AddForce(direction + new Vector3(0, 0.2f, 2) * force, ForceMode.Impulse);
 
         yield return new WaitForFixedUpdate();
-        yield return new WaitUntil(() => rb.linearVelocity.magnitude < 0.5f);
+        yield return new WaitUntil(() => rb.linearVelocity.magnitude < 2f);
 
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
