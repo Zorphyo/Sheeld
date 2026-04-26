@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public bool interactOkay = false;
     IInteractable currentInteractable;
-    IThrowable currentThrowable;
+    Throwable currentThrowable;
     InteractPopup text;
     public Transform holdPosition;
 
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
             currentInteractable = interactable;
         }
 
-        if (otherGameObject.TryGetComponent<IThrowable>(out IThrowable throwable))
+        if (otherGameObject.TryGetComponent<Throwable>(out Throwable throwable))
         {
             if (!isHolding)
             {

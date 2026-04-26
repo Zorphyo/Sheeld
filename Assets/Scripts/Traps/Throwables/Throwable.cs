@@ -5,7 +5,7 @@ using Core.Interfaces;
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(SphereCollider))]
 
-public class Throwable : MonoBehaviour, IInteractable, IThrowable
+public abstract class Throwable : MonoBehaviour, IInteractable
 {
     SphereCollider collider;
     Rigidbody rb;
@@ -85,7 +85,7 @@ public class Throwable : MonoBehaviour, IInteractable, IThrowable
         }
     }
 
-    public void EnemyHit(EnemyLocomotion enemy)
+    public virtual void EnemyHit(EnemyLocomotion enemy)
     {
         EnemyHealth health = enemy.gameObject.GetComponent<EnemyHealth>();
         health.TakeDamage(DAMAGE);

@@ -79,7 +79,7 @@ PrefabInstance:
       addedObject: {fileID: 2191441663238840730}
     - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 626655eac920442fb998797d244f794f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2381215106450688735}
+      addedObject: {fileID: 9157844186201823638}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 626655eac920442fb998797d244f794f, type: 3}
 --- !u!1 &4082966800244279014 stripped
 GameObject:
@@ -155,7 +155,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 225
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2381215106450688735
+--- !u!114 &9157844186201823638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,9 +164,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4082966800244279014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 8636c77ed7c0f684e803656af10df2aa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Throwable
+  m_EditorClassIdentifier: Assembly-CSharp::BookThrowable
   THROW_FORCE: 20
   HIT_FORCE: 10
   DAMAGE: 10
