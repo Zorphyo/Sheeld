@@ -130,6 +130,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
+--- !u!1 &42846198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 42846200}
+  - component: {fileID: 42846199}
+  m_Layer: 0
+  m_Name: DirectorAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &42846199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42846198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c4b6f2ec9b8504f8bd87a92af08856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DirectorAI
+  chaosSpikesRequiredBase: 3
+  chaosSpikesScaling: 1
+  timeRequiredBase: 60
+  timeRequiredScaling: 15
+  mainMenuScene: MainMenu
+  arenaScenes:
+  - SampleScene
+  roundsPerArena: 030000000500000009000000
+  endlessMode: 0
+  endlessArenaIndex: 0
+  overwhelmThreshold: 40
+  chaosSpikThreshold: 65
+  microBreathThreshold: 85
+  maxAliveEnemies: 25
+  pressureSpawnInterval: 4
+  overwhelmSpawnInterval: 2.5
+  chaosSpikeSpawnInterval: 1.5
+  microBreathSpawnInterval: 8
+  microBreathDuration: 6
+  betweenRoundBreathDuration: 10
+  spikeCooldown: 5
+  killStreakThreshold: 5
+  noDamageTimeThreshold: 20
+  noAttackTimeThreshold: 10
+  lowChaosTimeThreshold: 15
+  spawnMinDistanceFromPlayer: 15
+  spawnMaxDistanceFromPlayer: 40
+  chaosLevel: 0
+--- !u!4 &42846200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42846198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.51618, y: 0, z: -5.3267}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25316326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5972,3 +6044,4 @@ SceneRoots:
   - {fileID: 691100930}
   - {fileID: 420981343}
   - {fileID: 1124420218}
+  - {fileID: 42846200}

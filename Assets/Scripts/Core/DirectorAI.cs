@@ -11,16 +11,23 @@ public class DirectorAI : MonoBehaviour
 
     // ── Round settings ────────────────────────────────────────────────────────
     [Header("Round Settings")]
-    public int totalRounds = 5;
     public int chaosSpikesRequiredBase = 3;
     public int chaosSpikesScaling = 1;
     public float timeRequiredBase = 60f;
     public float timeRequiredScaling = 15f;
     public string mainMenuScene = "MainMenu";
+    private Coroutine spawnRoutine;
 
     [Header("Arena Scenes")]
-    public string[] arenaScenes;   // assign 3 scenes in the inspector
-    public int roundsPerArena = 2; // e.g. rounds 1-2 = arena 1, 3-4 = arena 2, 5 = arena 3
+    public string[] arenaScenes;             // assign 3 scenes in the inspector
+
+    [Header("Arena Rounds")]
+    public int[] roundsPerArena = { 3, 5, 9 }; // arena 1 = 3 rounds, arena 2 = 5, arena 3 = 9
+
+    // ── Endless mode ──────────────────────────────────────────────────────────
+    [Header("Endless Mode")]
+    public bool endlessMode = false;
+    public int endlessArenaIndex = 0;        // which arena to use for endless (set in inspector)
 
     // ── Chaos thresholds ──────────────────────────────────────────────────────
     [Header("Chaos Thresholds")]
@@ -41,6 +48,8 @@ public class DirectorAI : MonoBehaviour
     [Header("Micro-Breath Duration")]
     public float microBreathDuration = 6f;
     public float betweenRoundBreathDuration = 10f;
+    private float lastSpikeTime = -999f;
+    public float spikeCooldown = 5f;
 
     // ── Medic trigger ─────────────────────────────────────────────────────────
     [Header("Medic Trigger — Player Doing Well")]
@@ -49,7 +58,6 @@ public class DirectorAI : MonoBehaviour
     public float noAttackTimeThreshold = 10f;
     public float lowChaosTimeThreshold = 15f;
 
-    // Replace with:
     [Header("Spawn Settings")]
     public float spawnMinDistanceFromPlayer = 15f;
     public float spawnMaxDistanceFromPlayer = 40f;
@@ -67,6 +75,9 @@ public class DirectorAI : MonoBehaviour
     private int chaosSpikesThisRound = 0;
     private float timeInRound = 0f;
     private bool roundEndPending = false;
+
+    // Endless tracking
+    private int endlessWave = 0;
 
     // Performance tracking
     private int killStreak = 0;
@@ -97,13 +108,14 @@ public class DirectorAI : MonoBehaviour
     float RequiredTime => timeRequiredBase + (currentRound - 1) * timeRequiredScaling;
 
     public int CurrentRound => currentRound;
+    public int EndlessWave => endlessWave;
 
     // ── Unity lifecycle ───────────────────────────────────────────────────────
     void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // add this
+        DontDestroyOnLoad(gameObject);
         evaluator = new ChaosEvaluator();
         Roster = new EnemyRoster();
         Traps = new TrapRegistry();
@@ -111,15 +123,8 @@ public class DirectorAI : MonoBehaviour
         LoadEnemyPrefabs();
     }
 
-    void Start()
+    public void StartGame()
     {
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
-        if (p != null)
-        {
-            player = p.transform;
-            playerStats = p.GetComponent<PlayerStats>();
-        }
-
         StartCoroutine(RunGame());
     }
 
@@ -166,39 +171,86 @@ public class DirectorAI : MonoBehaviour
     }
 
     // ── Game loop ─────────────────────────────────────────────────────────────
+    IEnumerator FindPlayer()
+    {
+        while (player == null)
+        {
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null)
+            {
+                player = p.transform;
+                playerStats = p.GetComponent<PlayerStats>();
+            }
+            yield return null;
+        }
+    }
+
     IEnumerator RunGame()
     {
-        for (int round = 1; round <= totalRounds; round++)
+        if (endlessMode)
+            yield return StartCoroutine(RunEndless());
+        else
+            yield return StartCoroutine(RunCampaign());
+    }
+
+    IEnumerator RunCampaign()
+    {
+        int globalRound = 1;
+
+        for (int arenaIndex = 0; arenaIndex < arenaScenes.Length; arenaIndex++)
         {
-            int arenaIndex = (round - 1) / roundsPerArena;
-            arenaIndex = Mathf.Clamp(arenaIndex, 0, arenaScenes.Length - 1);
+            yield return StartCoroutine(LoadArena(arenaIndex));
 
-            // Load a new arena at the start of round 1, and whenever the index changes
-            if (round == 1 || (round - 1) % roundsPerArena == 0)
-                yield return StartCoroutine(LoadArena(arenaIndex));
+            int roundsInThisArena = roundsPerArena[arenaIndex];
 
-            yield return StartCoroutine(RunRound(round));
+            for (int arenaRound = 1; arenaRound <= roundsInThisArena; arenaRound++)
+            {
+                yield return StartCoroutine(RunRound(globalRound));
 
-            if (round < totalRounds)
-                yield return StartCoroutine(RunBetweenRound());
+                bool isLastRoundOfArena = arenaRound == roundsInThisArena;
+                bool isLastArena = arenaIndex == arenaScenes.Length - 1;
+
+                if (!isLastRoundOfArena || !isLastArena)
+                    yield return StartCoroutine(RunBetweenRound());
+
+                globalRound++;
+            }
         }
 
+        // All arenas complete
         yield return StartCoroutine(RunBetweenRound());
         SceneManager.LoadScene(mainMenuScene);
+    }
+
+    IEnumerator RunEndless()
+    {
+        endlessWave = 0;
+
+        int clampedArena = Mathf.Clamp(endlessArenaIndex, 0, arenaScenes.Length - 1);
+        yield return StartCoroutine(LoadArena(clampedArena));
+
+        while (true) // runs until player dies
+        {
+            endlessWave++;
+            Debug.Log($"[Director] Endless Wave {endlessWave} started.");
+
+            yield return StartCoroutine(RunRound(endlessWave));
+            yield return StartCoroutine(RunBetweenRound());
+        }
     }
 
     IEnumerator LoadArena(int index)
     {
         yield return SceneManager.LoadSceneAsync(arenaScenes[index]);
 
-        MedicManager.Instance?.ClearForNewArena(); // add this
+        MedicManager.Instance?.ClearForNewArena();
 
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
-        if (p != null)
-        {
-            player = p.transform;
-            playerStats = p.GetComponent<PlayerStats>();
-        }
+        player = null;
+        yield return StartCoroutine(FindPlayer());
+
+        // play the flyover before the round starts
+        if (ArenaIntroCamera.Instance != null)
+            yield return StartCoroutine(ArenaIntroCamera.Instance.PlayIntro());
 
         Roster.Clear();
         Traps.Clear();
@@ -216,10 +268,15 @@ public class DirectorAI : MonoBehaviour
         Debug.Log($"[Director] Round {round} started — " +
                   $"need {RequiredSpikes} spikes + {RequiredTime}s");
 
-        StartCoroutine(SpawnLoop());
+        if (spawnRoutine != null)
+            StopCoroutine(spawnRoutine);
+
+        spawnRoutine = StartCoroutine(SpawnLoop());
 
         yield return new WaitUntil(() => roundEndPending);
 
+        if (spawnRoutine != null)
+            StopCoroutine(spawnRoutine);
         Debug.Log($"[Director] Round {round} complete.");
     }
 
@@ -234,7 +291,7 @@ public class DirectorAI : MonoBehaviour
         yield return new WaitForSeconds(betweenRoundBreathDuration);
 
         microBreathActive = false;
-        chaosLevel = 0f;
+        chaosLevel = Mathf.Lerp(chaosLevel, 0f, 0.8f);
         betweenRounds = false;
     }
 
@@ -291,8 +348,12 @@ public class DirectorAI : MonoBehaviour
         Debug.Log($"[Director] → {state} | Chaos: {chaosLevel:F1} | " +
                   $"Round: {currentRound} | Spikes: {chaosSpikesThisRound}/{RequiredSpikes}");
 
-        if (state == DirectorState.ChaosSpike)
+        if (state == DirectorState.ChaosSpike &&
+            Time.time - lastSpikeTime > spikeCooldown)
+        {
             chaosSpikesThisRound++;
+            lastSpikeTime = Time.time;
+        }
 
         if (state == DirectorState.MicroBreath)
         {
@@ -341,18 +402,32 @@ public class DirectorAI : MonoBehaviour
                 break;
 
             case DirectorState.ChaosSpike:
-                Spawn(RandomFrom(basicPrefabs));
-                if (Random.value < 0.6f) Spawn(RandomFrom(speedsterPrefabs));
-                if (Random.value < 0.4f) Spawn(RandomFrom(heavyPrefabs));
+            {
+                int spawnCount = 1;
+
+                if (Random.value < 0.6f) spawnCount++;
+                if (Random.value < 0.4f) spawnCount++;
+
+                spawnCount = Mathf.Min(spawnCount, 2); // cap burst
+
+                for (int i = 0; i < spawnCount; i++)
+                {
+                    float roll = Random.value;
+
+                    if (roll < 0.5f) Spawn(RandomFrom(basicPrefabs));
+                    else if (roll < 0.8f) Spawn(RandomFrom(speedsterPrefabs));
+                    else Spawn(RandomFrom(heavyPrefabs));
+                }
+
                 if (!medicSpawned && ShouldSpawnMedic())
                 {
                     Spawn(RandomFrom(medicPrefabs));
                     medicSpawned = true;
                 }
                 break;
+            }
 
             case DirectorState.MicroBreath:
-                if (Random.value < 0.4f) Spawn(RandomFrom(basicPrefabs));
                 break;
         }
     }
@@ -388,18 +463,14 @@ public class DirectorAI : MonoBehaviour
 
     bool TryGetSpawnPosition(out Vector3 result)
     {
-        // Try up to 10 times to find a valid NavMesh position
         for (int i = 0; i < 10; i++)
         {
-            // Pick a random direction and distance from the player
             Vector2 randomCircle = Random.insideUnitCircle.normalized;
-            float distance = Random.Range(spawnMinDistanceFromPlayer,
-                                                spawnMaxDistanceFromPlayer);
+            float distance = Random.Range(spawnMinDistanceFromPlayer, spawnMaxDistanceFromPlayer);
 
             Vector3 candidate = player.position + new Vector3(
                 randomCircle.x, 0f, randomCircle.y) * distance;
 
-            // Snap to NavMesh
             if (NavMesh.SamplePosition(candidate, out NavMeshHit hit, 5f, NavMesh.AllAreas))
             {
                 result = hit.position;
@@ -485,4 +556,18 @@ public class DirectorAI : MonoBehaviour
     }
 
     public void OnEnemyAttacked() => timeSinceLastAttack = 0f;
+
+    // ── Restart ───────────────────────────────────────────────────────────────
+public void RestartFromRound(int round = 1)
+{
+    StopAllCoroutines();
+    currentRound = 0;
+    endlessWave = 0;
+    chaosLevel = 0f;
+    chaosSpikesThisRound = 0;
+    lastSpikeTime = -999f;
+    Roster.Clear();
+    ResetPerformanceTracking();
+    StartGame(); 
+}
 }

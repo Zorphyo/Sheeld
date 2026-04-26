@@ -13,6 +13,8 @@ public class SceneManagerScript : MonoBehaviour
     {
         deathPopup.SetActive(true);
         Time.timeScale = 0f;
+        // stop the director
+        DirectorAI.Instance?.StopAllCoroutines();
     }
 
     public void OnPlayerWin()
@@ -21,8 +23,17 @@ public class SceneManagerScript : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        // reload current scene and let director resume
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void EndGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 

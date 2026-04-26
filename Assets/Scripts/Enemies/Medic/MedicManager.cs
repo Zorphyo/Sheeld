@@ -14,7 +14,10 @@ public class MedicManager : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        DontDestroyOnLoad(gameObject); // add this
+        
+        // detach from parent before calling DontDestroyOnLoad
+        transform.SetParent(null);
+        DontDestroyOnLoad(gameObject);
     }
 
     // ── Medic registration (called by MedicAI) ────────────────────────────────
