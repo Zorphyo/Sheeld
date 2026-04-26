@@ -182,21 +182,12 @@ public class EnemyLocomotion : MonoBehaviour, IKnockbackable
         animator.SetFloat(SpeedID, smoothVelocity.magnitude);
     }
 
-    /*public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("WalkableFloor"))
-        {
-            agent.enabled = true;
-            knockbackable = true;
-        }
-    }*/
-
     public void Knockback(Vector3 direction, float force)
     {
-        StartCoroutine(ApplyShieldBashKnockback(direction, force));
+        StartCoroutine(ApplyKnockback(direction, force));
     }
 
-    public IEnumerator ApplyShieldBashKnockback(Vector3 direction, float force)
+    public IEnumerator ApplyKnockback(Vector3 direction, float force)
     {
         yield return null;
 
@@ -208,7 +199,7 @@ public class EnemyLocomotion : MonoBehaviour, IKnockbackable
         rb.AddForce(direction + new Vector3(0, 0.2f, 2) * force, ForceMode.Impulse);
 
         yield return new WaitForFixedUpdate();
-        yield return new WaitUntil(() => rb.linearVelocity.magnitude < 0.1f);
+        yield return new WaitUntil(() => rb.linearVelocity.magnitude < 0.5f);
 
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;

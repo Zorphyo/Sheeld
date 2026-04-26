@@ -80,17 +80,6 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         HandleRotation(inputVector);
     }
 
-    /*public void OnCollisionEnter(Collision collision)
-    {
-        GameObject otherGameObject = collision.gameObject;
-
-        if (otherGameObject.TryGetComponent<EnemyLocomotion>(out EnemyLocomotion enemy))
-        {
-            Vector3 launchDirection = enemy.transform.position - transform.position;
-            enemy.Knockback(launchDirection, KNOCKBACK_FORCE);
-        }
-    }*/
-
     public void OnTriggerEnter(Collider other)
     {
         GameObject otherGameObject = other.gameObject;

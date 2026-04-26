@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_Name
-      value: Book 1
+      value: Book
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.018
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.018
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.018
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.34
+      value: -3.8801227
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.675
+      value: 7.554426
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.55614
+      value: 49.75
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 626655eac920442fb998797d244f794f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,6 +70,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 626655eac920442fb998797d244f794f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 906279668807948624}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 626655eac920442fb998797d244f794f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7725404042513324713}
     - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 626655eac920442fb998797d244f794f, type: 3}
       insertIndex: -1
@@ -83,6 +86,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: 626655eac920442fb998797d244f794f, type: 3}
   m_PrefabInstance: {fileID: 1982245213950122845}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &906279668807948624
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082966800244279014}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &7725404042513324713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,7 +153,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 225
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2381215106450688735
 MonoBehaviour:
@@ -137,4 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Throwable
-  THROW_FORCE: 2.04
+  THROW_FORCE: 20
+  HIT_FORCE: 10
+  DAMAGE: 10
