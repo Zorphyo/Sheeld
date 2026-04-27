@@ -79,7 +79,7 @@ public abstract class Throwable : MonoBehaviour, IInteractable
             rb.AddForce((player.transform.forward + new Vector3(0, 0.3f, 0)) * THROW_FORCE, ForceMode.Impulse);
 
             yield return new WaitForFixedUpdate();
-            yield return new WaitUntil(() => rb.linearVelocity.magnitude < 0.1f);
+            yield return new WaitUntil(() => rb.linearVelocity.magnitude < 0.5f);
 
             thrown = false;
         }

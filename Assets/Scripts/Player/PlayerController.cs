@@ -86,9 +86,9 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
         if (otherGameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
-            text.EnablePopUp();
             interactOkay = true;
             currentInteractable = interactable;
+            text.EnablePopUp();
         }
 
         if (otherGameObject.TryGetComponent<Throwable>(out Throwable throwable))
@@ -112,9 +112,9 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
         if (otherGameObject.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
-            text.DisablePopUp();
             interactOkay = false;
             currentInteractable = null;
+            text.DisablePopUp();
         }
     }
 
