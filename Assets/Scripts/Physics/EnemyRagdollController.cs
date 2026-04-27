@@ -105,9 +105,11 @@ public class EnemyRagdollController : MonoBehaviour
         return closest;
     }
 
-    public void Knockback(Vector3 force, Vector3 hitPoint)
+    public void Knockback(Vector3 force, Vector3 hitPoint, float duration)
     {
         Launch(force, hitPoint);
+
+        Invoke(nameof(RecoverFromSlip), duration);
     }
 
     public void Explosion(Vector3 explosionPosition, float force, float radius, float upwardModifier)
