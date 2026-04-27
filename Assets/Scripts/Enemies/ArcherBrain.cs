@@ -113,8 +113,15 @@ public class ArcherBrain : MonoBehaviour
             Arrow arrow = arrowObj.GetComponent<Arrow>();
             if (arrow != null)
             {
-                // Launch in archer's current forward direction
-                arrow.Launch(transform.forward);
+                Vector3 targetPos = player.position + Vector3.up * 1f;
+                Vector3 aimDir = (targetPos - firePoint.position).normalized;
+
+                // Add slight upward loft scaled by distance
+                float distance = Vector3.Distance(firePoint.position, targetPos);
+                float loft = Mathf.Clamp(distance / 30f, 0f, 0.3f); // max 0.3 loft
+                aimDir = (aimDir + Vector3.up * loft).normalized;
+
+                arrow.Launch(aimDir);
             }
         }
     }

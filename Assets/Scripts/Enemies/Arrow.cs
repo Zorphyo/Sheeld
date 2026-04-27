@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float speed = 25f;       // initial forward speed
-    public float lifetime = 5f;     // auto-destroy
+    public float speed = 25f;
+    public float lifetime = 5f;
     public int damage = 10;
 
     private Rigidbody rb;
     private bool hasHit = false;
+
+    // For sticking without parenting
+    private Transform stuckTarget;
+    private Vector3 offset;
+
+    private static readonly Quaternion meshOffset = Quaternion.Euler(90f, 0f, 0f);
 
     void Awake()
     {
@@ -18,16 +24,12 @@ public class Arrow : MonoBehaviour
     // Call this after instantiating
     public void Launch(Vector3 direction)
     {
-        // Ensure direction is normalized
+        Debug.Log("Launch direction: " + direction);
         direction.Normalize();
 
-        // Set initial velocity
         rb.linearVelocity = direction * speed;
+        transform.rotation = Quaternion.LookRotation(direction) * meshOffset;
 
-        // Align arrow to direction immediately
-        transform.rotation = Quaternion.LookRotation(direction);
-
-        // Destroy after lifetime
         Destroy(gameObject, lifetime);
     }
 
@@ -35,10 +37,19 @@ public class Arrow : MonoBehaviour
     {
         if (hasHit) return;
 
-        // Only rotate along velocity if moving
         if (rb.linearVelocity.sqrMagnitude > 0.1f)
         {
-            transform.rotation = Quaternion.LookRotation(rb.linearVelocity);
+            Quaternion targetRotation = Quaternion.LookRotation(rb.linearVelocity) * meshOffset;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 10f);
+        }
+    }
+
+    void LateUpdate()
+    {
+        // Follow target position ONLY (ignore rotation)
+        if (stuckTarget != null)
+        {
+            transform.position = stuckTarget.position + offset;
         }
     }
 
@@ -52,8 +63,15 @@ public class Arrow : MonoBehaviour
             if (ph != null) ph.TakeDamage(damage);
         }
 
+        // Stop physics completely
         rb.isKinematic = true;
-        transform.parent = other.transform;
+        rb.linearVelocity = Vector3.zero;
+        rb.detectCollisions = false;
+
+        // Store target + offset
+        stuckTarget = other.transform;
+        offset = transform.position - stuckTarget.position;
+
         hasHit = true;
 
         Destroy(gameObject, 5f);
