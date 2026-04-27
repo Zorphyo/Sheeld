@@ -131,10 +131,8 @@ namespace Traps.SwingingHammer
             if (damageZone == null)
                 return;
 
-            bool active = currentAngle <= damageStartAngle && currentAngle >= damageEndAngle;
-            damageZone.enabled = active;
+            damageZone.enabled = true;
         }
-
         private void SetPivotAngle(float angle)
         {
             Vector3 euler = pivot.localEulerAngles;

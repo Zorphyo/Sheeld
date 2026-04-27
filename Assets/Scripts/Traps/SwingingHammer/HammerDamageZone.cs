@@ -15,6 +15,8 @@ namespace Traps.SwingingHammer
 
         private void OnTriggerStay(Collider other)
         {
+            Debug.Log("DamageZone touching: " + other.name, this);
+            
             IDamageable damageable = other.GetComponentInParent<IDamageable>();
             if (damageable == null)
                 return;

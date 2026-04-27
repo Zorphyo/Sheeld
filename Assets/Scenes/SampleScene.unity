@@ -2293,7 +2293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Throwable
-  THROW_FORCE: 25
 --- !u!135 &271222397
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4110,7 +4109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Throwable
-  THROW_FORCE: 25
 --- !u!135 &402090807
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7023,7 +7021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Throwable
-  THROW_FORCE: 25
 --- !u!135 &766315884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12101,14 +12098,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c4b6f2ec9b8504f8bd87a92af08856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DirectorAI
-  totalRounds: 5
   chaosSpikesRequiredBase: 3
   chaosSpikesScaling: 1
   timeRequiredBase: 60
   timeRequiredScaling: 15
   mainMenuScene: MainMenu
   arenaScenes: []
-  roundsPerArena: 2
+  roundsPerArena: 
+  endlessMode: 0
+  endlessArenaIndex: 0
   overwhelmThreshold: 40
   chaosSpikThreshold: 65
   microBreathThreshold: 85
@@ -12119,6 +12117,7 @@ MonoBehaviour:
   microBreathSpawnInterval: 8
   microBreathDuration: 6
   betweenRoundBreathDuration: 10
+  spikeCooldown: 5
   killStreakThreshold: 5
   noDamageTimeThreshold: 20
   noAttackTimeThreshold: 10
@@ -17855,7 +17854,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a941b4966a7c97b49ab395b4067338c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Throwable
-  THROW_FORCE: 25
 --- !u!135 &2050792364
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19221,6 +19219,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a7540b6074a841bd8d4a358cd1e26b3, type: 3}
+--- !u!1001 &3547651617592712228
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 136865342826836272, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_Name
+      value: DEMOSwingingAxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -207.06303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -22.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -156.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658895159416303235, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
 --- !u!1 &3940927042991944322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8165018445522277229, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
@@ -19588,3 +19643,4 @@ SceneRoots:
   - {fileID: 1246889556}
   - {fileID: 2707250289155583948}
   - {fileID: 3103748794814631698}
+  - {fileID: 3547651617592712228}
