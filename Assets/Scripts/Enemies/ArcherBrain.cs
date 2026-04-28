@@ -48,7 +48,7 @@ public class ArcherBrain : MonoBehaviour
         if (moveDelayTimer > 0f)
         {
             moveDelayTimer -= Time.deltaTime;
-            agent.isStopped = true;
+            StopAgent(); 
         }
         else if (!isFiring)
         {
@@ -79,6 +79,12 @@ public class ArcherBrain : MonoBehaviour
             drawAmount = Mathf.Clamp01(drawAmount);
             anim.SetFloat("DrawAmount", drawAmount);
         }
+    }
+
+    void StopAgent()
+    {
+    agent.isStopped = true;
+    agent.velocity = Vector3.zero;
     }
 
     void HandleMovement(float distance)
@@ -126,29 +132,31 @@ public class ArcherBrain : MonoBehaviour
         }
     }
 
+    private bool fireAnimComplete = false;
+
+    // Add this method (called by the StateMachineBehaviour)
+    public void OnFireAnimationComplete()
+    {
+        fireAnimComplete = true;
+    }
+
     private IEnumerator FireArrowRoutine()
     {
         isFiring = true;
-        agent.isStopped = true;
+        fireAnimComplete = false;
+        StopAgent();
         anim.SetTrigger("Fire");
 
-        // Small delay to start animation
-        yield return new WaitForSeconds(0.1f);
+        // Wait for Release state to fully exit
+        yield return new WaitUntil(() => fireAnimComplete);
 
-        // Spawn arrow
         Shoot();
         shootTimer = shootCooldown;
 
-        // Pause movement after firing
-        moveDelayTimer = postFireDelay;
-
-        // Wait for animation to finish
-        yield return new WaitForSeconds(0.2f);
-
-        // Reset draw
         drawAmount = 0f;
         anim.SetFloat("DrawAmount", drawAmount);
 
+        moveDelayTimer = postFireDelay;
         isFiring = false;
     }
 }
