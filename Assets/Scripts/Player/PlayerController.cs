@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     [HideInInspector] public bool isShieldBashing = false;
     [HideInInspector] public bool isHolding = false;
 
-    public bool interactOkay = false;
+    [HideInInspector] public bool interactOkay = false;
     IInteractable currentInteractable;
     Throwable currentThrowable;
     InteractPopup text;
@@ -57,7 +57,6 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         pia.Player.Block.canceled += BlockCanceled;
         pia.Player.Dodge.performed += DodgePerformed;
         pia.Player.ShieldBash.performed += ShieldBashPerformed;
-        pia.Player.ShieldBash.Disable();
         pia.Player.Interact.started += InteractStarted;
         pia.Player.Throw.started += ThrowStarted;
     }
@@ -190,28 +189,24 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     {
         if (!ps.staminaLockout)
         {
-            isSprinting = true;
-            ps.staminaRegen = false;   
+            isSprinting = true;  
         }
     }
 
     public void SprintCanceled(InputAction.CallbackContext context)
     {
         isSprinting = false;
-        ps.staminaRegen = true;
     }
 
     public void BlockPerformed(InputAction.CallbackContext context)
     {
         isBlocking = true;
-        pia.Player.ShieldBash.Enable();
         pia.Player.Throw.Disable();
     }
 
     public void BlockCanceled(InputAction.CallbackContext context)
     {
         isBlocking = false;
-        pia.Player.ShieldBash.Disable();
         pia.Player.Throw.Enable();
     }
 
@@ -222,8 +217,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
             isDodging = true;
             rb.AddForce(transform.forward * DODGE_FORCE, ForceMode.Impulse);
             ps.ChangeStamina(-ps.DODGE_STAMINA_COST);
-            ps.staminaRegen = false;
-            pia.Player.Dodge.Disable();
+            pia.Player.Disable();
         }
 
         StartCoroutine(DodgeTimer());
@@ -231,30 +225,27 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     IEnumerator DodgeTimer()
     {           
-        yield return new WaitForSeconds((1.433f - 0.35825f) + 0.1f);
+        yield return new WaitForSeconds(1f);
 
         isDodging = false;
 
-        if (!ps.staminaLockout)
-        {
-            pia.Player.Dodge.Enable();
+        pia.Player.Enable();
 
-            if (!isSprinting)
-            {
-                ps.staminaRegen = true;
-            }
+        if (ps.staminaLockout)
+        {
+            NoMoreStamina();
         }
     }
 
     public void ShieldBashPerformed(InputAction.CallbackContext context)
     {
+        Debug.Log("test");
         if (isBlocking)
         {
             isShieldBashing = true;
             rb.AddForce(transform.forward * SHIELD_BASH_FORCE, ForceMode.Impulse);
             ps.ChangeStamina(-ps.SHIELD_BASH_STAMINA_COST);
-            ps.staminaRegen = false;
-            pia.Player.ShieldBash.Disable();
+            pia.Player.Disable();
         }
 
         StartCoroutine(ShieldBashTimer());
@@ -262,18 +253,15 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     IEnumerator ShieldBashTimer()
     {           
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.1f);
 
         isShieldBashing = false;
 
-        if (!ps.staminaLockout)
-        {
-            pia.Player.ShieldBash.Enable();
+        pia.Player.Enable();
 
-            if (!isSprinting)
-            {
-                ps.staminaRegen = true;
-            }
+        if (ps.staminaLockout)
+        {
+            NoMoreStamina();
         }
     }
 

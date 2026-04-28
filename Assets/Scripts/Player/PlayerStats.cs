@@ -18,7 +18,6 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     [HideInInspector] public int currentHealth;
     [HideInInspector] public int currentStamina;
-    [HideInInspector] public bool staminaRegen = true;
     [HideInInspector] public bool staminaLockout = false;
 
     UnityEvent Death;
@@ -80,7 +79,6 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (currentStamina <= 0)
         {
             currentStamina = 0;
-            staminaRegen = false;
             staminaLockout = true;
 
             pc.NoMoreStamina();
@@ -95,7 +93,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
         {
             yield return new WaitForSeconds(0.75f);
 
-            if (staminaRegen && !staminaLockout && !pc.isSprinting && !pc.isBlocking && currentStamina < MAX_STAMINA)
+            if (!staminaLockout && !pc.isSprinting && !pc.isBlocking && !pc.isShieldBashing && currentStamina < MAX_STAMINA)
             {
                 ChangeStamina(amount);
             }
@@ -109,7 +107,6 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (currentStamina == MAX_STAMINA)
         {
             CancelInvoke("StaminaRecharge");
-            staminaRegen = true;
             staminaLockout = false;
 
             pc.RegainedStamina();
@@ -122,7 +119,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
         {
             yield return new WaitForSeconds(0.25f);
 
-            if (!staminaRegen && !staminaLockout && !pc.isBlocking && !pc.isDodging && currentStamina > 0)
+            if (pc.isSprinting && !pc.isBlocking && !pc.isDodging && !pc.isShieldBashing && currentStamina > 0)
             {
                 ChangeStamina(amount);
             }
@@ -131,7 +128,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        staminaRegen = false;
+        staminaLockout = true;
 
         if(sceneManager != null)
         {
@@ -143,13 +140,14 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-    if (pc.isBlocking)
-    {
-        ChangeStamina(-amount);
-    }
-    else
-    {
-        ChangeHealth(-amount);
-    }
+        if (pc.isBlocking)
+        {
+            ChangeStamina(-amount);
+        }
+
+        else
+        {
+            ChangeHealth(-amount);
+        }
     }
 }
