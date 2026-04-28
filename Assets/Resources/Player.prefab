@@ -200,7 +200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.73
+      value: 7.67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d666a37927626c74cae1be0de003195f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -300,7 +300,7 @@ MonoBehaviour:
   SPRINT_SPEED: 15
   BLOCKING_SPEED: 0
   ROTATION_SPEED: 10
-  JUMP_FORCE: 5
+  JUMP_FORCE: 10
   DODGE_FORCE: 70
   SHIELD_BASH_FORCE: 70
   KNOCKBACK_FORCE: 5
