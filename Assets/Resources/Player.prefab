@@ -298,11 +298,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   RUN_SPEED: 10
   SPRINT_SPEED: 15
-  BLOCKING_SPEED: 2.5
-  ROTATION_SPEED: 7
+  BLOCKING_SPEED: 0
+  ROTATION_SPEED: 10
   JUMP_FORCE: 5
-  DODGE_FORCE: 10
-  SHIELD_BASH_FORCE: 20
+  DODGE_FORCE: 70
+  SHIELD_BASH_FORCE: 70
   KNOCKBACK_FORCE: 5
   isSprinting: 0
   isBlocking: 0
@@ -346,7 +346,6 @@ MonoBehaviour:
   SHIELD_BASH_STAMINA_COST: 25
   currentHealth: 0
   currentStamina: 0
-  staminaRegen: 1
   staminaLockout: 0
 --- !u!54 &4085181678890531512
 Rigidbody:
@@ -356,8 +355,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57677947303201897}
   serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
+  m_Mass: 2
+  m_LinearDamping: 1.4
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
