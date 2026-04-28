@@ -10,19 +10,43 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("PhotoScene", LoadSceneMode.Additive);
     }
 
-    public void Play()
+    public void PlayStandard()
     {
         if (DirectorAI.Instance != null)
         {
+            GameSession.CurrentMode = GameMode.Standard;
             DirectorAI.Instance.endlessMode = false;
             DirectorAI.Instance.StartGame();
         }
     }
 
-    public void PlayEndless()
+    public void PlayEndlessForest()
     {
         if (DirectorAI.Instance != null)
         {
+            GameSession.CurrentMode = GameMode.EndlessForest;
+            DirectorAI.Instance.endlessMode = true;
+            DirectorAI.Instance.StartGame();
+        }
+    }
+
+    //Change to actually go to icy
+    public void PlayEndlessIcy()
+    {
+        if (DirectorAI.Instance != null)
+        {
+            GameSession.CurrentMode = GameMode.EndlessIcy;
+            DirectorAI.Instance.endlessMode = true;
+            DirectorAI.Instance.StartGame();
+        }
+    }
+
+    //Change to actually go to lava
+    public void PlayEndlessLava()
+    {
+        if (DirectorAI.Instance != null)
+        {
+            GameSession.CurrentMode = GameMode.EndlessLava;
             DirectorAI.Instance.endlessMode = true;
             DirectorAI.Instance.StartGame();
         }

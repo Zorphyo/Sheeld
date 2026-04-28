@@ -9,9 +9,12 @@ public class SceneManagerScript : MonoBehaviour
     private float _timeToWaitBeforeExit;
     public GameObject deathPopup;
     public GameObject winPopup;
+    public ScoreManagerScript scoreManager;
+
     public void OnPlayerDeath()
     {
         deathPopup.SetActive(true);
+        scoreManager.EndRun();
         Time.timeScale = 0f;
         // stop the director
         DirectorAI.Instance?.StopAllCoroutines();
@@ -20,6 +23,7 @@ public class SceneManagerScript : MonoBehaviour
     public void OnPlayerWin()
     {
         winPopup.SetActive(true);
+        scoreManager.EndRun();
         Time.timeScale = 0f;
     }
 

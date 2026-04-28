@@ -39,14 +39,6 @@ public class SettingsManagerScript : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("=== SETTINGS MANAGER START ===");
-
-        Debug.Log("ResDropDown: " + (ResDropDown == null ? "NULL ❌" : "OK ✅"));
-        Debug.Log("QualityDropDown: " + (QualityDropDown == null ? "NULL ❌" : "OK ✅"));
-        Debug.Log("MusicSlider: " + (MusicSlider == null ? "NULL ❌" : "OK ✅"));
-        Debug.Log("SFXSlider: " + (SFXSlider == null ? "NULL ❌" : "OK ✅"));
-        Debug.Log("FullScreenToggle: " + (FullScreenToggle == null ? "NULL ❌" : "OK ✅"));
-
         InitializeUI();
     }
 
@@ -68,7 +60,7 @@ public class SettingsManagerScript : MonoBehaviour
 
         foreach (var res in AllResolutions)
         {
-            string option = res.width + " x " + res.height;
+            string option = res.width + "   x   " + res.height;
 
             if (!options.Contains(option))
             {
@@ -79,8 +71,6 @@ public class SettingsManagerScript : MonoBehaviour
 
         ResDropDown.AddOptions(options);
     }
-
-    // ===== SETTINGS =====
 
     public void SetQuality(int qualityIndex)
     {
@@ -177,7 +167,6 @@ public class SettingsManagerScript : MonoBehaviour
         }
     }
 
-    // ===== PAUSE SYSTEM =====
 
     public void PauseGame()
     {

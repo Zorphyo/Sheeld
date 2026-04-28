@@ -2986,8 +2986,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
+  m_sharedMaterial: {fileID: 3146678896507181104, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3557,8 +3557,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
+  m_sharedMaterial: {fileID: 3146678896507181104, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5501,6 +5501,7 @@ Transform:
   - {fileID: 1953588419}
   - {fileID: 1342611242}
   - {fileID: 1672421792}
+  - {fileID: 1783760096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623031372
@@ -5809,6 +5810,18 @@ PrefabInstance:
     - target: {fileID: 7794955483670515413, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_TagString
       value: MusicSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342065407826708193, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
+    - target: {fileID: 8342065407826708193, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3146678896507181104, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
+    - target: {fileID: 8342065407826708193, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -6206,6 +6219,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762767859}
   m_CullTransparentMesh: 1
+--- !u!1 &1783760095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783760096}
+  - component: {fileID: 1783760097}
+  m_Layer: 0
+  m_Name: ScoreSystemManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1783760096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783760095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1586802436}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783760097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783760095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0a0aed2c9e2e349a213242573acadf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManagerScript
+  finalScore: 0
+  timeSurvived: 2
+  wavesCompleted: 0
 --- !u!1001 &1788688425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6510,8 +6570,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100/100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
+  m_sharedMaterial: {fileID: 3146678896507181104, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6841,6 +6901,7 @@ MonoBehaviour:
   _timeToWaitBeforeExit: 0.5
   deathPopup: {fileID: 755519956}
   winPopup: {fileID: 1125516416}
+  scoreManager: {fileID: 1783760097}
 --- !u!1 &2028516186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6881,8 +6942,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100/100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
+  m_sharedMaterial: {fileID: 3146678896507181104, guid: 67410e5307383634d9396baa0b8d5fc6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
