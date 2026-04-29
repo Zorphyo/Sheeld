@@ -46,26 +46,24 @@ public class ScoreManager : MonoBehaviour
         damageDealt += damageAmount;
         lastDamageTime = Time.time;
 
-        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
-
-        Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone}");
+        ChangeScore();
     }
 
     public void WaveCompleted()
     {
         wavesDone++;
-
-        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
-
-        Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone}");
+        ChangeScore();
     }
 
     public void TrapUsed()
     {
         trapsUsed++;
+        ChangeScore();
+    }
 
-        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
-
+    public void ChangeScore()
+    {
+        score = Mathf.CeilToInt((float)((damageDealt * (1 + 0.05 * trapsUsed)) + (1.3f * (1 + multiHit)) + (20 * wavesDone)));
         Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone} | TrapsUsed: {trapsUsed}");
     }
 }

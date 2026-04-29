@@ -1,6 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine;
 using Core.Interfaces;
+using Traps.TrapUsageData;
+using UnityEngine;
 
 namespace Traps.RotatingLogRagdoll
 {
@@ -34,6 +35,11 @@ namespace Traps.RotatingLogRagdoll
 
             if (enemy == null)
                 return;
+
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordUniqueTrapUsed(gameObject);
+            }
 
             enemy.Knockback((-transform.forward) * 40f + Vector3.up * 150f, transform.position + Vector3.back, 15f);
 
