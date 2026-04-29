@@ -187,7 +187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f8c56e8966f19594c97415e7f775db65, type: 3}
       propertyPath: m_Name
-      value: Enemy_Archer_01
+      value: rdEnemy_Archer_01
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f8c56e8966f19594c97415e7f775db65, type: 3}
       propertyPath: m_TagString
@@ -463,8 +463,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.30399323
-  m_Center: {x: -0.30399323, y: 0, z: 0}
+  m_Radius: 0.16
+  m_Center: {x: -0.12, y: 0.09, z: 0}
 --- !u!54 &2763199145237624658
 Rigidbody:
   m_ObjectHideFlags: 0

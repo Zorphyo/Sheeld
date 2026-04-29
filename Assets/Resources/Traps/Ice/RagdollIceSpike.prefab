@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5104608032962031832}
   - component: {fileID: 124728117468261870}
   - component: {fileID: 2320782487080583118}
-  - component: {fileID: 7384945483110241398}
+  - component: {fileID: -8790876493044544583}
   m_Layer: 0
   m_Name: RagdollIceSpike
   m_TagString: Untagged
@@ -85,7 +85,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7384945483110241398
+--- !u!114 &-8790876493044544583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,13 +94,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621221317027835235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 876ca5fcfe25b4c94a78b1b577ac8c62, type: 3}
+  m_Script: {fileID: 11500000, guid: 571d2941322706640b25115cd849cc8b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Traps.IceSpikeProjectile
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.WallSpikeShooter.RagdollIceSpikeProjectile
+  trapType: 7
   defaultSpeed: 25
   lifetime: 5
   damageAmount: 15
   destroyOnHit: 1
+  maxRagdollForce: 120
+  minRagdollForce: 20
+  upwardForce: 15
+  maxForceDistance: 3
+  minForceDistance: 18
+  ragdollDuration: 4
 --- !u!1 &2796714237567286032
 GameObject:
   m_ObjectHideFlags: 0
