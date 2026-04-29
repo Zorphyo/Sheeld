@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class EnemyRagdollController : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class EnemyRagdollController : MonoBehaviour
 
     private void Update()
     {
+        // TODO: Remove this upon testing completed
         if (Input.GetKeyDown(KeyCode.R))
         {
             Launch(transform.forward * 25f + Vector3.up * 150f, transform.position + Vector3.up);
@@ -109,7 +111,7 @@ public class EnemyRagdollController : MonoBehaviour
     {
         Launch(force, hitPoint);
 
-        Invoke(nameof(RecoverFromSlip), duration);
+        StartCoroutine(RecoverFromSlipAfterGrounded(duration));
     }
 
     public void Explosion(Vector3 explosionPosition, float force, float radius, float upwardModifier)
@@ -134,7 +136,40 @@ public class EnemyRagdollController : MonoBehaviour
             animator.SetTrigger("Slip");
         */
 
-        Invoke(nameof(RecoverFromSlip), duration);
+        StartCoroutine(RecoverFromSlipAfterGrounded(duration));
+    }
+
+    private IEnumerator RecoverFromSlipAfterGrounded(float minimumDelay)
+    {
+        // Keeps your existing delay behavior first
+        yield return new WaitForSeconds(minimumDelay);
+
+        // Wait until the ragdoll is actually touching the ground
+        while (!IsRagdollTouchingGround())
+        {
+            yield return null;
+        }
+
+        // Once touching ground, wait 2 more seconds before standing up
+        yield return new WaitForSeconds(2f);
+
+        RecoverFromSlip();
+    }
+
+    private bool IsRagdollTouchingGround()
+    {
+        foreach (Collider col in ragdollColliders)
+        {
+            if (col == null || !col.enabled)
+                continue;
+
+            if (Physics.Raycast(col.bounds.center, Vector3.down, col.bounds.extents.y + 0.15f))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void RecoverFromSlip()
