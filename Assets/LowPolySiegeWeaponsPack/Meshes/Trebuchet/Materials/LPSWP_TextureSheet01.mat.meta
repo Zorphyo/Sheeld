@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1f1d117f4456d6448a322685e7e56e8f
+timeCreated: 1547493161
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Meshes/Trebuchet/Materials/LPSWP_TextureSheet01.mat
+  uploadId: 287868

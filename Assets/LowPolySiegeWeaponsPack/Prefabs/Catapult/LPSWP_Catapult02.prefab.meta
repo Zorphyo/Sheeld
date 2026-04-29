@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 519fef1dd869ae44b94b742bc169aefc
+timeCreated: 1527937113
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Prefabs/Catapult/LPSWP_Catapult02.prefab
+  uploadId: 287868

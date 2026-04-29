@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private EnemyAnimator enemyAnimator;
     private EnemyMovement movement;
+    private EnemyRagdollController ragdollController;
 
     [HideInInspector] public bool medicPresent = false;
     [HideInInspector] public bool isDead = false;
@@ -31,6 +32,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
         enemyAnimator = GetComponent<EnemyAnimator>();
         movement = GetComponent<EnemyMovement>();
+        ragdollController = GetComponent<EnemyRagdollController>();
 
         if (MedicManager.Instance != null)
             MedicManager.Instance.RegisterEnemy(this);
@@ -140,6 +142,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             agent.enabled = false;
         }
 
+        /* Replaced with ragdoll
         // Stop rigidbody interference if one exists
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null && !rb.isKinematic)
@@ -148,8 +151,23 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             rb.isKinematic = true;          // then lock it
         }
 
+        
         enemyAnimator?.Die();
         movement?.StopMoving();
         Destroy(gameObject, 3f);
+        */
+
+        movement?.StopMoving();
+
+        if (ragdollController != null)
+        {
+            ragdollController.DieAsRagdoll();
+        }
+        else
+        {
+            enemyAnimator?.Die();
+        }
+
+        Destroy(gameObject, 8f);
     }
 }

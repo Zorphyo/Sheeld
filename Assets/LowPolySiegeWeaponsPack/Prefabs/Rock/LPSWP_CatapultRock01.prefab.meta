@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 68d64e7e84bdcc74bb51871a3ab26710
+timeCreated: 1527937125
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Prefabs/Rock/LPSWP_CatapultRock01.prefab
+  uploadId: 287868

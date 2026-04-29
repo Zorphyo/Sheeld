@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 7d84b8ed679b5b24b828e2f5b62699f4
+timeCreated: 1527313578
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Materials/LPSWP_Dark.mat
+  uploadId: 287868

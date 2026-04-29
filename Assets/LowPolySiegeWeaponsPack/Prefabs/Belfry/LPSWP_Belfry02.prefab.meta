@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e5476da1281c54c409d6fc1ed0bb743f
+timeCreated: 1527937065
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Prefabs/Belfry/LPSWP_Belfry02.prefab
+  uploadId: 287868
