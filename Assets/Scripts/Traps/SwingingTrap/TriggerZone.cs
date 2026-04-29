@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace Traps.SwingingHammer
 {
-    public class HammerTriggerZone : MonoBehaviour
+    public class TriggerZone : MonoBehaviour
     {
-        [SerializeField] private SwingingHammer hammerTrap;
+        [SerializeField] private SwingingTrap hammerTrap;
 
         [Header("Activation Rules")]
         [SerializeField] private bool triggerOnPlayer = true;

@@ -2,24 +2,27 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SnowballThrowable : Throwable
+namespace Traps.Throwables
 {
-    public float SLOW_TIMER;
-    public override void EnemyHit(EnemyLocomotion enemy)
+    public class SnowballThrowable : Throwable
     {
-        base.EnemyHit(enemy);
+        public float SLOW_TIMER;
+        public override void EnemyHit(EnemyLocomotion enemy)
+        {
+            base.EnemyHit(enemy);
 
-        StartCoroutine(SlowEnemy(enemy.gameObject));
-    }
+            StartCoroutine(SlowEnemy(enemy.gameObject));
+        }
 
-    public IEnumerator SlowEnemy(GameObject enemy)
-    {
-        NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
+        public IEnumerator SlowEnemy(GameObject enemy)
+        {
+            NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
 
-        agent.speed = agent.speed * 0.5f;
+            agent.speed = agent.speed * 0.5f;
 
-        yield return new WaitForSeconds(SLOW_TIMER);
+            yield return new WaitForSeconds(SLOW_TIMER);
 
-        agent.speed = agent.speed * 2;
+            agent.speed = agent.speed * 2;
+        }
     }
 }

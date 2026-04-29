@@ -1,10 +1,10 @@
-using NUnit.Framework.Constraints;
-using UnityEngine;
-
-public class BookThrowable : Throwable
+namespace Traps.Throwables
 {
-    public override void EnemyHit(EnemyLocomotion enemy)
+    public class BookThrowable : Throwable
     {
-        base.EnemyHit(enemy);
+        public override void EnemyHit(EnemyLocomotion enemy)
+        {
+            base.EnemyHit(enemy);
+        }
     }
 }

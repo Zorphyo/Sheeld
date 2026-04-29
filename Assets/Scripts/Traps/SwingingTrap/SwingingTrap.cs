@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Traps.SwingingHammer
 {
-    public class SwingingHammer : MonoBehaviour
+    public class SwingingTrap : MonoBehaviour
     {
         public enum RotationAxis
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using Core.Interfaces;
+using Traps.Throwables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

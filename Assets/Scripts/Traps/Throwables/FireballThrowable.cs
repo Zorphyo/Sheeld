@@ -1,27 +1,30 @@
 using System.Collections;
 using UnityEngine;
 
-public class FireballThrowable : Throwable
+namespace Traps.Throwables
 {
-    public int BURN_INSTANCES;
-    public int BURN_DAMAGE;
-
-    public override void EnemyHit(EnemyLocomotion enemy)
+    public class FireballThrowable : Throwable
     {
-        base.EnemyHit(enemy);
+        public int BURN_INSTANCES;
+        public int BURN_DAMAGE;
 
-        StartCoroutine(BurnDamage(enemy.gameObject));
-    }
-
-    public IEnumerator BurnDamage(GameObject enemy)
-    {
-        EnemyHealth health = enemy.GetComponent<EnemyHealth>();
-
-        for (int i = 0; i < BURN_INSTANCES; i++)
+        public override void EnemyHit(EnemyLocomotion enemy)
         {
-            yield return new WaitForSeconds(1);
+            base.EnemyHit(enemy);
 
-            health.TakeDamage(BURN_DAMAGE);
+            StartCoroutine(BurnDamage(enemy.gameObject));
+        }
+
+        public IEnumerator BurnDamage(GameObject enemy)
+        {
+            EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+
+            for (int i = 0; i < BURN_INSTANCES; i++)
+            {
+                yield return new WaitForSeconds(1);
+
+                health.TakeDamage(BURN_DAMAGE);
+            }
         }
     }
 }
