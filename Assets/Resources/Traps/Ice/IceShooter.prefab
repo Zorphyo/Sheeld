@@ -149,7 +149,7 @@ MonoBehaviour:
   randomYawJitter: 4
   randomPitchJitter: 2
   projectileSpeed: 50
-  cooldownTime: 3
+  cooldownTime: 0.05
 --- !u!1 &2082089462391504090
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +354,6 @@ MonoBehaviour:
   leverHandle: {fileID: 5550702762879277763}
   spikeShooter: {fileID: 5451541838599450100}
   playerTag: Player
-  interactKey: 101
   pulledLocalEulerOffset: {x: 0, y: 0, z: 35}
   pullSpeed: 240
   returnSpeed: 180

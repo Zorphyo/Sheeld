@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using Core.Interfaces;
 
 namespace Traps
 {
-    public class LeverBallSpawner : MonoBehaviour
+    public class LeverBallSpawner : MonoBehaviour, IInteractable
     {
         public enum SpawnRotationMode
         {
@@ -20,7 +21,6 @@ namespace Traps
 
         [Header("Interaction")]
         [SerializeField] private string playerTag = "Player";
-        [SerializeField] private KeyCode interactKey = KeyCode.E;
         [SerializeField] private float reuseCooldown = 4f;
 
         [Header("Lever Animation")]
@@ -52,20 +52,6 @@ namespace Traps
             }
         }
 
-        private void Update()
-        {
-            if (requirePlayerTrigger && !playerInRange)
-                return;
-
-            if (isBusy || isOnCooldown)
-                return;
-
-            if (Input.GetKeyDown(interactKey))
-            {
-                StartCoroutine(PullAndSpawnRoutine());
-            }
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(playerTag))
@@ -80,6 +66,17 @@ namespace Traps
             {
                 playerInRange = false;
             }
+        }
+
+        public void Interact()
+        {
+            if (requirePlayerTrigger && !playerInRange)
+                return;
+
+            if (isBusy || isOnCooldown)
+                return;
+
+            StartCoroutine(PullAndSpawnRoutine());
         }
 
         private IEnumerator PullAndSpawnRoutine()

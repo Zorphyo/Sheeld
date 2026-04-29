@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using Core.Interfaces;
 
 namespace Traps.WallSpikeShooter
 {
-    public class LeverSpikeShooterActivator : MonoBehaviour
+    public class LeverSpikeShooterActivator : MonoBehaviour, IInteractable
     {
         [Header("References")]
         [SerializeField] private Transform leverHandle;
@@ -11,7 +12,6 @@ namespace Traps.WallSpikeShooter
 
         [Header("Interaction")]
         [SerializeField] private string playerTag = "Player";
-        [SerializeField] private KeyCode interactKey = KeyCode.E;
 
         [Header("Lever Animation")]
         [SerializeField] private Vector3 pulledLocalEulerOffset = new Vector3(-35f, 0f, 0f);
@@ -39,21 +39,6 @@ namespace Traps.WallSpikeShooter
             }
         }
 
-        private void Update()
-        {
-            if (requirePlayerTrigger && !playerInRange)
-                return;
-
-            if (isBusy || isOnCooldown)
-                return;
-
-            if (Input.GetKeyDown(interactKey))
-            {
-                Debug.Log("LeverSpikeShooterActivator: E was pressed.", this);
-                StartCoroutine(PullLeverRoutine());
-            }
-        }
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag(playerTag))
@@ -68,6 +53,17 @@ namespace Traps.WallSpikeShooter
             {
                 playerInRange = false;
             }
+        }
+
+        public void Interact()
+        {
+            if (requirePlayerTrigger && !playerInRange)
+                return;
+
+            if (isBusy || isOnCooldown)
+                return;
+
+            StartCoroutine(PullLeverRoutine());
         }
 
         private IEnumerator PullLeverRoutine()
@@ -98,7 +94,7 @@ namespace Traps.WallSpikeShooter
             }
 
             leverHandle.localRotation = Quaternion.Euler(pulledLocalEuler);
-            
+
             Debug.Log("LeverSpikeShooterActivator: Calling spikeShooter.TryShoot().", this);
             spikeShooter.TryShoot();
 

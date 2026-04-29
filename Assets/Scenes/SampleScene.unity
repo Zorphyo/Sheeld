@@ -2476,6 +2476,46 @@ MonoBehaviour:
     overlapGroup: 6
     allowedOverlapGroups: 
     overlapCheckRadius: 10
+  - trapName: Throwable Snowball
+    prefab: {fileID: 4903313938104436757, guid: fae1264f33a95a742bbeccb820ee3d8e, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 10
+    maxSpawnCount: 20
+    placementMode: 0
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0.4
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 4
+    allowedOverlapGroups: 
+    overlapCheckRadius: 10
+  - trapName: Throwable FireBall
+    prefab: {fileID: 4762277471353977501, guid: 0654ea8ef9f688b4ea9795c1fa51d1a3, type: 3}
+    allowedArenas: 00000000
+    minSpawnCount: 10
+    maxSpawnCount: 20
+    placementMode: 0
+    respawnAtRuntime: 1
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0.43
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 0
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 4
+    allowedOverlapGroups: 
+    overlapCheckRadius: 10
   playerSpawnPoint: {fileID: 0}
   enemySpawnPoints: []
   trapParent: {fileID: 1623031373}
