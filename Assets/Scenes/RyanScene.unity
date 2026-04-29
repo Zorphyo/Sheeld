@@ -444,6 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -764,6 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -2035,6 +2037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -2055,6 +2058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -2549,6 +2553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -2994,6 +2999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -4006,6 +4012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -4375,6 +4382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -4611,6 +4619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -6052,6 +6061,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1102748744}
   m_SourcePrefab: {fileID: 100100000, guid: e2941325044864b8faf90ae8c8b483b5, type: 3}
+--- !u!1001 &2102590070
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1082034268796750, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_Name
+      value: Enemy_Basic_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.0484076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.518425
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.69241
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008829458874630, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29855e4a0c37747448a3fe54db331aec, type: 3}
 --- !u!1 &2113524186
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,6 +6272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 25
   damageInterval: 0.5
@@ -6604,6 +6671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b9c6857e5e942d0b90a6a2b040ee8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.StationarySpikeTrap.StationarySpikeDamage
+  trapType: 1
   playerDamage: 10
   enemyDamage: 50
   damageInterval: 0.5
@@ -6689,3 +6757,4 @@ SceneRoots:
   - {fileID: 132389925052207572}
   - {fileID: 5454535366388815117}
   - {fileID: 4049933389764577799}
+  - {fileID: 2102590070}

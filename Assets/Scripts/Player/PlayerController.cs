@@ -310,11 +310,21 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     
     public IEnumerator ApplyKnockback(Vector3 direction, float force)
     {
-        return null;
+        yield return null;
+
+        rb.AddForce(direction + new Vector3(0, 0.2f, 3) * force, ForceMode.Impulse);
+
+        yield return new WaitForFixedUpdate();
+        yield return new WaitUntil(() => rb.linearVelocity.magnitude < 2.5f);
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        yield return null;
     }
 
     public void Knockback(Vector3 direction, float force)
     {
-        
+        StartCoroutine(ApplyKnockback(direction, force));
     }
 }
