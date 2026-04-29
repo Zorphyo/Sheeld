@@ -2402,7 +2402,7 @@ MonoBehaviour:
     allowedOverlapGroups: 0200000001000000
     overlapCheckRadius: 3
   - trapName: Banana Peel
-    prefab: {fileID: 8284843170063756669, guid: c9fae08af77a64631bb55096d7e0d6ef, type: 3}
+    prefab: {fileID: 8284843170063756669, guid: 066f6e768f0be994680612906484105d, type: 3}
     allowedArenas: 00000000
     minSpawnCount: 10
     maxSpawnCount: 20

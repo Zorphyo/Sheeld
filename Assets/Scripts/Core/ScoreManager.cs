@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     public int damageDealt = 0;
     public int multiHit = 0;
+    public int wavesDone = 0;
 
     [Header("Multi-Hit Settings")]
     public float multiHitTimeframe = 2f;
@@ -27,6 +28,7 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         damageDealt = 0;
         multiHit = 0;
+        wavesDone = 0;
     }
 
     public void ReportDamage(int damageAmount)
@@ -42,8 +44,17 @@ public class ScoreManager : MonoBehaviour
         damageDealt += damageAmount;
         lastDamageTime = Time.time;
 
-        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)));
+        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
 
-        Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit}");
+        Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone}");
+    }
+
+    public void WaveCompleted()
+    {
+        wavesDone++;
+
+        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
+
+        Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone}");
     }
 }
