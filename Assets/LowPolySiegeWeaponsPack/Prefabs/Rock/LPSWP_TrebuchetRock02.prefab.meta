@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f4377b52b04ef7547886a330da469b73
+timeCreated: 1527937416
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Prefabs/Rock/LPSWP_TrebuchetRock02.prefab
+  uploadId: 287868

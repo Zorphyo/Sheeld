@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: af6357e0b647cc64b9b137d867317bb4
+timeCreated: 1527937277
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Prefabs/Ladder/LPSWP_Ladder01.prefab
+  uploadId: 287868

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: a58cc2e493df01e45a19b1f9a14b58c7
+timeCreated: 1527937366
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 119933
+  packageName: Low Poly Siege Weapons Pack
+  packageVersion: 1.0
+  assetPath: Assets/LowPolySiegeWeaponsPack/Prefabs/Ram/LPSWP_Ram04.prefab
+  uploadId: 287868
