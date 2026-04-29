@@ -5,7 +5,17 @@ using System.Collections.Generic;
 public class LeaderboardUI : MonoBehaviour
 {
     public GameMode mode;
-    public TMP_Text[] scoreTexts;
+
+    [System.Serializable]
+    public class Row
+    {
+        public TMP_Text dateText;
+        public TMP_Text timeText;
+        public TMP_Text scoreText;
+        public TMP_Text wavesText;
+    }
+
+    public Row[] rows; // size 5
 
     void OnEnable()
     {
@@ -14,28 +24,34 @@ public class LeaderboardUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        var scores = ScoreSystem.Instance.GetScores(mode);
+        List<ScoreEntry> scores = ScoreSystem.Instance.GetScores(mode);
 
-        for (int i = 0; i < scoreTexts.Length; i++)
+        for (int i = 0; i < rows.Length; i++)
         {
             if (i < scores.Count)
             {
-                var s = scores[i];
+                rows[i].dateText.text = scores[i].date;
+                rows[i].timeText.text = scores[i].timeTaken.ToString();
+                rows[i].scoreText.text = scores[i].score.ToString();
 
-                string waveText = (mode == GameMode.Standard)
-                    ? ""
-                    : " | W:" + s.waves;
-
-                scoreTexts[i].text =
-                    (i + 1) + ". " +
-                    " | " + s.date +
-                    " | " + s.timeTaken.ToString("F1") + "s" +
-                    s.score +
-                    waveText;
+                if(rows[i].wavesText != null)
+                {
+                    if (mode != GameMode.Standard)
+                        rows[i].wavesText.text = scores[i].waves.ToString();
+                    else
+                        rows[i].wavesText.text = "-";
+                }
             }
             else
             {
-                scoreTexts[i].text = (i + 1) + ". ---";
+                rows[i].dateText.text = "---";
+                rows[i].timeText.text = "---";
+                rows[i].scoreText.text = "---";
+
+                if(rows[i].wavesText != null)
+                {
+                    rows[i].wavesText.text = "---";
+                }
             }
         }
     }
