@@ -1,41 +1,51 @@
+using Core.Interfaces;
 using UnityEngine;
 
-public class BananaTrap : MonoBehaviour
+namespace Traps
 {
-    [SerializeField] private float destroyAfterTriggerDelay = 0.2f;
-    [SerializeField] private bool destroyOnTrigger = true;
-
-    private bool hasTriggered = false;
-
-    private void OnTriggerEnter(Collider other)
+    public class BananaTrap : MonoBehaviour
     {
-        if (hasTriggered) return;
+        [SerializeField] private int damageAmount = 5;
 
-        // Player
-        if (other.CompareTag("Player"))
+        [SerializeField] private float slipForce = 8f;
+        [SerializeField] private float upwardSlipForce = 2f;
+
+        [SerializeField] private float destroyAfterTriggerDelay = 0.2f;
+        [SerializeField] private bool destroyOnTrigger = true;
+
+        private bool hasTriggered = false;
+
+        private void OnTriggerEnter(Collider other)
         {
+            if (hasTriggered) return;
+
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
+
+            if (damageable == null)
+                return;
+
             hasTriggered = true;
 
-            // call a trip behavior on the player
-            // TODO: implement trip behavior on player 
-            /*PlayerTrip playerTrip = other.GetComponent<PlayerTrip>();
-            if (playerTrip != null)
+            damageable.TakeDamage(damageAmount);
+
+            Vector3 slipDirection = other.transform.forward;
+            slipDirection.y = 0f;
+            slipDirection.Normalize();
+
+            if (slipDirection == Vector3.zero)
+                slipDirection = transform.forward;
+
+            IKnockbackable knockbackable = other.GetComponentInParent<IKnockbackable>();
+
+            if (knockbackable != null)
             {
-                playerTrip.Trip();
+                knockbackable.Knockback(slipDirection + Vector3.up * upwardSlipForce, slipForce);
             }
-            
-            else
-            {
-                Debug.LogWarning("Player entered banana trap, but no PlayerTrip component was found.");
-            }
-            */
+
             if (destroyOnTrigger)
             {
                 Destroy(gameObject, destroyAfterTriggerDelay);
             }
         }
-
-        // Later we can do enemy here too
-        // if (other.CompareTag("Enemy")) { ... }
     }
 }
