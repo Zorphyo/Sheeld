@@ -1,5 +1,6 @@
 using Core.Interfaces;
 using UnityEngine;
+using Traps.TrapUsageData;
 
 namespace Traps.WallSpikeShooter
 {
@@ -7,6 +8,9 @@ namespace Traps.WallSpikeShooter
     [RequireComponent(typeof(Collider))]
     public class IceSpikeProjectile : MonoBehaviour
     {
+        [Header("Trap Data")]
+        [SerializeField] private TrapType trapType = TrapType.WallSpikeShooter;
+
         [Header("Movement")]
         [SerializeField] private float defaultSpeed = 25f;
         [SerializeField] private float lifetime = 5f;
@@ -41,7 +45,6 @@ namespace Traps.WallSpikeShooter
 
             if (direction.sqrMagnitude < 0.001f)
             {
-                Debug.LogWarning("IceSpikeProjectile: Invalid launch direction.", this);
                 direction = transform.forward;
             }
 
@@ -55,7 +58,6 @@ namespace Traps.WallSpikeShooter
 
         private void Start()
         {
-            // Safety fallback if someone manually places a spike in the scene.
             if (!hasBeenLaunched)
             {
                 Launch(transform.forward, defaultSpeed);
@@ -71,7 +73,19 @@ namespace Traps.WallSpikeShooter
 
             if (damageable != null)
             {
+                if (other.CompareTag("Player"))
+                {
+                    Record(TrapEventType.HitPlayer);
+                    Record(TrapEventType.DamagedPlayer);
+                }
+                else if (other.CompareTag("Enemy"))
+                {
+                    Record(TrapEventType.HitEnemy);
+                    Record(TrapEventType.DamagedEnemy);
+                }
+
                 damageable.TakeDamage(damageAmount);
+
                 hasHit = true;
 
                 if (destroyOnHit)
@@ -86,6 +100,14 @@ namespace Traps.WallSpikeShooter
 
                 if (destroyOnHit)
                     Destroy(gameObject);
+            }
+        }
+
+        private void Record(TrapEventType eventType)
+        {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
             }
         }
     }

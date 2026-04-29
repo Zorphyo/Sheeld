@@ -1,7 +1,8 @@
 using Core.Interfaces;
+using Traps.TrapUsageData;
 using UnityEngine;
 
-namespace Traps
+namespace Traps.RollingTraps
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
@@ -21,6 +22,9 @@ namespace Traps
             LocalY,
             LocalZ
         }
+
+        [Header("Trap Data")]
+        [SerializeField] private TrapType trapType = TrapType.RollingTrap;
 
         [Header("Movement")]
         public float startSpeed = 18f;
@@ -233,13 +237,40 @@ namespace Traps
             if (Time.time - lastDamageTime < damageCooldown)
                 return;
 
-            IDamageable damageable = other.GetComponent<IDamageable>();
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
 
             if (damageable == null)
                 return;
 
+            if (other.CompareTag("Player"))
+            {
+                Record(TrapEventType.HitPlayer);
+            }
+            else if (other.CompareTag("Enemy"))
+            {
+                Record(TrapEventType.HitEnemy);
+            }
+
             damageable.TakeDamage(damageAmount);
+
+            if (other.CompareTag("Player"))
+            {
+                Record(TrapEventType.DamagedPlayer);
+            }
+            else if (other.CompareTag("Enemy"))
+            {
+                Record(TrapEventType.DamagedEnemy);
+            }
+
             lastDamageTime = Time.time;
+        }
+
+        private void Record(TrapEventType eventType)
+        {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
+            }
         }
     }
 }

@@ -1,18 +1,22 @@
 using Core.Interfaces;
+using Traps.TrapUsageData;
 using UnityEngine;
 
-namespace Traps
+namespace Traps.RollingTraps
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
-    public class RollingBoulder : MonoBehaviour
+    public class RollingSnowball : MonoBehaviour
     {
+        [Header("Trap Data")]
+        [SerializeField] private TrapType trapType = TrapType.RollingTrap;
+
         [Header("Movement")]
         public float startSpeed = 22f;
         public float minimumSpeed = 18f;
         public float speedRecoveryAcceleration = 30f;
 
-        [Tooltip("How strongly the boulder spins visually while moving.")]
+        [Tooltip("How strongly the snowball spins visually while moving.")]
         public float rollTorque = 20f;
 
         [Header("Targeting")]
@@ -24,9 +28,17 @@ namespace Traps
         public float centerOfMassYOffset = -0.75f;
         public float maxUpwardVelocity = 1.5f;
 
+        [Header("Growth")]
+        [Tooltip("How much the snowball grows per unit of distance traveled.")]
+        public float growthPerUnit = 0.03f;
+
+        [Tooltip("Maximum multiplier relative to the starting scale.")]
+        public float maxScaleMultiplier = 2.5f;
+
         [Header("Damage")]
-        public int damageAmount = 10;
+        public int baseDamage = 10;
         public float damageCooldown = 0.5f;
+        public bool damageScalesWithSize = true;
 
         [Header("Despawn")]
         public float fallbackLifeTime = 20f;
@@ -38,6 +50,13 @@ namespace Traps
         private float lastDamageTime = -999f;
         private float stuckTimer = 0f;
 
+        private Vector3 initialScale;
+        private Vector3 lastPosition;
+        private float totalDistanceTraveled = 0f;
+
+        private SphereCollider sphereCollider;
+        private float initialColliderRadius;
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
@@ -47,6 +66,15 @@ namespace Traps
             rb.interpolation = RigidbodyInterpolation.Interpolate;
             rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             rb.centerOfMass = new Vector3(0f, centerOfMassYOffset, 0f);
+
+            initialScale = transform.localScale;
+            lastPosition = transform.position;
+
+            sphereCollider = GetComponent<SphereCollider>();
+            if (sphereCollider != null)
+            {
+                initialColliderRadius = sphereCollider.radius;
+            }
         }
 
         private void Start()
@@ -89,7 +117,6 @@ namespace Traps
 
             travelDirection = direction;
 
-            // Face the chosen travel direction once.
             if (travelDirection.sqrMagnitude > 0.001f)
             {
                 transform.rotation = Quaternion.LookRotation(travelDirection, Vector3.up);
@@ -111,6 +138,7 @@ namespace Traps
             MaintainGroundContact();
             MaintainForwardSpeed();
             ApplyRollingTorque();
+            HandleGrowth();
             HandleStuckCheck();
         }
 
@@ -139,7 +167,6 @@ namespace Traps
                 rb.AddForce(travelDirection * speedRecoveryAcceleration, ForceMode.Acceleration);
             }
 
-            // Remove sideways drift so it crosses the arena more cleanly.
             Vector3 desiredFlatVelocity = travelDirection * Mathf.Max(forwardSpeed, minimumSpeed);
             rb.linearVelocity = new Vector3(desiredFlatVelocity.x, velocity.y, desiredFlatVelocity.z);
         }
@@ -148,6 +175,22 @@ namespace Traps
         {
             Vector3 torqueAxis = Vector3.Cross(Vector3.up, travelDirection).normalized;
             rb.AddTorque(torqueAxis * rollTorque, ForceMode.Acceleration);
+        }
+
+        private void HandleGrowth()
+        {
+            Vector3 currentPosition = transform.position;
+            Vector3 flatDelta = currentPosition - lastPosition;
+            flatDelta.y = 0f;
+
+            float distanceThisFrame = flatDelta.magnitude;
+            totalDistanceTraveled += distanceThisFrame;
+            lastPosition = currentPosition;
+
+            float targetMultiplier = 1f + (totalDistanceTraveled * growthPerUnit);
+            targetMultiplier = Mathf.Min(targetMultiplier, maxScaleMultiplier);
+
+            transform.localScale = initialScale * targetMultiplier;
         }
 
         private void HandleStuckCheck()
@@ -185,12 +228,47 @@ namespace Traps
             if (Time.time - lastDamageTime < damageCooldown)
                 return;
 
-            IDamageable damageable = other.GetComponent<IDamageable>();
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
             if (damageable == null)
                 return;
 
-            damageable.TakeDamage(damageAmount);
+            int finalDamage = baseDamage;
+
+            if (damageScalesWithSize)
+            {
+                float scaleMultiplier = transform.localScale.x / initialScale.x;
+                finalDamage = Mathf.RoundToInt(baseDamage * scaleMultiplier);
+            }
+
+            if (other.CompareTag("Player"))
+            {
+                Record(TrapEventType.HitPlayer);
+            }
+            else if (other.CompareTag("Enemy"))
+            {
+                Record(TrapEventType.HitEnemy);
+            }
+
+            damageable.TakeDamage(finalDamage);
+
+            if (other.CompareTag("Player"))
+            {
+                Record(TrapEventType.DamagedPlayer);
+            }
+            else if (other.CompareTag("Enemy"))
+            {
+                Record(TrapEventType.DamagedEnemy);
+            }
+
             lastDamageTime = Time.time;
+        }
+
+        private void Record(TrapEventType eventType)
+        {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
+            }
         }
     }
 }

@@ -1,10 +1,11 @@
 using System.Collections;
-using UnityEngine;
 using Core.Interfaces;
+using Traps.TrapUsageData;
+using UnityEngine;
 
-namespace Traps
+namespace Traps.RollingTraps
 {
-    public class LeverBallSpawner : MonoBehaviour, IInteractable
+    public class LeverTrapActivator : MonoBehaviour, IInteractable
     {
         public enum SpawnRotationMode
         {
@@ -12,6 +13,9 @@ namespace Traps
             UseSpawnPointYawOnly,
             UsePrefabRotationOnly
         }
+
+        [Header("Trap Data")]
+        [SerializeField] private TrapType trapType = TrapType.RollingTrap;
 
         [Header("References")]
         [SerializeField] private Transform leverHandle;
@@ -76,6 +80,8 @@ namespace Traps
             if (isBusy || isOnCooldown)
                 return;
 
+            Record(TrapEventType.Interacted);
+
             StartCoroutine(PullAndSpawnRoutine());
         }
 
@@ -115,6 +121,8 @@ namespace Traps
             leverHandle.localRotation = Quaternion.Euler(pulledLocalEuler);
 
             Quaternion spawnRotation = GetSpawnRotation();
+
+            Record(TrapEventType.Triggered);
 
             GameObject spawnedTrap = Instantiate(
                 spawnedTrapPrefab,
@@ -168,6 +176,14 @@ namespace Traps
 
                 default:
                     return spawnPoint.rotation;
+            }
+        }
+
+        private void Record(TrapEventType eventType)
+        {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
             }
         }
     }

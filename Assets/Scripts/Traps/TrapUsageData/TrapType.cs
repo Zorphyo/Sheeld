@@ -9,7 +9,7 @@ namespace Traps.TrapUsageData
         RollingTrap,
         RotatingTrap,
         Banana,
-        WallSpikes,
+        WallSpikeShooter,
         Other  
     }
 }

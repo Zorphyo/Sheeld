@@ -1,11 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using Core.Interfaces;
+using Traps.TrapUsageData;
 
 namespace Traps.WallSpikeShooter
 {
     public class LeverSpikeShooterActivator : MonoBehaviour, IInteractable
     {
+        [Header("Trap Data")]
+        [SerializeField] private TrapType trapType = TrapType.WallSpikeShooter;
+
         [Header("References")]
         [SerializeField] private Transform leverHandle;
         [SerializeField] private WallSpikeShooter spikeShooter;
@@ -63,6 +67,8 @@ namespace Traps.WallSpikeShooter
             if (isBusy || isOnCooldown)
                 return;
 
+            Record(TrapEventType.Interacted);
+
             StartCoroutine(PullLeverRoutine());
         }
 
@@ -95,7 +101,8 @@ namespace Traps.WallSpikeShooter
 
             leverHandle.localRotation = Quaternion.Euler(pulledLocalEuler);
 
-            Debug.Log("LeverSpikeShooterActivator: Calling spikeShooter.TryShoot().", this);
+            Record(TrapEventType.Triggered);
+
             spikeShooter.TryShoot();
 
             if (pulledHoldTime > 0f)
@@ -122,6 +129,14 @@ namespace Traps.WallSpikeShooter
             yield return new WaitForSeconds(leverCooldown);
 
             isOnCooldown = false;
+        }
+
+        private void Record(TrapEventType eventType)
+        {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
+            }
         }
     }
 }
