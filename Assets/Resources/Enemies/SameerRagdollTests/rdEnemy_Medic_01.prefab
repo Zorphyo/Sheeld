@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 2242132049410592760}
   - component: {fileID: 7828522229975654715}
   m_Layer: 0
-  m_Name: Enemy_Medic_01
+  m_Name: rdEnemy_Medic_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

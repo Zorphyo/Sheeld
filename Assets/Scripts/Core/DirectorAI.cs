@@ -154,11 +154,11 @@ public class DirectorAI : MonoBehaviour
         {
             string n = prefab.name;
 
-            if (n.StartsWith("Enemy_Basic")) basicPrefabs.Add(prefab);
-            else if (n.StartsWith("Enemy_Heavy")) heavyPrefabs.Add(prefab);
-            else if (n.StartsWith("Enemy_Speedster")) speedsterPrefabs.Add(prefab);
-            else if (n.StartsWith("Enemy_Archer")) archerPrefabs.Add(prefab);
-            else if (n.StartsWith("Enemy_Medic")) medicPrefabs.Add(prefab);
+            if (n.StartsWith("rdEnemy_Basic")) basicPrefabs.Add(prefab);
+            else if (n.StartsWith("rdEnemy_Heavy")) heavyPrefabs.Add(prefab);
+            else if (n.StartsWith("rdEnemy_Speedster")) speedsterPrefabs.Add(prefab);
+            else if (n.StartsWith("rdEnemy_Archer")) archerPrefabs.Add(prefab);
+            else if (n.StartsWith("rdEnemy_Medic")) medicPrefabs.Add(prefab);
             else Debug.LogWarning($"[Director] Unrecognised prefab: {prefab.name}");
         }
 

@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 6929615564219998111}
   - component: {fileID: 7534217202519370034}
   m_Layer: 0
-  m_Name: Enemy_Speedster_01
+  m_Name: rdEnemy_Speedster_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
