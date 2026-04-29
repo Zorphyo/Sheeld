@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
     public int wavesDone = 0;
     public int trapsUsed = 0;
 
+    public float timeSpent = 0; //Need to implement
+
     [Header("Multi-Hit Settings")]
     public float multiHitTimeframe = 2f;
 
@@ -31,6 +33,12 @@ public class ScoreManager : MonoBehaviour
         multiHit = 0;
         wavesDone = 0;
         trapsUsed = 0;
+        timeSpent = 0;
+    }
+
+    void Update()
+    {
+        timeSpent += Time.deltaTime;
     }
 
     public void ReportDamage(int damageAmount)
@@ -65,5 +73,17 @@ public class ScoreManager : MonoBehaviour
     {
         score = Mathf.CeilToInt((float)((damageDealt * (1 + 0.05 * trapsUsed)) + (1.3f * (1 + multiHit)) + (20 * wavesDone)));
         Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone} | TrapsUsed: {trapsUsed}");
+    }
+
+    public void EndRun()
+    {
+        ScoreSystem.Instance.AddScore(
+            GameSession.CurrentMode, 
+            score,
+            timeSpent,
+            wavesDone
+        );
+
+        return;
     }
 }

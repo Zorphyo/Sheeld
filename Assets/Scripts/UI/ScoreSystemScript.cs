@@ -20,7 +20,10 @@ public class ScoreSystem : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        LoadAllScores();
+        foreach (GameMode mode in System.Enum.GetValues(typeof(GameMode)))
+        {
+            LoadScores(mode);
+        }
     }
 
     string GetFileName(GameMode mode)

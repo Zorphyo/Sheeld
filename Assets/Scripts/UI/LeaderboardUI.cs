@@ -36,10 +36,7 @@ public class LeaderboardUI : MonoBehaviour
 
                 if(rows[i].wavesText != null)
                 {
-                    if (mode != GameMode.Standard)
-                        rows[i].wavesText.text = scores[i].waves.ToString();
-                    else
-                        rows[i].wavesText.text = "-";
+                    rows[i].wavesText.text = scores[i].waves.ToString();
                 }
             }
             else

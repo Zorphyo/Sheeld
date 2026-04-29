@@ -9,10 +9,12 @@ public class SceneManagerScript : MonoBehaviour
     private float _timeToWaitBeforeExit;
     public GameObject deathPopup;
     public GameObject winPopup;
-    public ScoreManagerScript scoreManager;
+    public ScoreManager scoreManager;
+    public ScoreTrackUI scoreTrackUI;
 
     public void OnPlayerDeath()
     {
+        scoreTrackUI.deathPopupScore(ScoreManager.Instance.score);
         deathPopup.SetActive(true);
         scoreManager.EndRun();
         Time.timeScale = 0f;
@@ -22,6 +24,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void OnPlayerWin()
     {
+        scoreTrackUI.winPopupScore(ScoreManager.Instance.score);
         winPopup.SetActive(true);
         scoreManager.EndRun();
         Time.timeScale = 0f;
