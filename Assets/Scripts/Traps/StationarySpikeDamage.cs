@@ -1,17 +1,36 @@
 using System.Collections.Generic;
-using UnityEngine;
 using Core.Interfaces;
+using Traps.TrapUsageData;
+using UnityEngine;
 
-namespace Traps.StationarySpikeTrap
+namespace Traps
 {
     public class StationarySpikeDamage : MonoBehaviour
     {
+        [Header("Trap Data")]
+        [SerializeField] private TrapType trapType = TrapType.StationarySpikes;
+
         [Header("Damage Settings")]
         [SerializeField] private int playerDamage = 10;
         [SerializeField] private int enemyDamage = 50;
         [SerializeField] private float damageInterval = 0.5f;
 
         private Dictionary<IDamageable, float> nextDamageTime = new Dictionary<IDamageable, float>();
+
+        private void OnTriggerEnter(Collider other)
+        {
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
+            if (damageable == null) return;
+
+            if (other.CompareTag("Player"))
+            {
+                Record(TrapEventType.HitPlayer);
+            }
+            else if (other.CompareTag("Enemy"))
+            {
+                Record(TrapEventType.HitEnemy);
+            }
+        }
 
         private void OnTriggerStay(Collider other)
         {
@@ -23,8 +42,17 @@ namespace Traps.StationarySpikeTrap
 
             if (Time.time >= nextDamageTime[damageable])
             {
-                int damage = other.CompareTag("Enemy") ? enemyDamage : playerDamage;
-                damageable.TakeDamage(damage);
+                if (other.CompareTag("Enemy"))
+                {
+                    damageable.TakeDamage(enemyDamage);
+                    Record(TrapEventType.DamagedEnemy);
+                }
+                else
+                {
+                    damageable.TakeDamage(playerDamage);
+                    Record(TrapEventType.DamagedPlayer);
+                }
+
                 nextDamageTime[damageable] = Time.time + damageInterval;
             }
         }
@@ -41,6 +69,14 @@ namespace Traps.StationarySpikeTrap
         private void OnDisable()
         {
             nextDamageTime.Clear();
+        }
+
+        private void Record(TrapEventType eventType)
+        {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
+            }
         }
     }
 }
