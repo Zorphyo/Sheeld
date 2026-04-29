@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 {
     PlayerController pc;
     SceneManagerScript sceneManager;
+    Animator animator;
 
     public int MAX_HEALTH;
     public int MAX_STAMINA;
@@ -26,6 +27,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         pc = GetComponent<PlayerController>();
         sceneManager = FindFirstObjectByType<SceneManagerScript>();
+        animator = GetComponent<Animator>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -130,12 +132,13 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         staminaLockout = true;
 
+        pc.pia.Player.Disable();
+        animator.SetBool("Death", true);
+
         if(sceneManager != null)
         {
             sceneManager.OnPlayerDeath();
         }
-
-        Destroy(this);
     }
 
     public void TakeDamage(int amount)

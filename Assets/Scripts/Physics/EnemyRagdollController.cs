@@ -300,4 +300,40 @@ public class EnemyRagdollController : MonoBehaviour
                 closest.AddForceAtPosition(extraForce, closest.worldCenterOfMass, ForceMode.Impulse);
         }
     }
+
+    public void PartialBodyHit(Vector3 force, Vector3 hitPoint, float duration)
+    {
+        if (isRagdolled)
+            return;
+
+        Rigidbody hitBody = GetClosestRigidbody(hitPoint);
+
+        if (hitBody == null)
+            return;
+
+        StartCoroutine(PartialBodyHitRoutine(hitBody, force, hitPoint, duration));
+    }
+
+    private IEnumerator PartialBodyHitRoutine(Rigidbody hitBody, Vector3 force, Vector3 hitPoint, float duration)
+    {
+        // Temporarily let only this body part react
+        hitBody.isKinematic = false;
+        hitBody.detectCollisions = true;
+
+        Collider hitCollider = hitBody.GetComponent<Collider>();
+        if (hitCollider != null)
+            hitCollider.enabled = true;
+
+        hitBody.AddForceAtPosition(force, hitPoint, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(duration);
+
+        hitBody.linearVelocity = Vector3.zero;
+        hitBody.angularVelocity = Vector3.zero;
+
+        hitBody.isKinematic = true;
+
+        if (hitCollider != null)
+            hitCollider.enabled = false;
+    }
 }

@@ -107,7 +107,19 @@ namespace Traps.Throwables
             }
 
             Vector3 direction = rb.linearVelocity.normalized;
-            enemy.Knockback(direction, HIT_FORCE);
+            EnemyRagdollController ragdoll = enemy.GetComponent<EnemyRagdollController>();
+
+            if (ragdoll != null)
+            {
+                Vector3 hitPoint = transform.position;
+                Vector3 force = direction * HIT_FORCE;
+
+                ragdoll.PartialBodyHit(force, hitPoint, 0.25f);
+            }
+            else
+            {
+                enemy.Knockback(direction, HIT_FORCE);
+            }
 
             thrown = false;
         }
@@ -117,6 +129,7 @@ namespace Traps.Throwables
             if (TrapStatsManager.Instance != null)
             {
                 TrapStatsManager.Instance.RecordTrapEvent(trapType, eventType);
+                TrapStatsManager.Instance.RecordUniqueTrapUsed(gameObject);
             }
         }
     }

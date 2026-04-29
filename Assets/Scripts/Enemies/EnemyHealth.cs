@@ -56,6 +56,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (amount <= 0) return;
 
         currentHealth -= amount;
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.ReportDamage(amount);
+        }
         Debug.Log($"{gameObject.name} took {amount} damage, health now: {currentHealth}");
 
         if (currentHealth <= 0)

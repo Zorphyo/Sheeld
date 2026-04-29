@@ -3619,7 +3619,7 @@ GameObject:
   - component: {fileID: 4923684045631816613}
   - component: {fileID: 7885661955440799491}
   m_Layer: 0
-  m_Name: Enemy_Basic_04
+  m_Name: rdEnemy_Basic_04
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

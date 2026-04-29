@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5501882851472610180
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7256283138014265609, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.243
+      objectReference: {fileID: 0}
+    - target: {fileID: -7256283138014265609, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6689036041284674117, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_Name
+      value: RagdollRollingSnowball
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.44518
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.574
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49.02248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774220344278030320, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4383127399337748058}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3184955766965235735}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4627054112039342826}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 720412110d562425e8916590c88bebd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5013460201328537839}
+  m_SourcePrefab: {fileID: -5645937942226959685, guid: 720412110d562425e8916590c88bebd4, type: 3}
+--- !u!1 &8030296799390961215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: 720412110d562425e8916590c88bebd4, type: 3}
+  m_PrefabInstance: {fileID: 5501882851472610180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &4383127399337748058
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030296799390961215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25067875
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3184955766965235735
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030296799390961215}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4627054112039342826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030296799390961215}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31949b412e44abeab4e2a6bbfefbe1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.Logic.TrapRespawnNotifier
+--- !u!114 &-5013460201328537839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030296799390961215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db42c27adca3999499e31e8840fde284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Traps.RollingTraps.RagdollRollingSnowball
+  trapType: 4
+  startSpeed: 22
+  minimumSpeed: 18
+  speedRecoveryAcceleration: 30
+  rollTorque: 20
+  aimTowardPlayerOnStart: 1
+  randomYawOffset: 8
+  groundStickForce: 35
+  centerOfMassYOffset: -0.75
+  maxUpwardVelocity: 1.5
+  growthPerUnit: 0.03
+  maxScaleMultiplier: 2.5
+  baseDamage: 10
+  damageCooldown: 0.5
+  damageScalesWithSize: 1
+  enemyRagdollDuration: 4
+  enemyForwardForce: 45
+  enemyUpwardForce: 25
+  sizeForceMultiplier: 1.25
+  fallbackLifeTime: 20
+  minSpeedForStuckCheck: 1
+  stuckTimeBeforeDestroy: 3
