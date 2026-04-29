@@ -1,163 +1,135 @@
-using System.Collections;
-using Traps.TrapUsageData;
+using System.Collections.Generic;
 using UnityEngine;
+using Core.Interfaces;
+using Traps.TrapUsageData;
 
-namespace Traps.RotatingTrap
+namespace Traps
 {
-    public class SwingingTrap : MonoBehaviour
+    public class RotatingTrapHitZone : MonoBehaviour
     {
-        public enum RotationAxis
-        {
-            X,
-            Y,
-            Z
-        }
-
         [Header("Trap Data")]
-        [SerializeField] private TrapType trapType = TrapType.SwingingTrap;
+        [SerializeField] private TrapType trapType = TrapType.RotatingTrap;
 
-        [Header("References")]
-        [SerializeField] private Transform pivot;
-        [SerializeField] private Collider damageZone;
+        [Header("Damage Settings")]
+        [SerializeField] private int damageAmount = 10;
+        [SerializeField] private float damageInterval = 0.5f;
 
-        [Header("Rotation")]
-        [SerializeField] private RotationAxis rotationAxis = RotationAxis.Z;
+        [Header("Knockback Settings")]
+        [SerializeField] private float knockbackForce = 8f;
 
-        [SerializeField] private float hiddenAngle = 0f;
-        [SerializeField] private float strikeAngle = -90f;
-        [SerializeField] private float loopReturnAngle = -360f;
+        [SerializeField] private Transform trapRoot;
 
-        [Header("Speed")]
-        [SerializeField] private float strikeSpeed = 360f;
-        [SerializeField] private float loopSpeed = 220f;
+        private Dictionary<Component, float> nextHitTime = new Dictionary<Component, float>();
 
-        [Header("Damage Timing")]
-        [SerializeField] private float damageStartAngle = -20f;
-        [SerializeField] private float damageEndAngle = -140f;
-
-        [Header("Behavior")]
-        [SerializeField] private float cooldownTime = 2f;
-        [SerializeField] private bool canRetrigger = true;
-
-        private bool isActive = false;
-        private bool isOnCooldown = false;
-
-        private void Start()
+        private void OnTriggerEnter(Collider other)
         {
-            if (pivot == null)
-            {
-                Debug.LogWarning("SwingingHammer: Pivot is not assigned.", this);
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
+            IKnockbackable knockbackable = other.GetComponentInParent<IKnockbackable>();
+
+            if (damageable == null && knockbackable == null)
                 return;
-            }
 
-            SetPivotAngle(hiddenAngle);
-
-            if (damageZone != null)
+            if (other.CompareTag("Player"))
             {
-                damageZone.enabled = false;
+                Record(TrapEventType.HitPlayer);
+            }
+            else if (other.CompareTag("Enemy"))
+            {
+                Record(TrapEventType.HitEnemy);
             }
         }
 
-        public void TryActivate()
+        private void OnTriggerStay(Collider other)
         {
-            if (pivot == null)
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
+            IKnockbackable knockbackable = other.GetComponentInParent<IKnockbackable>();
+
+            if (damageable == null && knockbackable == null)
                 return;
 
-            if (isActive || isOnCooldown)
-                return;
+            Component key = null;
 
-            StartCoroutine(ActivateTrap());
-        }
-
-        private IEnumerator ActivateTrap()
-        {
-            isActive = true;
-
-            Record(TrapEventType.Triggered);
-
-            float currentAngle = hiddenAngle;
-
-            if (damageZone != null)
+            if (damageable is Component damageComponent)
             {
-                damageZone.enabled = false;
+                key = damageComponent;
+            }
+            else if (knockbackable is Component knockbackComponent)
+            {
+                key = knockbackComponent;
             }
 
-            while (currentAngle > strikeAngle)
-            {
-                currentAngle -= strikeSpeed * Time.deltaTime;
+            if (key == null)
+                return;
 
-                if (currentAngle < strikeAngle)
+            if (!nextHitTime.ContainsKey(key))
+            {
+                nextHitTime[key] = 0f;
+            }
+
+            if (Time.time >= nextHitTime[key])
+            {
+                if (damageable != null)
                 {
-                    currentAngle = strikeAngle;
+                    damageable.TakeDamage(damageAmount);
+
+                    if (other.CompareTag("Player"))
+                    {
+                        Record(TrapEventType.DamagedPlayer);
+                    }
+                    else if (other.CompareTag("Enemy"))
+                    {
+                        Record(TrapEventType.DamagedEnemy);
+                    }
                 }
 
-                SetPivotAngle(currentAngle);
-                UpdateDamageZone(currentAngle);
-
-                yield return null;
-            }
-
-            while (currentAngle > loopReturnAngle)
-            {
-                currentAngle -= loopSpeed * Time.deltaTime;
-
-                if (currentAngle < loopReturnAngle)
+                if (knockbackable != null)
                 {
-                    currentAngle = loopReturnAngle;
+                    Vector3 direction;
+
+                    if (trapRoot != null)
+                    {
+                        direction = other.transform.position - trapRoot.position;
+                    }
+                    else
+                    {
+                        direction = other.transform.position - transform.position;
+                    }
+
+                    direction.y = 0f;
+                    direction.Normalize();
+
+                    knockbackable.Knockback(direction, knockbackForce);
                 }
 
-                SetPivotAngle(currentAngle);
-                UpdateDamageZone(currentAngle);
-
-                yield return null;
-            }
-
-            SetPivotAngle(hiddenAngle);
-
-            if (damageZone != null)
-            {
-                damageZone.enabled = false;
-            }
-
-            isActive = false;
-
-            if (canRetrigger)
-            {
-                isOnCooldown = true;
-                yield return new WaitForSeconds(cooldownTime);
-                isOnCooldown = false;
+                nextHitTime[key] = Time.time + damageInterval;
             }
         }
 
-        private void UpdateDamageZone(float currentAngle)
+        private void OnTriggerExit(Collider other)
         {
-            if (damageZone == null)
-                return;
+            IDamageable damageable = other.GetComponentInParent<IDamageable>();
+            IKnockbackable knockbackable = other.GetComponentInParent<IKnockbackable>();
 
-            bool active = currentAngle <= damageStartAngle && currentAngle >= damageEndAngle;
-            damageZone.enabled = active;
-        }
+            Component key = null;
 
-        private void SetPivotAngle(float angle)
-        {
-            Vector3 euler = pivot.localEulerAngles;
-
-            switch (rotationAxis)
+            if (damageable is Component damageComponent)
             {
-                case RotationAxis.X:
-                    euler.x = angle;
-                    break;
-
-                case RotationAxis.Y:
-                    euler.y = angle;
-                    break;
-
-                case RotationAxis.Z:
-                    euler.z = angle;
-                    break;
+                key = damageComponent;
+            }
+            else if (knockbackable is Component knockbackComponent)
+            {
+                key = knockbackComponent;
             }
 
-            pivot.localEulerAngles = euler;
+            if (key != null && nextHitTime.ContainsKey(key))
+            {
+                nextHitTime.Remove(key);
+            }
+        }
+
+        private void OnDisable()
+        {
+            nextHitTime.Clear();
         }
 
         private void Record(TrapEventType eventType)
