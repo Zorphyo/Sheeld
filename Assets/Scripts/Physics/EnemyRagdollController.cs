@@ -114,7 +114,7 @@ public class EnemyRagdollController : MonoBehaviour
         StartCoroutine(RecoverFromSlipAfterGrounded(duration));
     }
 
-    public void Explosion(Vector3 explosionPosition, float force, float radius, float upwardModifier)
+    public void Explosion(Vector3 explosionPosition, float force, float radius, float upwardModifier, float duration)
     {
         SetRagdoll(true);
 
@@ -122,6 +122,8 @@ public class EnemyRagdollController : MonoBehaviour
         {
             rb.AddExplosionForce(force, explosionPosition, radius, upwardModifier, ForceMode.Impulse);
         }
+
+        StartCoroutine(RecoverFromSlipAfterGrounded(duration));
     }
 
     public void Slip(float duration)
@@ -174,9 +176,128 @@ public class EnemyRagdollController : MonoBehaviour
 
     private void RecoverFromSlip()
     {
+        MoveEnemyRootToRagdollLandingSpot();
+
+        StopRagdollMotion();
+
         SetRagdoll(false);
 
         if (agent != null)
+        {
             agent.enabled = true;
+            agent.Warp(transform.position);
+        }
+    }
+
+    private void MoveEnemyRootToRagdollLandingSpot()
+    {
+        Rigidbody referenceBody = GetBestBodyForRecovery();
+
+        if (referenceBody == null)
+            return;
+
+        Vector3 targetPosition = referenceBody.position;
+
+        // Try to place enemy on NavMesh near where the ragdoll landed
+        if (NavMesh.SamplePosition(targetPosition, out NavMeshHit navHit, 3f, NavMesh.AllAreas))
+        {
+            targetPosition = navHit.position;
+        }
+        else
+        {
+            // Fallback: raycast down to actual floor
+            Vector3 rayStart = targetPosition + Vector3.up * 2f;
+
+            if (Physics.Raycast(rayStart, Vector3.down, out RaycastHit groundHit, 10f))
+            {
+                targetPosition = groundHit.point;
+            }
+        }
+
+        // Prevent spawning halfway through the floor
+        float yOffset = 0.1f;
+
+        if (mainCollider != null)
+        {
+            yOffset += mainCollider.bounds.extents.y;
+        }
+
+        transform.position = targetPosition + Vector3.up * yOffset;
+
+        // Optional: face roughly same direction as the ragdoll body
+        Vector3 flatForward = referenceBody.transform.forward;
+        flatForward.y = 0f;
+
+        if (flatForward.sqrMagnitude > 0.01f)
+        {
+            transform.rotation = Quaternion.LookRotation(flatForward.normalized);
+        }
+    }
+
+    private Rigidbody GetBestBodyForRecovery()
+    {
+        // Prefer hips/pelvis/spine if names exist
+        foreach (Rigidbody rb in ragdollRigidbodies)
+        {
+            string lowerName = rb.name.ToLower();
+
+            if (lowerName.Contains("hips") ||
+                lowerName.Contains("pelvis") ||
+                lowerName.Contains("spine"))
+            {
+                return rb;
+            }
+        }
+
+        // Fallback: use the ragdoll body closest to the average position
+        if (ragdollRigidbodies.Length == 0)
+            return null;
+
+        return ragdollRigidbodies[0];
+    }
+
+    private void StopRagdollMotion()
+    {
+        foreach (Rigidbody rb in ragdollRigidbodies)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+    }
+
+    public void DieAsRagdoll(Vector3 extraForce = default, Vector3 hitPoint = default)
+    {
+        StopAllCoroutines();
+
+        SetRagdoll(true);
+
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
+
+        if (animator != null)
+            animator.enabled = false;
+
+        if (mainCollider != null)
+            mainCollider.enabled = false;
+
+        if (mainRigidbody != null)
+        {
+            mainRigidbody.linearVelocity = Vector3.zero;
+            mainRigidbody.angularVelocity = Vector3.zero;
+            mainRigidbody.isKinematic = true;
+        }
+
+        if (extraForce != Vector3.zero)
+        {
+            Rigidbody closest = hitPoint == default
+                ? GetBestBodyForRecovery()
+                : GetClosestRigidbody(hitPoint);
+
+            if (closest != null)
+                closest.AddForceAtPosition(extraForce, closest.worldCenterOfMass, ForceMode.Impulse);
+        }
     }
 }
