@@ -1,3 +1,4 @@
+using Traps.TrapUsageData;
 using UnityEngine;
 
 public class BananaTrapRagdoll : MonoBehaviour
@@ -37,6 +38,11 @@ public class BananaTrapRagdoll : MonoBehaviour
         }
 
         if (other.CompareTag("Enemy")) {
+            if (TrapStatsManager.Instance != null)
+            {
+                TrapStatsManager.Instance.RecordUniqueTrapUsed(gameObject);
+            }
+
             EnemyRagdollController enemy = other.GetComponentInParent<EnemyRagdollController>();
 
             if (enemy == null)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Traps.TrapUsageData;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -73,7 +74,16 @@ public class BombScript : MonoBehaviour
             EnemyRagdollController enemy = hit.GetComponentInParent<EnemyRagdollController>();
 
             if (enemy == null)
+            {
                 continue;
+            } else
+            {
+                if (TrapStatsManager.Instance != null)
+                {
+                    TrapStatsManager.Instance.RecordUniqueTrapUsed(gameObject);
+                }
+            }
+
 
             // Prevent damaging the same enemy multiple times because ragdolls have many colliders.
             if (damagedEnemies.Contains(enemy))

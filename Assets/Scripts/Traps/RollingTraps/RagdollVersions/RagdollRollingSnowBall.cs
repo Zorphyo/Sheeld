@@ -134,6 +134,11 @@ namespace Traps.RollingTraps
 
                 Vector3 force = GetRagdollForce();
 
+                if (TrapStatsManager.Instance != null)
+                {
+                    TrapStatsManager.Instance.RecordUniqueTrapUsed(gameObject);
+                }
+
                 ragdoll.Knockback(force, hitPoint, enemyRagdollDuration);
             }
 

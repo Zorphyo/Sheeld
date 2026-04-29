@@ -13,6 +13,7 @@ namespace Traps.TrapUsageData
         private Dictionary<TrapType, int> enemyHitCounts = new Dictionary<TrapType, int>();
         private Dictionary<TrapType, int> playerDamageCounts = new Dictionary<TrapType, int>();
         private Dictionary<TrapType, int> enemyDamageCounts = new Dictionary<TrapType, int>();
+        private HashSet<int> uniqueTrapsUsed = new HashSet<int>();
 
         private void Awake()
         {
@@ -105,6 +106,27 @@ namespace Traps.TrapUsageData
             enemyHitCounts.Clear();
             playerDamageCounts.Clear();
             enemyDamageCounts.Clear();
+            uniqueTrapsUsed.Clear();
+        }
+
+        public void RecordUniqueTrapUsed(GameObject trapObject)
+        {
+            if (trapObject == null)
+                return;
+
+            int trapId = trapObject.GetInstanceID();
+
+            if (uniqueTrapsUsed.Contains(trapId))
+                return;
+
+            uniqueTrapsUsed.Add(trapId);
+
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.TrapUsed();
+            }
+
+            Debug.Log("Unique trap used: " + trapObject.name);
         }
     }
 }

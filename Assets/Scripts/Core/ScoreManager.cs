@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public int damageDealt = 0;
     public int multiHit = 0;
     public int wavesDone = 0;
+    public int trapsUsed = 0;
 
     [Header("Multi-Hit Settings")]
     public float multiHitTimeframe = 2f;
@@ -29,6 +30,7 @@ public class ScoreManager : MonoBehaviour
         damageDealt = 0;
         multiHit = 0;
         wavesDone = 0;
+        trapsUsed = 0;
     }
 
     public void ReportDamage(int damageAmount)
@@ -56,5 +58,14 @@ public class ScoreManager : MonoBehaviour
         score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
 
         Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone}");
+    }
+
+    public void TrapUsed()
+    {
+        trapsUsed++;
+
+        score = Mathf.CeilToInt(damageDealt * (1.3f * (1 + multiHit)) + (20 * wavesDone));
+
+        Debug.Log($"Score changed: {score} | DamageDealt: {damageDealt} | MultiHit: {multiHit} | Waves: {wavesDone} | TrapsUsed: {trapsUsed}");
     }
 }
