@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     [HideInInspector] public bool isShieldBashing = false;
     [HideInInspector] public bool isHolding = false;
 
+    [HideInInspector] public bool isMountedWeapon = false;
+    private MountedWeapon currentMountedWeapon;
+
     [HideInInspector] public bool interactOkay = false;
     IInteractable currentInteractable;
     Throwable currentThrowable;
@@ -74,10 +77,23 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     {
         HandleFalling();
 
+        if (isMountedWeapon)
+        {
+            return;
+        }
+
         Vector2 inputVector = pia.Player.Movement.ReadValue<Vector2>();
 
         HandleMovement(inputVector);
         HandleRotation(inputVector);
+    }
+
+    private void Update()
+    {
+        if (isMountedWeapon && currentMountedWeapon != null)
+        {
+            currentMountedWeapon.HandleMountedUpdate();
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -180,6 +196,12 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public void JumpPerformed(InputAction.CallbackContext context)
     {
+        if (isMountedWeapon)
+        {
+            DismountWeapon();
+            return;
+        }
+
         if (isGrounded)
         {
             rb.AddForce(Vector3.up * JUMP_FORCE, ForceMode.Impulse);
@@ -268,7 +290,13 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public void InteractStarted(InputAction.CallbackContext context)
     {
-        if (interactOkay)
+        if (isMountedWeapon)
+        {
+            DismountWeapon();
+            return;
+        }
+
+        if (interactOkay && currentInteractable != null)
         {
             currentInteractable.Interact();
         }
@@ -276,6 +304,12 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public void ThrowStarted(InputAction.CallbackContext context)
     {
+        if (isMountedWeapon && currentMountedWeapon != null)
+        {
+            currentMountedWeapon.UseWeapon();
+            return;
+        }
+
         if (isHolding)
         {
             currentThrowable.Throw();
@@ -326,5 +360,33 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     public void Knockback(Vector3 direction, float force)
     {
         StartCoroutine(ApplyKnockback(direction, force));
+    }
+
+    public void MountWeapon(MountedWeapon weapon, Transform mountPoint)
+    {
+        if (weapon == null || mountPoint == null)
+            return;
+
+        isMountedWeapon = true;
+        currentMountedWeapon = weapon;
+
+        isSprinting = false;
+        isBlocking = false;
+        isDodging = false;
+        isShieldBashing = false;
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+
+        transform.rotation = Quaternion.Euler(0, mountPoint.eulerAngles.y, 0);
+    }
+
+    public void DismountWeapon()
+    {
+        isMountedWeapon = false;
+        currentMountedWeapon = null;
+
+        rb.isKinematic = false;
     }
 }

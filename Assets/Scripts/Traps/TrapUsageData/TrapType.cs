@@ -10,6 +10,7 @@ namespace Traps.TrapUsageData
         RotatingTrap,
         Banana,
         WallSpikeShooter,
+        Mounted,
         Other  
     }
 }
