@@ -227,6 +227,7 @@ MonoBehaviour:
   medicPresent: 0
   isDead: 0
   isDBNO: 0
+  healthBarPrefab: {fileID: 5190737527595059631, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
 --- !u!114 &-1445658437360413622
 MonoBehaviour:
   m_ObjectHideFlags: 0

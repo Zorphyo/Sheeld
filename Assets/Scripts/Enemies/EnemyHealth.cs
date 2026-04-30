@@ -27,6 +27,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private float bleedoutTimer;
     private bool bleedoutActive;
 
+    // UI Health Bar
+    [Header("Health Bar")]
+    public GameObject healthBarPrefab;
+    public Transform headPoint;
+    private EnemyHealthBar healthBarUI;
+
     void OnEnable()
     {
         currentHealth = maxHealth;
@@ -36,6 +42,27 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         if (MedicManager.Instance != null)
             MedicManager.Instance.RegisterEnemy(this);
+
+        if (headPoint == null)
+        {
+            Transform found = transform.Find("HeadObject");
+            if (found != null)
+                headPoint = found;
+        }
+
+        if (healthBarPrefab != null)
+        {
+            GameObject hb = Instantiate(healthBarPrefab);
+
+            healthBarUI = hb.GetComponent<EnemyHealthBar>();
+
+            var follow = hb.GetComponent<EnemyHealthFollow>();
+            follow.target = headPoint != null ? headPoint : transform;
+
+            healthBarUI.SetHealthBar(currentHealth, maxHealth);
+
+            hb.SetActive(false);
+        }
     }
 
     void OnDestroy()
@@ -56,6 +83,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (amount <= 0) return;
 
         currentHealth -= amount;
+
+        healthBarUI?.SetHealthBar(currentHealth, maxHealth);
+        if (healthBarUI != null)
+        {
+            healthBarUI.gameObject.SetActive(currentHealth < maxHealth);
+        }
+
         if (ScoreManager.Instance != null)
         {
             ScoreManager.Instance.ReportDamage(amount);
@@ -125,6 +159,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         enemyAnimator?.Revive();
 
+        healthBarUI?.SetHealthBar(currentHealth, maxHealth);
+
+        if (healthBarUI != null)
+        {
+            healthBarUI.gameObject.SetActive(currentHealth < maxHealth);
+        }
+
         Debug.Log($"{gameObject.name} revived at {currentHealth} hp");
     }
 
@@ -137,6 +178,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         bleedoutActive = false;
 
         Debug.Log($"{gameObject.name} died.");
+
+        if (healthBarUI != null)
+        {
+            Destroy(healthBarUI.gameObject);
+        }
 
         if (ScoreManager.Instance != null)
         {

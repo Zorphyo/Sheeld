@@ -8846,6 +8846,7 @@ Transform:
   - {fileID: 4512379770510734}
   - {fileID: 4296176390280038}
   - {fileID: 4750143952197616}
+  - {fileID: 2191272305204355950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95664687578323722
@@ -8965,6 +8966,8 @@ MonoBehaviour:
   medicPresent: 0
   isDead: 0
   isDBNO: 0
+  healthBarPrefab: {fileID: 5190737527595059631, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
+  headPoint: {fileID: 2191272305204355950}
 --- !u!114 &1920330642829009242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9465,3 +9468,34 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5213725429903214316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2191272305204355950}
+  m_Layer: 0
+  m_Name: HeadObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2191272305204355950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5213725429903214316}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.018, y: 1.773, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4393496376346426}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

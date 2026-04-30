@@ -2020,6 +2020,7 @@ MonoBehaviour:
   medicPresent: 0
   isDead: 0
   isDBNO: 0
+  healthBarPrefab: {fileID: 5190737527595059631, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
 --- !u!114 &-5221200786807613066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2062,7 +2063,9 @@ MonoBehaviour:
   voice: 0
   type: 4
   mixerGroup: {fileID: 2027888447949932597, guid: 708e68d943c7a764d835467d997fac49, type: 2}
-  footstepInterval: 0.4
+  basicFootstepInterval: 0.4
+  heavyFootstepInterval: 0.7
+  speedsterFootstepInterval: 0.25
 --- !u!1 &4411677762338043546
 GameObject:
   m_ObjectHideFlags: 0
