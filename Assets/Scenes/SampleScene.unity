@@ -3005,6 +3005,63 @@ MonoBehaviour:
   useRandomSeed: 1
   fixedSeed: 12345
   maxPlacementAttemptsPerTrap: 50
+--- !u!1001 &684994852
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1429419887474910, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_Name
+      value: rdEnemy_Basic_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 71.94599
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1000051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1437.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439735364738112, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5eff82214dcd3d74c971080d0cba0023, type: 3}
 --- !u!1 &722964831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,8 +5824,8 @@ MonoBehaviour:
   noDamageTimeThreshold: 20
   noAttackTimeThreshold: 10
   lowChaosTimeThreshold: 15
-  spawnMinDistanceFromPlayer: 15
-  spawnMaxDistanceFromPlayer: 40
+  spawnMinDistanceFromPlayer: 20
+  spawnMaxDistanceFromPlayer: 50
   chaosLevel: 0
 --- !u!1 &1375121161
 GameObject:
@@ -7467,6 +7524,11 @@ MonoBehaviour:
   wavesDone: 0
   trapsUsed: 0
   timeSpent: 0
+  basicDeaths: 0
+  heavyDeaths: 0
+  archerDeaths: 0
+  speedsterDeaths: 0
+  medicDeaths: 0
   multiHitTimeframe: 2
 --- !u!114 &1783760099
 MonoBehaviour:
@@ -9033,3 +9095,4 @@ SceneRoots:
   - {fileID: 1778230898}
   - {fileID: 2049635821}
   - {fileID: 664219592}
+  - {fileID: 684994852}

@@ -165,7 +165,7 @@ MonoBehaviour:
   fallbackDistanceBehindWeapon: 13
   playerHeightOffset: 0
   mouseSensitivity: 3
-  maxDegreesPerFrame: 1.5
+  maxDegreesPerFrame: 2
   boltPrefab: {fileID: 1678360869550186552, guid: cd75cca0a81119947b532c74fc0b50c3, type: 3}
   firePoint: {fileID: 7542261231361755766}
   boltSpeed: 45

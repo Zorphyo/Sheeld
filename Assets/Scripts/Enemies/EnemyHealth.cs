@@ -138,6 +138,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         Debug.Log($"{gameObject.name} died.");
 
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.ReportEnemyDeath(gameObject.name);
+        }
+
         // Kill agent immediately so it stops fighting the death animation
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         if (agent != null)
