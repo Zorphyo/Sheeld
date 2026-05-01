@@ -22,6 +22,6 @@ public class MultiHitBar : MonoBehaviour
 
         fill.color = Color.Lerp(Color.blue, Color.purple, value);
 
-        //slider.gameObject.SetActive(value > 0f);
+        slider.gameObject.SetActive(value > 0f);
     }
 }
