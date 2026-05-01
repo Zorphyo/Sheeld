@@ -74,16 +74,13 @@ namespace Traps.RollingTraps
 
         private void Start()
         {
-            SetTravelDirection();
+            // Move sideways using the log's red X arrow.
+            travelDirection = transform.right;
+            travelDirection.y = 0f;
+            travelDirection.Normalize();
 
-            // A real log rolls around its long axis.
-            // The long axis must be sideways/perpendicular to the movement direction.
-            rollAxis = Vector3.Cross(Vector3.up, travelDirection).normalized;
-
-            if (forceCorrectLogOrientationOnSpawn)
-            {
-                ForceLogLongAxisToMatchRollAxis();
-            }
+            // Roll around the log's long axis, which is green/Y.
+            rollAxis = transform.up.normalized;
 
             Launch();
 

@@ -173,11 +173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eae59214ede4e0b9d57e58046dae670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.RollingLog
+  trapType: 4
   startSpeed: 18
   minimumSpeed: 14
   speedRecoveryAcceleration: 20
   rollTorque: 8
   rollDirection: 1
+  logLongAxis: 1
+  forceCorrectLogOrientationOnSpawn: 0
   groundStickForce: 45
   centerOfMassYOffset: -0.5
   maxUpwardVelocity: 1

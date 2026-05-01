@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f303ce4358c485cba3933867782f194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.RollingBoulder
+  trapType: 4
   startSpeed: 22
   minimumSpeed: 18
   speedRecoveryAcceleration: 30
@@ -163,7 +164,7 @@ MonoBehaviour:
   groundStickForce: 35
   centerOfMassYOffset: -0.75
   maxUpwardVelocity: 1.5
-  damageAmount: 15
+  damageAmount: 10
   damageCooldown: 0.5
   fallbackLifeTime: 20
   minSpeedForStuckCheck: 1

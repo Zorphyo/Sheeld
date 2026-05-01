@@ -2940,7 +2940,7 @@ MonoBehaviour:
     yOffset: 0
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 30
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 1
@@ -2960,7 +2960,7 @@ MonoBehaviour:
     yOffset: 0
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 30
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 2
@@ -2980,7 +2980,7 @@ MonoBehaviour:
     yOffset: 5.1
     randomYaw: 0
     baseRotationEuler: {x: -90, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 5
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 3
@@ -3000,7 +3000,7 @@ MonoBehaviour:
     yOffset: 1.25
     randomYaw: 0
     baseRotationEuler: {x: -90, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 5
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 5
@@ -3020,7 +3020,7 @@ MonoBehaviour:
     yOffset: 0.08
     randomYaw: 0
     baseRotationEuler: {x: -90, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 5
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 4
@@ -3040,7 +3040,7 @@ MonoBehaviour:
     yOffset: 0
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 5
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 0
@@ -3060,7 +3060,7 @@ MonoBehaviour:
     yOffset: 1.5
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 30
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 0
@@ -3080,7 +3080,7 @@ MonoBehaviour:
     yOffset: 0
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 5
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 6
@@ -3100,7 +3100,7 @@ MonoBehaviour:
     yOffset: 0
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 5
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 6
@@ -3160,7 +3160,7 @@ MonoBehaviour:
     yOffset: 0.43
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 20
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 7
@@ -3180,7 +3180,7 @@ MonoBehaviour:
     yOffset: 0.6
     randomYaw: 0
     baseRotationEuler: {x: 0, y: 0, z: 0}
-    minDistanceFromPlayerSpawn: 0
+    minDistanceFromPlayerSpawn: 30
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 1
@@ -9816,6 +9816,18 @@ PrefabInstance:
     - target: {fileID: 5190737527595059631, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
       propertyPath: m_Name
       value: EnemyCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734372550399391328, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734372550399391328, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734372550399391328, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

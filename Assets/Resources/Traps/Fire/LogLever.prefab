@@ -350,17 +350,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390c213ac65f4410889ce23948cc2aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.LeverBallSpawner
+  trapType: 4
   leverHandle: {fileID: 5732735650838086293}
   spawnPoint: {fileID: 776154229063396734}
   spawnedTrapPrefab: {fileID: 1100035794660457298, guid: aca8e6b84bad34dad89ab8852973537e, type: 3}
   spawnedTrapParent: {fileID: 0}
   playerTag: Player
-  interactKey: 101
   reuseCooldown: 4
   pulledLocalEulerOffset: {x: 0, y: 0, z: -35}
   pullSpeed: 240
   returnSpeed: 180
   pulledHoldTime: 0.08
+  spawnRotationMode: 2
   requirePlayerTrigger: 1
 --- !u!54 &7231693739068603499
 Rigidbody:
