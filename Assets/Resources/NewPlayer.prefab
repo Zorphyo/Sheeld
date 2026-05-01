@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 8656569097953060003}
   - component: {fileID: 1741614733242064219}
   - component: {fileID: 1906586562684881425}
+  - component: {fileID: 3868494634343878841}
   - component: {fileID: 7409437735452391608}
   - component: {fileID: 4157721542098168211}
   - component: {fileID: 4787230051245943939}
@@ -759,6 +760,7 @@ MonoBehaviour:
   isDodging: 0
   isShieldBashing: 0
   isHolding: 0
+  isMountedWeapon: 0
   interactOkay: 0
   holdPosition: {fileID: 8877052242975331779}
   groundLayer:
@@ -796,6 +798,26 @@ MonoBehaviour:
   currentHealth: 0
   currentStamina: 0
   staminaLockout: 0
+--- !u!114 &3868494634343878841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818807309100505852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6c50e6886228c40ac8784a90c9394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSounds
+  shieldUp: {fileID: 8300000, guid: 1503820e53d671d4c90c4a63dbdb527b, type: 3}
+  shieldDown: {fileID: 8300000, guid: 4fc08d2df236cc0458f8ce0f9e69b5fb, type: 3}
+  shieldBash: {fileID: 8300000, guid: 46d8ec44bc6a5824b85b43d81f68afbb, type: 3}
+  shieldHit: {fileID: 8300000, guid: b883c27c88428884fb3a10dcc42b8b47, type: 3}
+  hit: {fileID: 8300000, guid: 7cbd6cd765888ff418d01d98bd1ce9c2, type: 3}
+  thrown: {fileID: 8300000, guid: 13182107f288fdc47a11f9216c8f062b, type: 3}
+  roll: {fileID: 8300000, guid: 7053294e066eb1945baa4d9cc9194f15, type: 3}
+  footstep: {fileID: 8300000, guid: 9c18278ffe5a7f6408c1a6374487cbb6, type: 3}
 --- !u!54 &7409437735452391608
 Rigidbody:
   m_ObjectHideFlags: 0
