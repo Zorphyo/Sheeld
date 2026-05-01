@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class PlayerStats : MonoBehaviour, IDamageable
 {
     PlayerController pc;
+    PlayerSounds sounds;
     SceneManagerScript sceneManager;
     Animator animator;
 
@@ -26,6 +27,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     void Awake()
     {
         pc = GetComponent<PlayerController>();
+        sounds = GetComponent<PlayerSounds>();
         sceneManager = FindFirstObjectByType<SceneManagerScript>();
         animator = GetComponent<Animator>();
     }
@@ -45,12 +47,6 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
         StartCoroutine(StaminaRegen(1));
         StartCoroutine(Sprinting(-1));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void ChangeHealth(int amount)
@@ -145,11 +141,13 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         if (pc.isBlocking)
         {
+            AudioSource.PlayClipAtPoint(sounds.shieldHit, transform.position);
             ChangeStamina(-amount);
         }
 
         else
         {
+            AudioSource.PlayClipAtPoint(sounds.hit, transform.position);
             ChangeHealth(-amount);
         }
     }

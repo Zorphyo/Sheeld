@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     public PlayerInputActions pia;
     GameObject camera;
     PlayerStats ps;
+    PlayerSounds sounds;
 
     [SerializeField] float RUN_SPEED;
     [SerializeField] float SPRINT_SPEED;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         rb = GetComponent<Rigidbody>();
         pia = new PlayerInputActions();
         ps = GetComponent<PlayerStats>();
+        sounds = GetComponent<PlayerSounds>();
 
         pia.Enable();
         pia.Player.Movement.started += SprintOkay;
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         pia.Player.Jump.performed += JumpPerformed;
         pia.Player.Sprint.performed += SprintPerformed;
         pia.Player.Sprint.canceled += SprintCanceled;
-        pia.Player.Block.performed += BlockPerformed;
+        pia.Player.Block.started += BlockStarted;
         pia.Player.Block.canceled += BlockCanceled;
         pia.Player.Dodge.performed += DodgePerformed;
         pia.Player.ShieldBash.performed += ShieldBashPerformed;
@@ -221,14 +223,16 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         isSprinting = false;
     }
 
-    public void BlockPerformed(InputAction.CallbackContext context)
+    public void BlockStarted(InputAction.CallbackContext context)
     {
+        AudioSource.PlayClipAtPoint(sounds.shieldUp, transform.position);
         isBlocking = true;
         pia.Player.Throw.Disable();
     }
 
     public void BlockCanceled(InputAction.CallbackContext context)
     {
+        AudioSource.PlayClipAtPoint(sounds.shieldDown, transform.position);
         isBlocking = false;
         pia.Player.Throw.Enable();
     }
@@ -240,6 +244,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
             isDodging = true;
             rb.AddForce(transform.forward * DODGE_FORCE, ForceMode.Impulse);
             ps.ChangeStamina(-ps.DODGE_STAMINA_COST);
+            AudioSource.PlayClipAtPoint(sounds.roll, transform.position);
             pia.Player.Disable();
         }
 
@@ -247,7 +252,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
     }
 
     IEnumerator DodgeTimer()
-    {           
+    {  
         yield return new WaitForSeconds(1f);
 
         isDodging = false;
@@ -262,12 +267,12 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
     public void ShieldBashPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log("test");
         if (isBlocking)
         {
             isShieldBashing = true;
             rb.AddForce(transform.forward * SHIELD_BASH_FORCE, ForceMode.Impulse);
             ps.ChangeStamina(-ps.SHIELD_BASH_STAMINA_COST);
+            AudioSource.PlayClipAtPoint(sounds.shieldBash, transform.position);
             pia.Player.Disable();
         }
 
@@ -313,6 +318,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
         if (isHolding)
         {
             currentThrowable.Throw();
+            AudioSource.PlayClipAtPoint(sounds.thrown, transform.position);
             currentThrowable = null;
         }
     }
