@@ -37,7 +37,7 @@ public class DirectorAI : MonoBehaviour
 
     // ── Spawn settings ────────────────────────────────────────────────────────
     [Header("Spawn Cap")]
-    public int maxAliveEnemies = 25;
+    public int maxAliveEnemies = 10;
 
     [Header("Spawn Intervals (seconds)")]
     public float pressureSpawnInterval = 4f;
