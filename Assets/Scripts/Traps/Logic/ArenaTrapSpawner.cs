@@ -27,6 +27,7 @@ namespace Traps.Logic
             Throwable,
             Banana,
             Rolling,
+            LavaSpout,
             Other
         }
 

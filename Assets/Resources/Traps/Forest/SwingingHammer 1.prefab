@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6057816077777020321}
   - component: {fileID: 2701355932538032696}
   - component: {fileID: 6586234550805136909}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SwingingHammer 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7594629312196440694}
   - component: {fileID: 675307126406840395}
   - component: {fileID: 2467219292213984172}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TriggerZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 246423787597074991}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 7282565741407946514}
   - component: {fileID: 1880839828871706314}
   - component: {fileID: 1461833284108228716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DamageZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84545c501a2044bb59ce8b9aa1333474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.SwingingHammer.HammerDamageZone
+  trapType: 2
   playerDamage: 25
   enemyDamage: 40
   damageInterval: 0.5
@@ -318,9 +319,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e9138e54c1e334be3b8916867a4980c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: e9138e54c1e334be3b8916867a4980c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e9138e54c1e334be3b8916867a4980c1, type: 3}
       propertyPath: m_Name
       value: HammerVisual
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e9138e54c1e334be3b8916867a4980c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: e9138e54c1e334be3b8916867a4980c1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
