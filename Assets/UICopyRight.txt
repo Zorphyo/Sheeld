@@ -1,0 +1,4 @@
+Tab Shapes: QuantumUI by Quantum Tek (FREE Standard Unity Asset Store EULA) https://assetstore.unity.com/packages/tools/gui/quantum-ui-162077
+Save Files: Easy File Save by TIGERFORGE (FREE Standard Unity Asset Store EULA) https://assetstore.unity.com/packages/tools/input-management/easy-file-save-161484
+GUI Elements: SIMPLE FANTASY GUI by Nayrissa (FREE Standard Unity Asset Store EULA) https://assetstore.unity.com/packages/2d/gui/simple-fantasy-gui-99451
+KeyBoard Icons: Game Input Controller Icons Free (FREE Standard Unity Asset Store EULA) https://assetstore.unity.com/packages/2d/gui/icons/game-input-controller-icons-free-285953
