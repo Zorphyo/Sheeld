@@ -148,7 +148,7 @@ MonoBehaviour:
   maxFanYaw: 25
   randomYawJitter: 4
   randomPitchJitter: 2
-  projectileSpeed: 50
+  projectileSpeed: 5
   cooldownTime: 0.05
 --- !u!1 &2082089462391504090
 GameObject:
@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bba7ee894dd4541babdb3e42908ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.WallSpikeShooter.LeverSpikeShooterActivator
+  trapType: 7
   leverHandle: {fileID: 5550702762879277763}
   spikeShooter: {fileID: 5451541838599450100}
   playerTag: Player
