@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour, IKnockbackable
 
         if (otherGameObject.TryGetComponent<EnemyLocomotion>(out EnemyLocomotion enemy) && isShieldBashing)
         {
-            Vector3 launchDirection = transform.forward;
+            Vector3 launchDirection = rb.linearVelocity.normalized;
             enemy.Knockback(launchDirection, KNOCKBACK_FORCE);
         }
     }

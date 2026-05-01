@@ -8026,6 +8026,7 @@ MonoBehaviour:
   isDead: 0
   isDBNO: 0
   healthBarPrefab: {fileID: 5190737527595059631, guid: 6bd3ee873862483438ca711ead97d279, type: 3}
+  headPoint: {fileID: 0}
 --- !u!114 &1920330642829009242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8080,7 +8081,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &-4962963433394055793
 Rigidbody:
