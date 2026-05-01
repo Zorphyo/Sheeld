@@ -51,6 +51,12 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         timeSpent += Time.deltaTime;
+
+        if (Time.time > lastDamageTime + multiHitTimeframe)
+        {
+            multiHit = 0; // Reset multiplier
+        }
+
     }
 
     public void ReportDamage(int damageAmount)
@@ -134,5 +140,13 @@ public class ScoreManager : MonoBehaviour
         );
 
         return;
+    }
+
+    public float GetMultiHitTimerNormalized()
+    {
+        float timeSinceLastHit = Time.time - lastDamageTime;
+        float remaining = multiHitTimeframe - timeSinceLastHit;
+
+        return Mathf.Clamp01(remaining / multiHitTimeframe);
     }
 }
