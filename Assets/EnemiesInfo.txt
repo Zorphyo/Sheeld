@@ -1,31 +1,31 @@
 --Models--
 Witch by Quaternius [CC-BY] via Poly Pizza
-Warrior Pack Bundle 3 FREE in Unity Store
-Viking warrior polygon in Unity Store
-Low Poly Melee & Ranged Medieval Weapons in Unity Store
-Lowpoly Magician RIO in Unity Store
-Low Poly Axe Warrior in Unity Store
-Warrior Pack Bundle 1 FREE in Unity Store
-Warrior Pack Bundle 2 FREE in Unity Store
-LOWPOLY - Universal Character (Modular) in Unity Store
+Warrior Pack Bundle 3 FREE Standard Unity Asset Store EULA
+Viking warrior polygon Standard Unity Asset Store EULA
+Low Poly Melee & Ranged Medieval Weapons Standard Unity Asset Store EULA
+Lowpoly Magician RIO Standard Unity Asset Store EULA
+Low Poly Axe Warrior Standard Unity Asset Store EULA
+Warrior Pack Bundle 1 FREE Standard Unity Asset Store EULA
+Warrior Pack Bundle 2 FREE Standard Unity Asset Store EULA
+LOWPOLY - Universal Character (Modular) Standard Unity Asset Store EULA
 
 --Animations--
-Skeleton Animations FREE in Unity Store
-Human Spellcasting Animations FREE in Unity Store
-Human Archer Animations FREE in Unity Store
-Giant Animations FREE in Unity Store
-Free Sample Animation Set in Unity Store
-Human Melee Animations FREE in Unity Store
-Human Basic Motions FREE in Unity Store
+Skeleton Animations FREE Standard Unity Asset Store EULA
+Human Spellcasting Animations FREE Standard Unity Asset Store EULA
+Human Archer Animations FREE Standard Unity Asset Store EULA
+Giant Animations FREE Standard Unity Asset Store EULA
+Free Sample Animation Set Standard Unity Asset Store EULA
+Human Melee Animations FREE Standard Unity Asset Store EULA
+Human Basic Motions FREE Standard Unity Asset Store EULA
 
 --Audio--
-Bow and Arrow - 2D in Unity Store
-Free Deadly Kombat in Unity Store
-Blades & Bludgeoning Free Sample Pack in Unity Store
-Male Character Vocalizations Sound Effects Pack LITE Edition in Unity Store
-Damage Sounds (Male) - NPC/Player Audio Pack in Unity Store
-RPG Essentials Sound Effects - FREE! in Unity Store
-Footsteps Small Sound Pack in Unity Store
-Bow and Hammer Sound Effects in Unity Store
-Demo Ancient Magic Pack FREE in Unity Store
-Voices - Essentials in Unity Store
+Bow and Arrow - 2D Standard Unity Asset Store EULA
+Free Deadly Kombat Standard Unity Asset Store EULA
+Blades & Bludgeoning Free Sample Pack Standard Unity Asset Store EULA
+Male Character Vocalizations Sound Effects Pack LITE Edition Standard Unity Asset Store EULA
+Damage Sounds (Male) - NPC/Player Audio Pack Standard Unity Asset Store EULA
+RPG Essentials Sound Effects - FREE! Standard Unity Asset Store EULA
+Footsteps Small Sound Pack Standard Unity Asset Store EULA
+Bow and Hammer Sound Effects Standard Unity Asset Store EULA
+Demo Ancient Magic Pack FREE Standard Unity Asset Store EULA
+Voices - Essentials Standard Unity Asset Store EULA
