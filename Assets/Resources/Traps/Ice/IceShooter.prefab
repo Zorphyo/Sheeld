@@ -148,7 +148,7 @@ MonoBehaviour:
   maxFanYaw: 25
   randomYawJitter: 4
   randomPitchJitter: 2
-  projectileSpeed: 5
+  projectileSpeed: 30
   cooldownTime: 0.05
 --- !u!1 &2082089462391504090
 GameObject:
