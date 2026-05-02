@@ -9978,6 +9978,7 @@ GameObject:
   - component: {fileID: 3643696708692917790}
   - component: {fileID: 5346170708746005330}
   - component: {fileID: 2399067106944423694}
+  - component: {fileID: 5346170708746005331}
   m_Layer: 0
   m_Name: King's Area
   m_TagString: Untagged
@@ -10094,6 +10095,7 @@ GameObject:
   - component: {fileID: 577469547501800615}
   - component: {fileID: 7872245191517646593}
   - component: {fileID: 587555677661879042}
+  - component: {fileID: 7872245191517646594}
   m_Layer: 0
   m_Name: MainWalls
   m_TagString: Untagged
@@ -10272,6 +10274,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2451757640241197306}
   m_Mesh: {fileID: -4206952927535209298, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
+--- !u!64 &5346170708746005331
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2451757640241197306}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4206952927535209298, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
 --- !u!4 &5435649927267149446
 Transform:
   m_ObjectHideFlags: 0
@@ -10298,6 +10322,7 @@ GameObject:
   - component: {fileID: 7195576527305465351}
   - component: {fileID: 2747224591320369726}
   - component: {fileID: 7216054566649963663}
+  - component: {fileID: 7216054566649963664}
   m_Layer: 0
   m_Name: KingsAreaAccent
   m_TagString: Untagged
@@ -10406,6 +10431,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7216054566649963664
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085173200053265066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6371746058544277431, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
 --- !u!4 &7702885056338047238
 Transform:
   m_ObjectHideFlags: 0
@@ -10447,6 +10494,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3514230617025243280}
   m_Mesh: {fileID: 6821957543254970829, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
+--- !u!64 &7872245191517646594
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3514230617025243280}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6821957543254970829, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
 --- !u!1 &7923214317086793386
 GameObject:
   m_ObjectHideFlags: 0
@@ -10458,6 +10527,7 @@ GameObject:
   - component: {fileID: 7702885056338047238}
   - component: {fileID: 8164409088559985300}
   - component: {fileID: 4355236252117718846}
+  - component: {fileID: 8164409088559985301}
   m_Layer: 0
   m_Name: ArenaRoof
   m_TagString: Untagged
@@ -10472,6 +10542,28 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7923214317086793386}
+  m_Mesh: {fileID: 9100610830048034609, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
+--- !u!64 &8164409088559985301
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7923214317086793386}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 9100610830048034609, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
 --- !u!33 &8165554855815827975
 MeshFilter:
@@ -10557,6 +10649,7 @@ GameObject:
   - component: {fileID: 2639795323931855431}
   - component: {fileID: 1721745888039708704}
   - component: {fileID: 2014120120405971726}
+  - component: {fileID: 8820969599030274463}
   m_Layer: 0
   m_Name: AccentAreas
   m_TagString: Untagged
@@ -10564,6 +10657,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &8820969599030274463
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8820969599030274462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5108515124036084211, guid: 10e52cfe531984b478a4ab7aa2c97fec, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
