@@ -6011,7 +6011,7 @@ MonoBehaviour:
     endAngle: 180
   - startAngle: 300
     endAngle: 315
-  currentArena: 0
+  currentArena: 1
   arenaCenter: {fileID: 1514058444}
   wallRadius: 201
   wallTrapDefinitions:
@@ -6026,7 +6026,7 @@ MonoBehaviour:
     minDistanceFromOtherWallTraps: 15
   - trapName: Swinging Axe
     prefab: {fileID: 136865342826836272, guid: 1a8037d78e3574dd58a6e88c4079362e, type: 3}
-    allowedArenas: 00000000
+    allowedArenas: 01000000
     minSpawnCount: 4
     maxSpawnCount: 8
     heightAboveFloor: -28
@@ -6035,7 +6035,7 @@ MonoBehaviour:
     minDistanceFromOtherWallTraps: 15
   - trapName: Ice Shooter
     prefab: {fileID: 171641878617191790, guid: 2a7540b6074a841bd8d4a358cd1e26b3, type: 3}
-    allowedArenas: 00000000
+    allowedArenas: 01000000
     minSpawnCount: 5
     maxSpawnCount: 8
     heightAboveFloor: 5
@@ -10324,6 +10324,7 @@ GameObject:
   - component: {fileID: 6415524402894007141}
   - component: {fileID: 2783160661934667499}
   - component: {fileID: 4533699582189364596}
+  - component: {fileID: 6415524402894007142}
   m_Layer: 3
   m_Name: ElevatedFloor
   m_TagString: Untagged
@@ -10517,6 +10518,27 @@ Transform:
   - {fileID: 1343443212}
   m_Father: {fileID: 1667241120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6415524402894007142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3872500899246232906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 400, y: 5.5227895, z: 400}
+  m_Center: {x: 0, y: -1.71, z: 0}
 --- !u!4 &7195576527305465351
 Transform:
   m_ObjectHideFlags: 0
@@ -10719,7 +10741,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 9cae2584c70e2d04195a183998f1ff79, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &8820969599030274462
 GameObject:
