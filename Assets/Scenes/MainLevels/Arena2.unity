@@ -5741,6 +5741,8 @@ MonoBehaviour:
     endAngle: 180
   - startAngle: 300
     endAngle: 315
+  - startAngle: 194
+    endAngle: 214
   currentArena: 1
   arenaCenter: {fileID: 1514058444}
   wallRadius: 201
