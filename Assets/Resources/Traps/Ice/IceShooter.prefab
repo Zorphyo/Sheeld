@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439ebae13072e444d87df83834a16e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.WallSpikeShooter.WallSpikeShooter
-  spikeProjectilePrefab: {fileID: 1621221317027835235, guid: b75e162ee512241c384ab570d47c416a, type: 3}
+  spikeProjectilePrefab: {fileID: 1621221317027835235, guid: 028ad34c4d714b04ca9c071c0ec29e86, type: 3}
   spawnRoot: {fileID: 7796325054169494942}
   projectileParent: {fileID: 8430527316923058217}
   shootAxis: 4
@@ -148,7 +148,7 @@ MonoBehaviour:
   maxFanYaw: 25
   randomYawJitter: 4
   randomPitchJitter: 2
-  projectileSpeed: 35
+  projectileSpeed: 45
   cooldownTime: 0.05
 --- !u!1 &2082089462391504090
 GameObject:
