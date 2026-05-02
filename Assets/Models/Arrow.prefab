@@ -141,7 +141,7 @@ CapsuleCollider:
   serializedVersion: 2
   m_Radius: 0.0365505
   m_Height: 0.820091
-  m_Direction: 1
+  m_Direction: 2
   m_Center: {x: -0.0030735005, y: 0.40974152, z: -0.003392}
 --- !u!114 &8926227712487596300
 MonoBehaviour:
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d821f508a062c8479b59f0f4ec98df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
-  speed: 1
+  speed: 25
   lifetime: 5
   damage: 10
