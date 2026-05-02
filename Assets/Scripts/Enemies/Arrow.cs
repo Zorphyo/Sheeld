@@ -9,28 +9,24 @@ public class Arrow : MonoBehaviour
     private Rigidbody rb;
     private bool hasHit = false;
 
-    // For sticking without parenting
+    // Improved Sticking logic
     private Transform stuckTarget;
-    private Vector3 offset;
+    private Vector3 relativePosition;
+    private Quaternion relativeRotation;
+
     private Vector3 lastPosition;
     private static readonly Quaternion meshOffset = Quaternion.Euler(90f, 0f, 0f);
-
-
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.useGravity = true;
-
+        // ContinuousDynamic is key for high-speed projectiles
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
-    // Call this after instantiating
     public void Launch(Vector3 direction)
     {
-        Debug.Log("Launch direction: " + direction);
         direction.Normalize();
-
         rb.linearVelocity = direction * speed;
         transform.rotation = Quaternion.LookRotation(direction) * meshOffset;
         lastPosition = transform.position;
@@ -42,83 +38,79 @@ public class Arrow : MonoBehaviour
     {
         if (hasHit) return;
 
+        // 1. Orient arrow to travel direction
         if (rb.linearVelocity.sqrMagnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(rb.linearVelocity) * meshOffset;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.fixedDeltaTime * 10f);
+        }
 
-            Vector3 currentPosition = transform.position;
-            Vector3 direction = currentPosition - lastPosition;
-            float distance = direction.magnitude;
+        // 2. Manual Raycast Ray-bundle (Prevents tunneling)
+        Vector3 currentPosition = transform.position;
+        Vector3 travelVec = currentPosition - lastPosition;
+        float distance = travelVec.magnitude;
 
-            if (distance > 0f)
+        if (distance > 0f)
+        {
+            // We use travelVec.normalized instead of 'direction'
+            if (Physics.Raycast(lastPosition, travelVec.normalized, out RaycastHit hit, distance))
             {
-                RaycastHit hit;
-                if (Physics.Raycast(lastPosition, direction.normalized, out hit, distance))
+                // Ensure we don't hit our own shooter or triggers
+                if (!hit.collider.isTrigger)
                 {
-                    if (!hit.collider.isTrigger && !hit.collider.CompareTag("Player"))
-                    {
-                        transform.position = hit.point;
-                        transform.rotation = Quaternion.LookRotation(direction) * meshOffset;
-                        StickTo(null);
-                        return;
-                    }
+                    HandleHit(hit.collider, hit.point, travelVec.normalized);
+                    return;
                 }
             }
-
-            lastPosition = currentPosition;
-
-
         }
+        lastPosition = currentPosition;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (hasHit) return;
+        
+        ContactPoint contact = collision.contacts[0];
+        HandleHit(collision.collider, contact.point, rb.linearVelocity.normalized);
+    }
+
+    private void HandleHit(Collider other, Vector3 hitPoint, Vector3 direction)
+    {
+        if (hasHit) return;
+        hasHit = true;
+
+        // Stop all physics immediately
+        rb.isKinematic = true;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.detectCollisions = false;
+
+        // Damage logic
+        if (other.CompareTag("Player"))
+        {
+            if (other.TryGetComponent(out PlayerStats stats))
+                stats.TakeDamage(damage);
+        }
+
+        // Snap to hit location
+        transform.position = hitPoint;
+        transform.rotation = Quaternion.LookRotation(direction) * meshOffset;
+
+        // Rotation-aware sticking
+        stuckTarget = other.transform;
+        relativePosition = stuckTarget.InverseTransformPoint(transform.position);
+        relativeRotation = Quaternion.Inverse(stuckTarget.rotation) * transform.rotation;
+
+        Destroy(gameObject, 10f); 
     }
 
     void LateUpdate()
     {
-        // Follow target position ONLY (ignore rotation)
-        if (stuckTarget != null)
+        if (hasHit && stuckTarget != null)
         {
-            transform.position = stuckTarget.position + offset;
-        }
-    }
-
-    private void StickTo(Transform target)
-    {
-        hasHit = true;
-
-        rb.isKinematic = true;
-        rb.linearVelocity = Vector3.zero;
-        rb.detectCollisions = false;
-
-        if (target != null)
-        {
-            stuckTarget = target;
-            offset = transform.position - stuckTarget.position;
-        }
-
-        Destroy(gameObject, 5f);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (hasHit) return;
-
-        if (collision.collider.CompareTag("Player"))
-        {
-            PlayerStats ph = collision.collider.GetComponent<PlayerStats>();
-            if (ph != null) ph.TakeDamage(damage);
-
-            StickTo(collision.transform);
-            return;
-        }
-
-        if (!collision.collider.isTrigger)
-        {
-            ContactPoint contact = collision.contacts[0];
-
-            transform.position = contact.point;
-            transform.rotation = Quaternion.LookRotation(rb.linearVelocity) * meshOffset;
-
-            StickTo(null);
+            // Keeps arrow stuck to moving/rotating targets
+            transform.position = stuckTarget.TransformPoint(relativePosition);
+            transform.rotation = stuckTarget.rotation * relativeRotation;
         }
     }
 }
