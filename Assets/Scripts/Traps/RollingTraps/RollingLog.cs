@@ -50,6 +50,12 @@ namespace Traps.RollingTraps
         public int damageAmount = 10;
         public float damageCooldown = 0.5f;
 
+        [Header("Enemy Ragdoll")]
+        public bool ragdollEnemies = true;
+        public float ragdollForceMultiplier = 2f;
+        public float ragdollUpwardBoost = 2f;
+        public float ragdollDuration = 1.5f;
+
         [Header("Despawn")]
         public float fallbackLifeTime = 20f;
         public float minSpeedForStuckCheck = 1f;
@@ -74,12 +80,10 @@ namespace Traps.RollingTraps
 
         private void Start()
         {
-            // Move sideways using the log's red X arrow.
             travelDirection = transform.right;
             travelDirection.y = 0f;
             travelDirection.Normalize();
 
-            // Roll around the log's long axis, which is green/Y.
             rollAxis = transform.up.normalized;
 
             Launch();
@@ -87,57 +91,6 @@ namespace Traps.RollingTraps
             if (fallbackLifeTime > 0f)
             {
                 Destroy(gameObject, fallbackLifeTime);
-            }
-        }
-
-        private void SetTravelDirection()
-        {
-            switch (rollDirection)
-            {
-                case WorldRollDirection.PositiveX:
-                    travelDirection = Vector3.right;
-                    break;
-
-                case WorldRollDirection.NegativeX:
-                    travelDirection = Vector3.left;
-                    break;
-
-                case WorldRollDirection.PositiveZ:
-                    travelDirection = Vector3.forward;
-                    break;
-
-                case WorldRollDirection.NegativeZ:
-                    travelDirection = Vector3.back;
-                    break;
-            }
-        }
-
-        private void ForceLogLongAxisToMatchRollAxis()
-        {
-            Vector3 currentLongAxis = GetCurrentWorldLongAxis();
-
-            if (currentLongAxis == Vector3.zero)
-                return;
-
-            Quaternion correction = Quaternion.FromToRotation(currentLongAxis, rollAxis);
-            transform.rotation = correction * transform.rotation;
-        }
-
-        private Vector3 GetCurrentWorldLongAxis()
-        {
-            switch (logLongAxis)
-            {
-                case LocalLongAxis.LocalX:
-                    return transform.right;
-
-                case LocalLongAxis.LocalY:
-                    return transform.up;
-
-                case LocalLongAxis.LocalZ:
-                    return transform.forward;
-
-                default:
-                    return transform.up;
             }
         }
 
@@ -221,18 +174,20 @@ namespace Traps.RollingTraps
 
         private void OnCollisionEnter(Collision collision)
         {
-            TryDamage(collision.gameObject);
+            TryDamage(collision);
         }
 
         private void OnCollisionStay(Collision collision)
         {
-            TryDamage(collision.gameObject);
+            TryDamage(collision);
         }
 
-        private void TryDamage(GameObject other)
+        private void TryDamage(Collision collision)
         {
             if (Time.time - lastDamageTime < damageCooldown)
                 return;
+
+            GameObject other = collision.gameObject;
 
             IDamageable damageable = other.GetComponentInParent<IDamageable>();
 
@@ -250,16 +205,35 @@ namespace Traps.RollingTraps
 
             damageable.TakeDamage(damageAmount);
 
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Enemy"))
+            {
+                TryRagdollEnemy(other, collision);
+                Record(TrapEventType.DamagedEnemy);
+            }
+            else if (other.CompareTag("Player"))
             {
                 Record(TrapEventType.DamagedPlayer);
             }
-            else if (other.CompareTag("Enemy"))
-            {
-                Record(TrapEventType.DamagedEnemy);
-            }
 
             lastDamageTime = Time.time;
+        }
+
+        private void TryRagdollEnemy(GameObject other, Collision collision)
+        {
+            if (!ragdollEnemies)
+                return;
+
+            EnemyRagdollController ragdoll = other.GetComponentInParent<EnemyRagdollController>();
+
+            if (ragdoll == null)
+                return;
+
+            Vector3 hitPoint = collision.GetContact(0).point;
+
+            Vector3 force = rb.linearVelocity * ragdollForceMultiplier;
+            force += Vector3.up * ragdollUpwardBoost;
+
+            ragdoll.Knockback(force, hitPoint, ragdollDuration);
         }
 
         private void Record(TrapEventType eventType)

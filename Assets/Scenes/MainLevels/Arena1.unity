@@ -3088,7 +3088,7 @@ MonoBehaviour:
     overlapCheckRadius: 10
   - trapName: Rolling Log
     prefab: {fileID: 8756624941542966808, guid: 9bc851a064fd441e88fac16914c41af4, type: 3}
-    allowedArenas: 00000000
+    allowedArenas: 02000000
     minSpawnCount: 7
     maxSpawnCount: 10
     placementMode: 0
