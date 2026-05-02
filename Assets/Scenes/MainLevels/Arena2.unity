@@ -3149,7 +3149,7 @@ MonoBehaviour:
     overlapCheckRadius: 10
   - trapName: Ballista
     prefab: {fileID: 2291371096403072726, guid: c7507f485543a7e4cb3d955c1ddac330, type: 3}
-    allowedArenas: 00000000
+    allowedArenas: 0000000001000000
     minSpawnCount: 2
     maxSpawnCount: 5
     placementMode: 0
@@ -3164,7 +3164,7 @@ MonoBehaviour:
     minDistanceFromPlayerSpawn: 20
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
-    overlapGroup: 7
+    overlapGroup: 8
     allowedOverlapGroups: 
     overlapCheckRadius: 10
   - trapName: LavaSpout
@@ -3185,6 +3185,26 @@ MonoBehaviour:
     minDistanceFromEnemySpawn: 0
     maxAllowedSlope: 0
     overlapGroup: 1
+    allowedOverlapGroups: 
+    overlapCheckRadius: 20
+  - trapName: Bomb
+    prefab: {fileID: 8756624941542966808, guid: eb103ed43679a6748a1a2776944b149b, type: 3}
+    allowedArenas: 02000000
+    minSpawnCount: 7
+    maxSpawnCount: 12
+    placementMode: 0
+    respawnAtRuntime: 0
+    respawnDelay: 8
+    bottomOffset: 0
+    minEmbedDepth: 0
+    maxEmbedDepth: 0
+    yOffset: 0.6
+    randomYaw: 0
+    baseRotationEuler: {x: 0, y: 0, z: 0}
+    minDistanceFromPlayerSpawn: 30
+    minDistanceFromEnemySpawn: 0
+    maxAllowedSlope: 0
+    overlapGroup: 6
     allowedOverlapGroups: 
     overlapCheckRadius: 20
   playerSpawnPoint: {fileID: 0}
