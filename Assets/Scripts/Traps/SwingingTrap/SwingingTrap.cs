@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Traps.SwingingHammer
+namespace Traps.SwingingTrap
 {
     public class SwingingTrap : MonoBehaviour
     {

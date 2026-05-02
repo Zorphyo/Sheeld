@@ -4,7 +4,7 @@ namespace Traps.SwingingTrap
 {
     public class TriggerZone : MonoBehaviour
     {
-        [SerializeField] private SwingingHammer.SwingingTrap hammerTrap;
+        [SerializeField] private SwingingTrap hammerTrap;
 
         [Header("Activation Rules")]
         [SerializeField] private bool triggerOnPlayer = true;
