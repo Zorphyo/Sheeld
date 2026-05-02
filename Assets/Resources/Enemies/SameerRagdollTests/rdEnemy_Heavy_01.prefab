@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3684150013033655259}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 1.94, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalRotation: {x: 0.000000115484006, y: 0.00000011920925, z: -1.2434499e-14, w: 1}
+  m_LocalPosition: {x: 0.019999994, y: 0.32656312, z: -0.0015371628}
+  m_LocalScale: {x: 0.6000001, y: 0.60000014, z: 0.6000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1444048464664359147}
+  m_Father: {fileID: 6813391775546402836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1405390333792556800
 PrefabInstance:
@@ -143,8 +143,8 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5508318051045800028, guid: 26884749826e6774aa58a039de667f50, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26884749826e6774aa58a039de667f50, type: 3}
-      insertIndex: 0
+    - targetCorrespondingSourceObject: {fileID: -3670727641427869932, guid: 26884749826e6774aa58a039de667f50, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 2704818212669537929}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26884749826e6774aa58a039de667f50, type: 3}
@@ -483,11 +483,6 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!4 &1444048464664359147 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26884749826e6774aa58a039de667f50, type: 3}
-  m_PrefabInstance: {fileID: 1405390333792556800}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1765442955969931881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8430476733748822679, guid: 26884749826e6774aa58a039de667f50, type: 3}
@@ -1501,6 +1496,11 @@ CharacterJoint:
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!4 &6813391775546402836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3670727641427869932, guid: 26884749826e6774aa58a039de667f50, type: 3}
+  m_PrefabInstance: {fileID: 1405390333792556800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8472196952991463605 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7355426222476292021, guid: 26884749826e6774aa58a039de667f50, type: 3}
