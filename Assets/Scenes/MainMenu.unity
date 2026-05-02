@@ -767,7 +767,9 @@ MonoBehaviour:
   timeRequiredScaling: 15
   mainMenuScene: MainMenu
   arenaScenes:
-  - SampleScene
+  - Arena1
+  - Arena2
+  - Arena3
   roundsPerArena: 030000000500000009000000
   endlessMode: 0
   endlessArenaIndex: 0
