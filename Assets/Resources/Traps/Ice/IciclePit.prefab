@@ -656,9 +656,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30820ea15900f4e61aebbc8aaf747289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.MovingSpikeTrap.SpikeDamageZone
+  trapType: 0
   playerDamage: 10
   enemyDamage: 20
   damageInterval: 0.5
+  ragdollEnemies: 1
+  upwardForce: 52.8
+  sideForce: 16.43
+  ragdollDuration: 1.5
 --- !u!1 &3451282506169780271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f7be38369f249e2b30b4591a9f9440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Traps.MovingSpikeTrap.MovingSpikeTrap
+  trapType: 0
   spikesVisual: {fileID: 1872259671036801968}
   damageZone: {fileID: 1497283450812270227}
   triggerZone: {fileID: 3003208423915405791}

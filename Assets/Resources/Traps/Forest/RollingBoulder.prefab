@@ -166,6 +166,10 @@ MonoBehaviour:
   maxUpwardVelocity: 1.5
   damageAmount: 10
   damageCooldown: 0.5
+  ragdollEnemies: 1
+  enemyRagdollDuration: 4
+  enemyForwardForce: 63.4
+  enemyUpwardForce: 31.4
   fallbackLifeTime: 20
   minSpeedForStuckCheck: 1
   stuckTimeBeforeDestroy: 1.5

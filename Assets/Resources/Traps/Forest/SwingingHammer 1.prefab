@@ -259,6 +259,10 @@ MonoBehaviour:
   playerDamage: 25
   enemyDamage: 40
   damageInterval: 0.5
+  ragdollEnemies: 1
+  ragdollForce: 41.9
+  upwardForce: 8.08
+  ragdollDuration: 1.5
 --- !u!1001 &2822261821273160666
 PrefabInstance:
   m_ObjectHideFlags: 0
