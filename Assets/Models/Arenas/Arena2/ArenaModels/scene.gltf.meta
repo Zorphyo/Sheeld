@@ -27,19 +27,14 @@ ScriptedImporter:
   assetDependencies:
   - type: 0
     originalUri: Assets\Models\Arenas\Arena2\ArenaModels\scene.bin
-    assetPath: 
+    assetPath: Assets\Models\Arenas\Arena2\ArenaModels\scene.bin
   - type: 1
     originalUri: Assets\Models\Arenas\Arena2\ArenaModels\textures\Material_baseColor.png
-    assetPath: 
+    assetPath: Assets\Models\Arenas\Arena2\ArenaModels\textures\Material_baseColor.png
   - type: 1
     originalUri: Assets\Models\Arenas\Arena2\ArenaModels\textures\Material_metallicRoughness.png
-    assetPath: 
+    assetPath: Assets\Models\Arenas\Arena2\ArenaModels\textures\Material_metallicRoughness.png
   - type: 1
     originalUri: Assets\Models\Arenas\Arena2\ArenaModels\textures\Material_normal.png
-    assetPath: 
-  reportItems:
-  - type: 0
-    code: 8
-    messages:
-    - Cannot find resource at path Assets\Models\Arenas\Arena2\ArenaModels\scene.bin
-    - 0
+    assetPath: Assets\Models\Arenas\Arena2\ArenaModels\textures\Material_normal.png
+  reportItems: []
