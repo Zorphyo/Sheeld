@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace Traps.SwingingHammer
+namespace Traps.SwingingTrap
 {
     public class TriggerZone : MonoBehaviour
     {
-        [SerializeField] private SwingingTrap hammerTrap;
+        [SerializeField] private SwingingHammer.SwingingTrap hammerTrap;
 
         [Header("Activation Rules")]
         [SerializeField] private bool triggerOnPlayer = true;
@@ -12,6 +12,16 @@ namespace Traps.SwingingHammer
         [SerializeField] private bool triggerOnAnyCollider = true;
 
         private void OnTriggerEnter(Collider other)
+        {
+            TryTrigger(other);
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            TryTrigger(other);
+        }
+
+        private void TryTrigger(Collider other)
         {
             if (hammerTrap == null)
             {
