@@ -4090,6 +4090,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443682707}
   m_CullTransparentMesh: 1
+--- !u!1 &453264369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453264371}
+  - component: {fileID: 453264370}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &453264370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453264369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a9fac1c4e5ada40adb1b3dd972adf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicHandler
+  mixerGroup: {fileID: -2682097820629463764, guid: 708e68d943c7a764d835467d997fac49, type: 2}
+  mainMenuMusic: {fileID: 8300000, guid: f0b475ad36346bf469678a77e7367e79, type: 3}
+  level1Music: {fileID: 8300000, guid: 064b3c9be3757ed4e9ffe336ce6878e6, type: 3}
+  level2Music: {fileID: 8300000, guid: 95f8fb2fa6c849046ada9a0e601df0ea, type: 3}
+  level3Music: {fileID: 8300000, guid: 033c10b0347c4b14581d2c5e4bcfbf45, type: 3}
+  mainMenuSceneName: MainMenu
+  level1SceneName: Arena1
+  level2SceneName: Arena2
+  level3SceneName: Arena3
+  volume: 1
+  loopDelay: 5
+  dontDestroyOnLoad: 1
+--- !u!4 &453264371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453264369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -359.77722, y: -0, z: 222.47981}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &464151320
 GameObject:
   m_ObjectHideFlags: 0
@@ -13797,6 +13853,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276870048}
   m_CullTransparentMesh: 1
+--- !u!1 &1286386840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286386842}
+  - component: {fileID: 1286386841}
+  m_Layer: 0
+  m_Name: AudoListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1286386841
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286386840}
+  m_Enabled: 1
+--- !u!4 &1286386842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286386840}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -359.77725, y: -0, z: 222.47983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1288462507
 GameObject:
   m_ObjectHideFlags: 0
@@ -21068,3 +21164,5 @@ SceneRoots:
   - {fileID: 420981343}
   - {fileID: 1124420218}
   - {fileID: 42846200}
+  - {fileID: 453264371}
+  - {fileID: 1286386842}

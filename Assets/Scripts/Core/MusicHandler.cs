@@ -1,24 +1,18 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MusicHandler : MonoBehaviour
 {
-    [System.Serializable]
-    public class SceneMusic
-    {
-        public string sceneName;
-        public AudioClip musicClip;
-    }
-
     [Header("Mixer")]
     public AudioMixerGroup mixerGroup;
 
     [Header("Scene Music")]
     public AudioClip mainMenuMusic;
-    public AudioClip arena1Music;
-    public AudioClip arena2Music;
-    public AudioClip arena3Music;
+    public AudioClip level1Music;
+    public AudioClip level2Music;
+    public AudioClip level3Music;
 
     [Header("Scene Names")]
     public string mainMenuSceneName = "MainMenu";
@@ -28,15 +22,15 @@ public class MusicHandler : MonoBehaviour
 
     [Header("Settings")]
     public float volume = 1f;
-    public bool loopMusic = true;
+    public float loopDelay = 5f;
     public bool dontDestroyOnLoad = true;
 
     private AudioSource audioSource;
     private static MusicHandler instance;
+    private Coroutine loopCoroutine;
 
     void Awake()
     {
-        // Prevent duplicate music managers when changing scenes
         if (dontDestroyOnLoad)
         {
             if (instance != null && instance != this)
@@ -56,14 +50,15 @@ public class MusicHandler : MonoBehaviour
 
         audioSource.outputAudioMixerGroup = mixerGroup;
         audioSource.volume = volume;
-        audioSource.loop = loopMusic;
+
+        // Important: false, because we are manually looping with a delay.
+        audioSource.loop = false;
         audioSource.playOnAwake = false;
     }
 
     void Start()
     {
         PlayMusicForCurrentScene();
-
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -93,15 +88,15 @@ public class MusicHandler : MonoBehaviour
         }
         else if (sceneName == level1SceneName)
         {
-            selectedClip = arena1Music;
+            selectedClip = level1Music;
         }
         else if (sceneName == level2SceneName)
         {
-            selectedClip = arena2Music;
+            selectedClip = level2Music;
         }
         else if (sceneName == level3SceneName)
         {
-            selectedClip = arena3Music;
+            selectedClip = level3Music;
         }
 
         if (selectedClip == null)
@@ -110,16 +105,40 @@ public class MusicHandler : MonoBehaviour
             return;
         }
 
-        // Do not restart the same song if it is already playing
         if (audioSource.clip == selectedClip && audioSource.isPlaying)
             return;
 
+        if (loopCoroutine != null)
+        {
+            StopCoroutine(loopCoroutine);
+        }
+
         audioSource.clip = selectedClip;
-        audioSource.Play();
+        loopCoroutine = StartCoroutine(PlayWithLoopDelay());
+    }
+
+    private IEnumerator PlayWithLoopDelay()
+    {
+        while (true)
+        {
+            audioSource.Play();
+
+            yield return new WaitForSeconds(audioSource.clip.length);
+
+            audioSource.Stop();
+
+            yield return new WaitForSeconds(loopDelay);
+        }
     }
 
     public void StopMusic()
     {
+        if (loopCoroutine != null)
+        {
+            StopCoroutine(loopCoroutine);
+            loopCoroutine = null;
+        }
+
         audioSource.Stop();
     }
 
