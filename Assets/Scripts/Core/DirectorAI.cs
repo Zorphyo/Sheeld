@@ -123,11 +123,15 @@ public class DirectorAI : MonoBehaviour
         LoadEnemyPrefabs();
     }
 
-    public void StartGame()
+    public void StartGame(int selectedArenaIndex = 0)
     {
+        if (endlessMode)
+        {
+            endlessArenaIndex = selectedArenaIndex;
+        }
+
         StartCoroutine(RunGame());
     }
-
     void Update()
     {
         if (player == null || betweenRounds) return;
@@ -402,30 +406,30 @@ public class DirectorAI : MonoBehaviour
                 break;
 
             case DirectorState.ChaosSpike:
-            {
-                int spawnCount = 1;
-
-                if (Random.value < 0.6f) spawnCount++;
-                if (Random.value < 0.4f) spawnCount++;
-
-                spawnCount = Mathf.Min(spawnCount, 2); // cap burst
-
-                for (int i = 0; i < spawnCount; i++)
                 {
-                    float roll = Random.value;
+                    int spawnCount = 1;
 
-                    if (roll < 0.5f) Spawn(RandomFrom(basicPrefabs));
-                    else if (roll < 0.8f) Spawn(RandomFrom(speedsterPrefabs));
-                    else Spawn(RandomFrom(heavyPrefabs));
-                }
+                    if (Random.value < 0.6f) spawnCount++;
+                    if (Random.value < 0.4f) spawnCount++;
 
-                if (!medicSpawned && ShouldSpawnMedic())
-                {
-                    Spawn(RandomFrom(medicPrefabs));
-                    medicSpawned = true;
+                    spawnCount = Mathf.Min(spawnCount, 2); // cap burst
+
+                    for (int i = 0; i < spawnCount; i++)
+                    {
+                        float roll = Random.value;
+
+                        if (roll < 0.5f) Spawn(RandomFrom(basicPrefabs));
+                        else if (roll < 0.8f) Spawn(RandomFrom(speedsterPrefabs));
+                        else Spawn(RandomFrom(heavyPrefabs));
+                    }
+
+                    if (!medicSpawned && ShouldSpawnMedic())
+                    {
+                        Spawn(RandomFrom(medicPrefabs));
+                        medicSpawned = true;
+                    }
+                    break;
                 }
-                break;
-            }
 
             case DirectorState.MicroBreath:
                 break;
@@ -558,16 +562,16 @@ public class DirectorAI : MonoBehaviour
     public void OnEnemyAttacked() => timeSinceLastAttack = 0f;
 
     // ── Restart ───────────────────────────────────────────────────────────────
-public void RestartFromRound(int round = 1)
-{
-    StopAllCoroutines();
-    currentRound = 0;
-    endlessWave = 0;
-    chaosLevel = 0f;
-    chaosSpikesThisRound = 0;
-    lastSpikeTime = -999f;
-    Roster.Clear();
-    ResetPerformanceTracking();
-    StartGame(); 
-}
+    public void RestartFromRound(int round = 1)
+    {
+        StopAllCoroutines();
+        currentRound = 0;
+        endlessWave = 0;
+        chaosLevel = 0f;
+        chaosSpikesThisRound = 0;
+        lastSpikeTime = -999f;
+        Roster.Clear();
+        ResetPerformanceTracking();
+        StartGame();
+    }
 }
