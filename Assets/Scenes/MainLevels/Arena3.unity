@@ -6108,7 +6108,7 @@ MonoBehaviour:
   overwhelmThreshold: 40
   chaosSpikThreshold: 65
   microBreathThreshold: 85
-  maxAliveEnemies: 10
+  maxAliveEnemies: 7
   pressureSpawnInterval: 4
   overwhelmSpawnInterval: 2.5
   chaosSpikeSpawnInterval: 1.5

@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PhotoScene.unity
     guid: ca855c67f7bcf2347bda9c2641e6e296
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/MainLevels/Arena1.unity
     guid: 8467339a7579e264384b271522660701
   - enabled: 1
