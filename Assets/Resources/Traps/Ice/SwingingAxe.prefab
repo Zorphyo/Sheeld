@@ -52,8 +52,8 @@ MonoBehaviour:
   hiddenAngle: 0
   strikeAngle: -90
   loopReturnAngle: -360
-  strikeSpeed: 300
-  loopSpeed: 300
+  strikeSpeed: 500
+  loopSpeed: 400
   damageStartAngle: -20
   damageEndAngle: -140
   cooldownTime: 2
