@@ -2271,6 +2271,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588516199}
   m_CullTransparentMesh: 1
+--- !u!114 &615744651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3467304197964544726, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
+  m_PrefabInstance: {fileID: 1665332414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665332417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb63eb688a644f4698f7c40b8aff249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsUI
 --- !u!1 &623138077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7423,7 +7434,7 @@ PrefabInstance:
     - target: {fileID: 14746308028562579, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 615744651}
     - target: {fileID: 14746308028562579, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetFullscreen
@@ -7439,7 +7450,7 @@ PrefabInstance:
     - target: {fileID: 144997992138266836, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 615744651}
     - target: {fileID: 144997992138266836, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetMusic
@@ -7471,7 +7482,7 @@ PrefabInstance:
     - target: {fileID: 2683985564966196631, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 615744651}
     - target: {fileID: 2683985564966196631, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetQuality
@@ -7543,7 +7554,7 @@ PrefabInstance:
     - target: {fileID: 6707670912331131813, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 615744651}
     - target: {fileID: 6707670912331131813, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSFX
@@ -7711,7 +7722,7 @@ PrefabInstance:
     - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 615744651}
     - target: {fileID: 8642319475278982466, guid: 3ad068740a79c454c934b10328136c7e, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetResolution
