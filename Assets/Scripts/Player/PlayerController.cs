@@ -117,10 +117,10 @@ public class PlayerController : MonoBehaviour, IKnockbackable
             }
         }
 
-        if (otherGameObject.TryGetComponent<EnemyRagdoll>(out EnemyLocomotion enemy) && isShieldBashing)
+        if (otherGameObject.TryGetComponent<EnemyRagdollController>(out EnemyRagdollController enemy) && isShieldBashing)
         {
             Vector3 launchDirection = rb.linearVelocity.normalized;
-            enemy.Knockback(launchDirection, KNOCKBACK_FORCE);
+            enemy.Knockback(launchDirection, launchDirection, 1.8f);
         }
     }
 

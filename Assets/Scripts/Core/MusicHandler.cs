@@ -93,15 +93,15 @@ public class MusicHandler : MonoBehaviour
         }
         else if (sceneName == level1SceneName)
         {
-            selectedClip = level1Music;
+            selectedClip = arena1Music;
         }
         else if (sceneName == level2SceneName)
         {
-            selectedClip = level2Music;
+            selectedClip = arena2Music;
         }
         else if (sceneName == level3SceneName)
         {
-            selectedClip = level3Music;
+            selectedClip = arena3Music;
         }
 
         if (selectedClip == null)
