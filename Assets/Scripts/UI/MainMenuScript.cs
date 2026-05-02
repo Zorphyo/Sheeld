@@ -26,7 +26,7 @@ public class MainMenuScript : MonoBehaviour
         {
             GameSession.CurrentMode = GameMode.EndlessForest;
             DirectorAI.Instance.endlessMode = true;
-            DirectorAI.Instance.StartGame();
+            DirectorAI.Instance.StartGame(0);
         }
     }
 
@@ -37,7 +37,7 @@ public class MainMenuScript : MonoBehaviour
         {
             GameSession.CurrentMode = GameMode.EndlessIcy;
             DirectorAI.Instance.endlessMode = true;
-            DirectorAI.Instance.StartGame();
+            DirectorAI.Instance.StartGame(1);
         }
     }
 
@@ -48,7 +48,7 @@ public class MainMenuScript : MonoBehaviour
         {
             GameSession.CurrentMode = GameMode.EndlessLava;
             DirectorAI.Instance.endlessMode = true;
-            DirectorAI.Instance.StartGame();
+            DirectorAI.Instance.StartGame(2);
         }
     }
 
